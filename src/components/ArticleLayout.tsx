@@ -26,7 +26,7 @@ export function ArticleLayout({
   previousPathname,
 }: {
   children: ReactNode;
-  meta: Record<string, string>;
+  meta: { date: string; title: string; description: string };
   isRssFeed?: boolean | undefined;
   previousPathname: string;
 }) {

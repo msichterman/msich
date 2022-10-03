@@ -1,7 +1,9 @@
 import {
   CSSProperties,
+  DetailedHTMLProps,
   forwardRef,
   ForwardRefExoticComponent,
+  HTMLAttributes,
   ReactNode,
   RefAttributes,
 } from "react";
@@ -10,8 +12,8 @@ import clsx from "clsx";
 type ContainerProps = {
   className?: string;
   children?: ReactNode;
-  props?: Record<string, unknown>;
-  style?: Record<string, unknown> | undefined;
+  props?: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+  style?: CSSProperties | undefined;
 };
 
 const OuterContainer = forwardRef<HTMLDivElement, ContainerProps>(

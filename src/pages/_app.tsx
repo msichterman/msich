@@ -9,6 +9,8 @@ import type { AppRouter } from "../server/router";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
 import { useEffect, useRef } from "react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 function usePrevious(value: string) {
   const ref = useRef<string>();
@@ -29,7 +31,20 @@ const MyApp: AppType<{ session: Session | null }> = ({
 
   return (
     <SessionProvider session={session}>
-      <Component previousPathname={previousPathname} {...pageProps} />
+      <>
+        <div className="fixed inset-0 flex justify-center sm:px-8">
+          <div className="flex w-full max-w-7xl lg:px-8">
+            <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
+          </div>
+        </div>
+        <div className="relative">
+          <Header />
+          <main>
+            <Component previousPathname={previousPathname} {...pageProps} />
+          </main>
+          <Footer />
+        </div>
+      </>
     </SessionProvider>
   );
 };
@@ -41,6 +56,7 @@ const getBaseUrl = () => {
 };
 
 export default withTRPC<AppRouter>({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   config({ ctx }) {
     /**
      * If you want to use SSR, you need to use the server's full URL

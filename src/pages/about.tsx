@@ -1,20 +1,31 @@
-import Image from 'next/future/image'
-import Head from 'next/head'
-import Link from 'next/link'
-import clsx from 'clsx'
+import Image from "next/future/image";
+import Head from "next/head";
+import Link from "next/link";
+import clsx from "clsx";
 
-import { Container } from '@/components/Container'
+import { Container } from "@/components/Container";
 import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+} from "@/components/SocialIcons";
+import portraitImage from "@/images/portrait.jpg";
+import { ElementType, ReactNode, SVGProps } from "react";
 
-function SocialLink({ className, href, children, icon: Icon }) {
+function SocialLink({
+  className,
+  href,
+  children,
+  icon: Icon,
+}: {
+  className?: string;
+  icon: ElementType;
+  href: string;
+  children: ReactNode;
+}) {
   return (
-    <li className={clsx(className, 'flex')}>
+    <li className={clsx(className, "flex")}>
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -23,10 +34,10 @@ function SocialLink({ className, href, children, icon: Icon }) {
         <span className="ml-4">{children}</span>
       </Link>
     </li>
-  )
+  );
 }
 
-function MailIcon(props) {
+function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -34,7 +45,7 @@ function MailIcon(props) {
         d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
       />
     </svg>
-  )
+  );
 }
 
 export default function About() {
@@ -88,7 +99,7 @@ export default function About() {
               <p>
                 Today, I’m the founder of Planetaria, where we’re working on
                 civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
+                home so that the next generation of kids really <em>can</em>{" "}
                 make it to orbit — from the comfort of their own backyards.
               </p>
             </div>
@@ -119,5 +130,5 @@ export default function About() {
         </div>
       </Container>
     </>
-  )
+  );
 }

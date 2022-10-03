@@ -1,5 +1,10 @@
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 import clsx from "clsx";
+import {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  RefAttributes,
+} from "react";
 
 const variantStyles = new Map<string, string>([
   [
@@ -12,17 +17,27 @@ const variantStyles = new Map<string, string>([
   ],
 ]);
 
+type ButtonProps = Omit<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  keyof LinkProps
+> &
+  Omit<LinkProps, "href"> & {
+    children?: React.ReactNode;
+  } & RefAttributes<HTMLAnchorElement> &
+  ButtonHTMLAttributes<HTMLButtonElement> &
+  RefAttributes<HTMLButtonElement> & {
+    variant?: "primary" | "secondary";
+  } & {
+    href?: string | URL;
+  };
+
 export function Button({
   variant = "primary",
   className,
   href,
+  children,
   ...props
-}: {
-  variant: "primary" | "secondary";
-  className?: string;
-  href?: string;
-  props: Record<string, unknown>;
-}) {
+}: ButtonProps) {
   className = clsx(
     "inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none",
     variantStyles.get(variant),
@@ -30,8 +45,12 @@ export function Button({
   );
 
   return href ? (
-    <Link href={href} className={className} {...props} />
+    <Link href={href} className={className} {...props}>
+      {children}
+    </Link>
   ) : (
-    <button className={className} {...props} />
+    <button className={className} {...props}>
+      {children}
+    </button>
   );
 }

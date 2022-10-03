@@ -1,31 +1,32 @@
-import Image from 'next/future/image'
-import Head from 'next/head'
-import Link from 'next/link'
-import clsx from 'clsx'
+import Image from "next/future/image";
+import Head from "next/head";
+import Link from "next/link";
+import clsx from "clsx";
 
-import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
-import { Container } from '@/components/Container'
+import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
+import { Container } from "@/components/Container";
 import {
   TwitterIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
-} from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
-import { generateRssFeed } from '@/lib/generateRssFeed'
-import { getAllArticles } from '@/lib/getAllArticles'
-import { formatDate } from '@/lib/formatDate'
+} from "@/components/SocialIcons";
+import image1 from "@/images/photos/image-1.jpg";
+import image2 from "@/images/photos/image-2.jpg";
+import image3 from "@/images/photos/image-3.jpg";
+import image4 from "@/images/photos/image-4.jpg";
+import image5 from "@/images/photos/image-5.jpg";
+import logoAirbnb from "@/images/logos/airbnb.svg";
+import logoFacebook from "@/images/logos/facebook.svg";
+import logoPlanetaria from "@/images/logos/planetaria.svg";
+import logoStarbucks from "@/images/logos/starbucks.svg";
+import { generateRssFeed } from "@/lib/generateRssFeed";
+import { ArticleProps, getAllArticles } from "@/lib/getAllArticles";
+import { formatDate } from "@/lib/formatDate";
+import { ElementType, SVGProps } from "react";
 
-function MailIcon(props) {
+function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -45,10 +46,10 @@ function MailIcon(props) {
         className="stroke-zinc-400 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }
 
-function BriefcaseIcon(props) {
+function BriefcaseIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -68,10 +69,10 @@ function BriefcaseIcon(props) {
         className="stroke-zinc-400 dark:stroke-zinc-500"
       />
     </svg>
-  )
+  );
 }
 
-function ArrowDownIcon(props) {
+function ArrowDownIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
       <path
@@ -81,10 +82,14 @@ function ArrowDownIcon(props) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
-function Article({ article }) {
+function Article({
+  article,
+}: {
+  article: ArticleProps["meta"] & { slug: string };
+}) {
   return (
     <Card as="article">
       <Card.Title href={`/articles/${article.slug}`}>
@@ -96,15 +101,22 @@ function Article({ article }) {
       <Card.Description>{article.description}</Card.Description>
       <Card.Cta>Read article</Card.Cta>
     </Card>
-  )
+  );
 }
 
-function SocialLink({ icon: Icon, ...props }) {
+function SocialLink({
+  icon: Icon,
+  href,
+  ...props
+}: {
+  icon: ElementType;
+  href: string;
+}) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className="group -m-1 p-1" href={href} {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
-  )
+  );
 }
 
 function Newsletter() {
@@ -133,43 +145,52 @@ function Newsletter() {
         </Button>
       </div>
     </form>
-  )
+  );
 }
 
 function Resume() {
-  let resume = [
+  const resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
+      company: "Planetaria",
+      title: "CEO",
       logo: logoPlanetaria,
-      start: '2019',
+      start: "2019",
       end: {
-        label: 'Present',
+        label: "Present",
         dateTime: new Date().getFullYear(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
+      company: "Airbnb",
+      title: "Product Designer",
       logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      start: "2014",
+      end: {
+        label: "Present",
+        dateTime: new Date().getFullYear(),
+      },
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
+      company: "Facebook",
+      title: "iOS Software Engineer",
       logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      start: "2011",
+      end: {
+        label: "Present",
+        dateTime: new Date().getFullYear(),
+      },
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
+      company: "Starbucks",
+      title: "Shift Supervisor",
       logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      start: "2008",
+      end: {
+        label: "Present",
+        dateTime: new Date().getFullYear(),
+      },
     },
-  ]
+  ];
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
@@ -178,33 +199,29 @@ function Resume() {
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
+        {resume.map(({ company, title, logo, start, end }, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+              <Image src={logo} alt="" className="h-7 w-7" unoptimized />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {role.company}
+                {company}
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="text-xs text-zinc-500 dark:text-zinc-400">
-                {role.title}
+                {title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${start} until ${end.label ?? end}`}
               >
-                <time dateTime={role.start.dateTime ?? role.start}>
-                  {role.start.label ?? role.start}
-                </time>{' '}
-                <span aria-hidden="true">—</span>{' '}
-                <time dateTime={role.end.dateTime ?? role.end}>
-                  {role.end.label ?? role.end}
+                <time dateTime={start}>{start}</time>{" "}
+                <span aria-hidden="true">—</span>{" "}
+                <time dateTime={end.dateTime.toString()}>
+                  {end.label ?? end}
                 </time>
               </dd>
             </dl>
@@ -216,11 +233,17 @@ function Resume() {
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
-  )
+  );
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  const rotations = [
+    "rotate-2",
+    "-rotate-2",
+    "rotate-2",
+    "rotate-2",
+    "-rotate-2",
+  ];
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -229,7 +252,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+              "relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length]
             )}
           >
@@ -243,10 +266,14 @@ function Photos() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default function Home({ articles }) {
+export default function Home({
+  articles,
+}: {
+  articles: Array<ArticleProps["meta"] & { slug: string }>;
+}) {
   return (
     <>
       <Head>
@@ -308,19 +335,20 @@ export default function Home({ articles }) {
         </div>
       </Container>
     </>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
+  if (process.env.NODE_ENV === "production") {
+    await generateRssFeed();
   }
 
   return {
     props: {
       articles: (await getAllArticles())
         .slice(0, 4)
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         .map(({ component, ...meta }) => meta),
     },
-  }
+  };
 }

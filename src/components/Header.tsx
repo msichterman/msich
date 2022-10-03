@@ -11,11 +11,12 @@ import {
   Fragment,
   HTMLAttributes,
   ReactNode,
+  SVGProps,
   useEffect,
   useRef,
 } from "react";
 
-function CloseIcon(props: Record<string, unknown>) {
+function CloseIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -30,7 +31,7 @@ function CloseIcon(props: Record<string, unknown>) {
   );
 }
 
-function ChevronDownIcon(props: Record<string, unknown>) {
+function ChevronDownIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
       <path
@@ -44,7 +45,7 @@ function ChevronDownIcon(props: Record<string, unknown>) {
   );
 }
 
-function SunIcon(props: Record<string, unknown>) {
+function SunIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -63,7 +64,7 @@ function SunIcon(props: Record<string, unknown>) {
   );
 }
 
-function MoonIcon(props: Record<string, unknown>) {
+function MoonIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
@@ -76,7 +77,7 @@ function MoonIcon(props: Record<string, unknown>) {
   );
 }
 
-type NavItemProps = {
+export type NavItemProps = {
   href: string;
   children: ReactNode;
 };
@@ -395,6 +396,7 @@ export function Header() {
             />
             <Container
               className="top-0 order-last -mb-3 pt-3"
+              // @ts-ignore
               style={{ position: "var(--header-position)" }}
             >
               <div
@@ -430,6 +432,7 @@ export function Header() {
         >
           <Container
             className="top-[var(--header-top,theme(spacing.6))] w-full"
+            // @ts-ignore
             style={{ position: "var(--header-inner-position)" }}
           >
             <div className="relative flex gap-4">
