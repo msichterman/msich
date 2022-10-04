@@ -1,4 +1,3 @@
-import { env } from "./src/env/server.mjs";
 import nextMDX from "@next/mdx";
 import remarkGfm from "remark-gfm";
 import rehypePrism from "@mapbox/rehype-prism";
