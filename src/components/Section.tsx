@@ -1,8 +1,8 @@
 import { ReactNode, useId } from "react";
 
 type SectionProps = {
-  title: string;
-  children: ReactNode;
+  title?: string;
+  children?: ReactNode;
 };
 
 export function Section({ title, children }: SectionProps) {

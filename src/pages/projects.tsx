@@ -1,51 +1,51 @@
-import Image from 'next/future/image'
-import Head from 'next/head'
+import Image from "next/future/image";
+import Head from "next/head";
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import { Card } from "@/components/Card";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import logoAnimaginary from "@/images/logos/animaginary.svg";
+import logoCosmos from "@/images/logos/cosmos.svg";
+import logoHelioStream from "@/images/logos/helio-stream.svg";
+import logoOpenShuttle from "@/images/logos/open-shuttle.svg";
+import logoPlanetaria from "@/images/logos/planetaria.svg";
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: "Planetaria",
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      "Creating technology to empower civilians to explore space on their own terms.",
+    link: { href: "http://planetaria.tech", label: "planetaria.tech" },
     logo: logoPlanetaria,
   },
   {
-    name: 'Animaginary',
+    name: "Animaginary",
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      "High performance web animation library, hand-written in optimized WASM.",
+    link: { href: "#", label: "github.com" },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: "HelioStream",
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      "Real-time video streaming library, optimized for interstellar transmission.",
+    link: { href: "#", label: "github.com" },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: "cosmOS",
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      "The operating system that powers our Planetaria space shuttles.",
+    link: { href: "#", label: "github.com" },
     logo: logoCosmos,
   },
   {
-    name: 'OpenShuttle',
+    name: "OpenShuttle",
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
+      "The schematics for the first rocket I designed that successfully made it to orbit.",
+    link: { href: "#", label: "github.com" },
     logo: logoOpenShuttle,
   },
-]
+];
 
 function LinkIcon(props) {
   return (
@@ -55,14 +55,14 @@ function LinkIcon(props) {
         fill="currentColor"
       />
     </svg>
-  )
+  );
 }
 
 export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Spencer Sharp</title>
+        <title>Projects - Matt Sichterman</title>
         <meta
           name="description"
           content="Things I’ve made trying to put my dent in the universe."
@@ -90,7 +90,7 @@ export default function Projects() {
                 <Card.Link href={project.link.href}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-sky-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
@@ -99,5 +99,5 @@ export default function Projects() {
         </ul>
       </SimpleLayout>
     </>
-  )
+  );
 }

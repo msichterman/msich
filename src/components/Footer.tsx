@@ -2,12 +2,20 @@ import Link from "next/link";
 
 import { Container } from "@/components/Container";
 import { NavItemProps } from "./Header";
+import { useRouter } from "next/router";
+import clsx from "clsx";
 
 function NavLink({ href, children }: NavItemProps) {
+  const isActive = useRouter().pathname === href;
+
   return (
     <Link
       href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+      className={clsx(
+        "rounded px-1 transition hover:text-sky-500 dark:hover:text-sky-400",
+        isActive &&
+          "border border-sky-300 bg-sky-100 dark:border-sky-600 dark:bg-sky-800"
+      )}
     >
       {children}
     </Link>
@@ -28,7 +36,7 @@ export function Footer() {
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
+                &copy; {new Date().getFullYear()} Matt Sichterman. All rights
                 reserved.
               </p>
             </div>

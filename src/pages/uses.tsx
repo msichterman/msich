@@ -1,20 +1,32 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/Card";
+import { Section } from "@/components/Section";
+import { SimpleLayout } from "@/components/SimpleLayout";
+import { HTMLAttributes, ReactNode } from "react";
 
-function ToolsSection({ children, ...props }) {
+function ToolsSection({
+  children,
+  ...props
+}: { children: ReactNode } & HTMLAttributes<HTMLElement>) {
   return (
     <Section {...props}>
       <ul role="list" className="space-y-16">
         {children}
       </ul>
     </Section>
-  )
+  );
 }
 
-function Tool({ title, href, children }) {
+function Tool({
+  title,
+  href,
+  children,
+}: {
+  title: string;
+  href?: string;
+  children: ReactNode;
+}) {
   return (
     <Card as="li">
       <Card.Title as="h3" href={href}>
@@ -22,14 +34,14 @@ function Tool({ title, href, children }) {
       </Card.Title>
       <Card.Description>{children}</Card.Description>
     </Card>
-  )
+  );
 }
 
 export default function Uses() {
   return (
     <>
       <Head>
-        <title>Uses - Spencer Sharp</title>
+        <title>Uses - Matt Sichterman</title>
         <meta
           name="description"
           content="Software I use, gadgets I love, and other things I recommend."
@@ -115,5 +127,5 @@ export default function Uses() {
         </div>
       </SimpleLayout>
     </>
-  )
+  );
 }

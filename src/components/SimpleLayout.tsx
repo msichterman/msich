@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 type SimpleLayoutProps = {
   title: string;
   intro: string;
-  children: ReactNode;
+  children?: ReactNode;
 };
 
 export function SimpleLayout({ title, intro, children }: SimpleLayoutProps) {

@@ -1,15 +1,15 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from "@/components/Card";
+import { Section } from "@/components/Section";
+import { SimpleLayout } from "@/components/SimpleLayout";
 
 function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
       <div className="space-y-16">{children}</div>
     </Section>
-  )
+  );
 }
 
 function Appearance({ title, description, event, cta, href }) {
@@ -22,14 +22,14 @@ function Appearance({ title, description, event, cta, href }) {
       <Card.Description>{description}</Card.Description>
       <Card.Cta>{cta}</Card.Cta>
     </Card>
-  )
+  );
 }
 
 export default function Speaking() {
   return (
     <>
       <Head>
-        <title>Speaking - Spencer Sharp</title>
+        <title>Speaking - Matt Sichterman</title>
         <meta
           name="description"
           content="I’ve spoken at events all around the world and been interviewed for many podcasts."
@@ -82,5 +82,5 @@ export default function Speaking() {
         </div>
       </SimpleLayout>
     </>
-  )
+  );
 }

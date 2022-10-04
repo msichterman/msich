@@ -11,20 +11,23 @@ import {
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
+  MailIcon as SolidMailIcon,
 } from "@/components/SocialIcons";
 import image1 from "@/images/photos/image-1.jpg";
 import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
 import image4 from "@/images/photos/image-4.jpg";
 import image5 from "@/images/photos/image-5.jpg";
-import logoAirbnb from "@/images/logos/airbnb.svg";
-import logoFacebook from "@/images/logos/facebook.svg";
-import logoPlanetaria from "@/images/logos/planetaria.svg";
-import logoStarbucks from "@/images/logos/starbucks.svg";
+
+import logoAmex from "@/images/logos/amex.svg";
+import logoHudl from "@/images/logos/hudl.svg";
+import logoLevelFive from "@/images/logos/levelfive.svg";
+import logoSpreetail from "@/images/logos/spreetail.svg";
 import { generateRssFeed } from "@/lib/generateRssFeed";
 import { ArticleProps, getAllArticles } from "@/lib/getAllArticles";
 import { formatDate } from "@/lib/formatDate";
 import { ElementType, SVGProps } from "react";
+import ExternalLink from "@/components/ExternalLink";
 
 function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -138,7 +141,7 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
+          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm"
         />
         <Button type="submit" className="ml-4 flex-none">
           Join
@@ -151,43 +154,46 @@ function Newsletter() {
 function Resume() {
   const resume = [
     {
-      company: "Planetaria",
-      title: "CEO",
-      logo: logoPlanetaria,
-      start: "2019",
+      company: "American Express",
+      title: "Full-Stack Engineer II",
+      logo: logoAmex,
+      start: "Aug 2022",
       end: {
         label: "Present",
-        dateTime: new Date().getFullYear(),
+        dateTime: new Date().toLocaleString("en-us", {
+          month: "short",
+          year: "numeric",
+        }),
       },
     },
     {
-      company: "Airbnb",
-      title: "Product Designer",
-      logo: logoAirbnb,
-      start: "2014",
+      company: "Hudl",
+      title: "Full-Stack Engineer",
+      logo: logoHudl,
+      start: "Mar 2021",
       end: {
-        label: "Present",
-        dateTime: new Date().getFullYear(),
+        label: null,
+        dateTime: "Aug 2022",
       },
     },
     {
-      company: "Facebook",
-      title: "iOS Software Engineer",
-      logo: logoFacebook,
-      start: "2011",
+      company: "Level Five Solutions",
+      title: "Junior UI Developer",
+      logo: logoLevelFive,
+      start: "Aug 2020",
       end: {
-        label: "Present",
-        dateTime: new Date().getFullYear(),
+        label: null,
+        dateTime: "Mar 2021",
       },
     },
     {
-      company: "Starbucks",
-      title: "Shift Supervisor",
-      logo: logoStarbucks,
-      start: "2008",
+      company: "Spreetail",
+      title: "Software Engineer Intern",
+      logo: logoSpreetail,
+      start: "May 2020",
       end: {
-        label: "Present",
-        dateTime: new Date().getFullYear(),
+        label: null,
+        dateTime: "July 2020",
       },
     },
   ];
@@ -220,9 +226,7 @@ function Resume() {
               >
                 <time dateTime={start}>{start}</time>{" "}
                 <span aria-hidden="true">—</span>{" "}
-                <time dateTime={end.dateTime.toString()}>
-                  {end.label ?? end}
-                </time>
+                <time dateTime={end.dateTime}>{end.label ?? end.dateTime}</time>
               </dd>
             </dl>
           </li>
@@ -278,46 +282,59 @@ export default function Home({
     <>
       <Head>
         <title>
-          Spencer Sharp - Software designer, founder, and amateur astronaut
+          Matt Sichterman - Software engineer, tinkerer, and former hogmollie
         </title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I’m Matt, a software engineer and entrepreneur based in Cincinnati,
+            OH. I’m the founder of Web Forestry, where I create and manage
+            thriving websites for growing businesses."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Software engineer, tinkerer, and former hogmollie.
+            <sup>&Dagger;</sup>
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I’m Matt, a software engineer and entrepreneur based in Cincinnati,
+            OH. I’m the founder of Web Forestry, where I create and manage
+            thriving websites for growing businesses.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com"
+              href="https://twitter.com/mattsichterman"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://instagram.com"
+              href="https://instagram.com/mattsichterman"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com"
+              href="https://github.com/msichterman"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/msichterman"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
+            <SocialLink
+              href="mailto:msichterman1@gmail.com"
+              aria-label="Email matt"
+              icon={SolidMailIcon}
+            />
           </div>
+          <ExternalLink
+            to="http://hogmollie.urbanup.com/228367"
+            className="mt-6 block text-xxs text-zinc-400 dark:text-zinc-600"
+          >
+            &Dagger; what the heck is a hogmollie?
+          </ExternalLink>
         </div>
       </Container>
       <Photos />
