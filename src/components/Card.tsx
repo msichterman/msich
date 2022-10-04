@@ -96,7 +96,7 @@ Card.Cta = function CardCta({ children }: { children: ReactNode }) {
 };
 
 type CardEyebrowProps = {
-  as: ElementType;
+  as?: ElementType;
   children: ReactNode;
   href?: string;
   decorate?: boolean;

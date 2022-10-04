@@ -3,8 +3,12 @@ import Head from "next/head";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { SimpleLayout } from "@/components/SimpleLayout";
+import { HTMLAttributes, ReactNode } from "react";
 
-function SpeakingSection({ children, ...props }) {
+function SpeakingSection({
+  children,
+  ...props
+}: { children: ReactNode } & HTMLAttributes<HTMLElement>) {
   return (
     <Section {...props}>
       <div className="space-y-16">{children}</div>
@@ -12,7 +16,19 @@ function SpeakingSection({ children, ...props }) {
   );
 }
 
-function Appearance({ title, description, event, cta, href }) {
+function Appearance({
+  title,
+  description,
+  event,
+  cta,
+  href,
+}: {
+  title: string;
+  description: string;
+  event: string;
+  cta: string;
+  href: string;
+}) {
   return (
     <Card as="article">
       <Card.Title as="h3" href={href}>

@@ -8,6 +8,7 @@ import logoCosmos from "@/images/logos/cosmos.svg";
 import logoHelioStream from "@/images/logos/helio-stream.svg";
 import logoOpenShuttle from "@/images/logos/open-shuttle.svg";
 import logoPlanetaria from "@/images/logos/planetaria.svg";
+import { SVGProps } from "react";
 
 const projects = [
   {
@@ -47,7 +48,7 @@ const projects = [
   },
 ];
 
-function LinkIcon(props) {
+function LinkIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
       <path
