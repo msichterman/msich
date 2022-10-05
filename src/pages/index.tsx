@@ -2,6 +2,9 @@ import Image from "next/future/image";
 import Head from "next/head";
 import Link from "next/link";
 import clsx from "clsx";
+import { z } from "zod";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
@@ -28,6 +31,7 @@ import { ArticleProps, getAllArticles } from "@/lib/getAllArticles";
 import { formatDate } from "@/lib/formatDate";
 import { ElementType, SVGProps } from "react";
 import ExternalLink from "@/components/ExternalLink";
+import { trpc } from "@/utils/trpc";
 
 function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -123,10 +127,38 @@ function SocialLink({
 }
 
 function Newsletter() {
+  const FormSchema = z.object({
+    email: z.string().email({ message: "Invalid email address." }),
+  });
+
+  type FormSchemaType = z.infer<typeof FormSchema>;
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    clearErrors,
+  } = useForm<FormSchemaType>({
+    resolver: zodResolver(FormSchema),
+  });
+
+  const {
+    mutateAsync: subscribeToNewsletter,
+    isLoading,
+    isSuccess,
+    error,
+    data,
+  } = trpc.useMutation(["newsletter.subscribe"]);
+
+  const onSubmit: SubmitHandler<FormSchemaType> = async ({ email }) => {
+    await subscribeToNewsletter({ email });
+  };
+
   return (
     <form
-      action="/thank-you"
+      onSubmit={handleSubmit(onSubmit)}
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      onBlur={() => clearErrors()}
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
@@ -141,12 +173,43 @@ function Newsletter() {
           placeholder="Email address"
           aria-label="Email address"
           required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm"
+          id="email"
+          {...register("email")}
+          autoComplete="email"
+          className={clsx(
+            "min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm",
+            errors.email || error
+              ? "border-red-600"
+              : "border-zinc-900/10 dark:border-zinc-700"
+          )}
+          disabled={isSubmitting || isLoading}
         />
-        <Button type="submit" className="ml-4 flex-none">
+        <Button
+          type="submit"
+          className="ml-4 flex-none"
+          disabled={isSubmitting || isLoading}
+        >
           Join
         </Button>
       </div>
+      {(errors.email || error || data?.error) && (
+        <p
+          className={clsx(
+            "mt-2 block min-w-0 flex-auto appearance-none rounded-md border border-red-600 bg-red-200 px-2 py-1 text-center text-xxs text-red-700 shadow-md shadow-zinc-800/5 dark:bg-red-800 dark:text-red-50"
+          )}
+        >
+          {errors.email?.message || error?.message || data?.error}
+        </p>
+      )}
+      {isSuccess && data.email && (
+        <p
+          className={clsx(
+            "mt-2 block min-w-0 flex-auto appearance-none rounded-md border border-green-600 bg-green-200 px-2 py-1 text-center text-xxs text-green-700 shadow-md shadow-zinc-800/5 dark:bg-green-800 dark:text-green-50"
+          )}
+        >
+          Thanks {data.email}! Please verify your email.
+        </p>
+      )}
     </form>
   );
 }
@@ -155,7 +218,7 @@ function Resume() {
   const resume = [
     {
       company: "American Express",
-      title: "Full-Stack Engineer II",
+      title: "Full-Stack Software Engineer II",
       logo: logoAmex,
       start: "Aug 2022",
       end: {
@@ -168,7 +231,7 @@ function Resume() {
     },
     {
       company: "Hudl",
-      title: "Full-Stack Engineer",
+      title: "Full-Stack Software Engineer",
       logo: logoHudl,
       start: "Mar 2021",
       end: {
@@ -206,9 +269,12 @@ function Resume() {
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map(({ company, title, logo, start, end }, roleIndex) => (
-          <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={logo} alt="" className="h-7 w-7" unoptimized />
+          <li
+            key={roleIndex}
+            className="flex items-center gap-4 border-b border-zinc-100 pb-4 dark:border-zinc-700/40"
+          >
+            <div className="relative mt-1 flex h-12 w-12 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <Image src={logo} alt="" className="h-8 w-8" unoptimized />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -216,12 +282,12 @@ function Resume() {
                 {company}
               </dd>
               <dt className="sr-only">Role</dt>
-              <dd className="text-xs text-zinc-500 dark:text-zinc-400">
+              <dd className="w-full text-xs text-zinc-500 dark:text-zinc-400">
                 {title}
               </dd>
               <dt className="sr-only">Date</dt>
               <dd
-                className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+                className="w-full text-xxs text-zinc-400 dark:text-zinc-500"
                 aria-label={`${start} until ${end.label ?? end}`}
               >
                 <time dateTime={start}>{start}</time>{" "}
@@ -233,7 +299,7 @@ function Resume() {
         ))}
       </ol>
       <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
+        Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>

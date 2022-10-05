@@ -22,11 +22,11 @@ function usePrevious(value: string) {
   return ref.current;
 }
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const MyApp: AppType<{ session: Session | null | undefined }> = ({
   Component,
   pageProps: { session, ...pageProps },
   router,
-}: AppProps<{ session: Session | null }>) => {
+}: AppProps<{ session: Session | null | undefined }>) => {
   const previousPathname = usePrevious(router.pathname);
 
   return (

@@ -34,5 +34,5 @@ export default defineNextConfig({
     newNextLinkBehavior: true,
     scrollRestoration: true,
   },
-  pageExtensions: ["tsx", "mdx"],
+  pageExtensions: ["tsx", "ts", "mdx", "md"],
 });
