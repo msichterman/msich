@@ -142,16 +142,18 @@ function Newsletter() {
     resolver: zodResolver(FormSchema),
   });
 
-  const {
-    mutateAsync: subscribeToNewsletter,
-    isLoading,
-    isSuccess,
-    error,
-    data,
-  } = trpc.useMutation(["newsletter.subscribe"]);
+  const utils = trpc.useContext();
+
+  const getSubscribers = trpc.newsletter.getSubscribers.useQuery();
+
+  const subscribe = trpc.newsletter.subscribe.useMutation({
+    onSuccess() {
+      utils.newsletter.getSubscribers.invalidate();
+    },
+  });
 
   const onSubmit: SubmitHandler<FormSchemaType> = async ({ email }) => {
-    await subscribeToNewsletter({ email });
+    subscribe.mutate({ email });
   };
 
   return (
@@ -165,7 +167,20 @@ function Newsletter() {
         <span className="ml-3">Stay up to date</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        {!getSubscribers.isError && getSubscribers?.data?.count ? (
+          <>
+            <span className="font-bold text-sky-600 motion-safe:animate-pulse dark:text-sky-500">
+              {`Join ${getSubscribers.data.count} others `}
+            </span>
+            who get notified when I publish something new, and unsubscribe at
+            any time.
+          </>
+        ) : (
+          <>
+            Get notified when I publish something new, and unsubscribe at any
+            time.
+          </>
+        )}
       </p>
       <div className="mt-6 flex">
         <input
@@ -178,36 +193,38 @@ function Newsletter() {
           autoComplete="email"
           className={clsx(
             "min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm",
-            errors.email || error
+            errors.email || subscribe.error
               ? "border-red-600"
               : "border-zinc-900/10 dark:border-zinc-700"
           )}
-          disabled={isSubmitting || isLoading}
+          disabled={isSubmitting || subscribe.isLoading}
         />
         <Button
           type="submit"
           className="ml-4 flex-none"
-          disabled={isSubmitting || isLoading}
+          disabled={isSubmitting || subscribe.isLoading}
         >
           Join
         </Button>
       </div>
-      {(errors.email || error || data?.error) && (
+      {(errors.email || subscribe.error || subscribe.data?.error) && (
         <p
           className={clsx(
             "mt-2 block min-w-0 flex-auto appearance-none rounded-md border border-red-600 bg-red-200 px-2 py-1 text-center text-xxs text-red-700 shadow-md shadow-zinc-800/5 dark:bg-red-800 dark:text-red-50"
           )}
         >
-          {errors.email?.message || error?.message || data?.error}
+          {errors.email?.message ||
+            subscribe.error?.message ||
+            subscribe.data?.error}
         </p>
       )}
-      {isSuccess && data.email && (
+      {subscribe.isSuccess && subscribe.data.email && (
         <p
           className={clsx(
             "mt-2 block min-w-0 flex-auto appearance-none rounded-md border border-green-600 bg-green-200 px-2 py-1 text-center text-xxs text-green-700 shadow-md shadow-zinc-800/5 dark:bg-green-800 dark:text-green-50"
           )}
         >
-          Thanks {data.email}! Please verify your email.
+          Thanks {subscribe.data.email}! Please verify your email.
         </p>
       )}
     </form>
