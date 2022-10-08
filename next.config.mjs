@@ -1,14 +1,4 @@
-import nextMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
-import rehypePrism from "@mapbox/rehype-prism";
-
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
-});
+import { withContentlayer } from "next-contentlayer";
 
 /**
  * Don't be scared of the generics here.
@@ -19,7 +9,7 @@ const withMDX = nextMDX({
  * @constraint {{import('next').NextConfig}}
  */
 function defineNextConfig(config) {
-  return withMDX(config);
+  return withContentlayer(config);
 }
 
 export default defineNextConfig({
@@ -35,4 +25,11 @@ export default defineNextConfig({
     scrollRestoration: true,
   },
   pageExtensions: ["tsx", "ts", "mdx", "md"],
+  webpack: (config) => {
+    config.infrastructureLogging = {
+      level: "error",
+    };
+
+    return config;
+  },
 });

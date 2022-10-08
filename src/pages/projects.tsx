@@ -2,7 +2,7 @@ import Image from "next/future/image";
 import Head from "next/head";
 
 import { Card } from "@/components/Card";
-import { SimpleLayout } from "@/components/SimpleLayout";
+import { SimpleLayout } from "@/layouts/SimpleLayout";
 import logoAnimaginary from "@/images/logos/animaginary.svg";
 import logoCosmos from "@/images/logos/cosmos.svg";
 import logoHelioStream from "@/images/logos/helio-stream.svg";

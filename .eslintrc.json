@@ -7,5 +7,15 @@
   "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended"],
   "rules": {
     "@typescript-eslint/ban-ts-comment": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [".tsx", ".ts"],
+      "extends": "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    },
+    {
+      "files": ["*.mdx"],
+      "extends": "plugin:mdx/recommended"
+    }
+  ]
 }

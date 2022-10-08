@@ -26,12 +26,11 @@ import logoAmex from "@/images/logos/amex.svg";
 import logoHudl from "@/images/logos/hudl.svg";
 import logoLevelFive from "@/images/logos/levelfive.svg";
 import logoSpreetail from "@/images/logos/spreetail.svg";
-import { generateRssFeed } from "@/lib/generateRssFeed";
-import { ArticleProps, getAllArticles } from "@/lib/getAllArticles";
-import { formatDate } from "@/lib/formatDate";
 import { ElementType, SVGProps } from "react";
 import ExternalLink from "@/components/ExternalLink";
 import { trpc } from "@/utils/trpc";
+import { allArticles, Article } from "contentlayer/generated";
+import { formatDate } from "@/lib/formatDate";
 
 function MailIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -92,11 +91,7 @@ function ArrowDownIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function Article({
-  article,
-}: {
-  article: ArticleProps["meta"] & { slug: string };
-}) {
+function Article({ article }: { article: Article }) {
   return (
     <Card as="article">
       <Card.Title href={`/articles/${article.slug}`}>
@@ -356,11 +351,7 @@ function Photos() {
   );
 }
 
-export default function Home({
-  articles,
-}: {
-  articles: Array<ArticleProps["meta"] & { slug: string }>;
-}) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -424,7 +415,7 @@ export default function Home({
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {articles.map((article) => (
+            {allArticles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
           </div>
@@ -436,19 +427,4 @@ export default function Home({
       </Container>
     </>
   );
-}
-
-export async function getStaticProps() {
-  if (process.env.NODE_ENV === "production") {
-    await generateRssFeed();
-  }
-
-  return {
-    props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        .map(({ component, ...meta }) => meta),
-    },
-  };
 }

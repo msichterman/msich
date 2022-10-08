@@ -17,9 +17,18 @@
     "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
+      "contentlayer/generated": ["./.contentlayer/generated"],
       "@/*": ["src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    ".contentlayer/generated",
+    "**/*.mdx"
+  ],
   "exclude": ["node_modules"]
 }
