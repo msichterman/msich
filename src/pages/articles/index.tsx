@@ -6,7 +6,6 @@ import { SimpleLayout } from "@/layouts/SimpleLayout";
 import { formatDate } from "@/lib/formatDate";
 
 function Article({ article }: { article: Article }) {
-  console.log(article);
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">

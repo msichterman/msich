@@ -21,20 +21,20 @@ export const newsletterRouter = t.router({
       const data = await result.json();
 
       const responseSchema = z.object({
-        email: z.string().email().nullable(),
-        error: z.string().nullable(),
+        email: z.string().email().optional(),
+        error: z.string().optional(),
       });
 
       type SubscribeResponseType = z.infer<typeof responseSchema>;
 
       const response: SubscribeResponseType = !result.ok
         ? {
-            email: null,
+            email: undefined,
             error: data.error.email[0],
           }
         : {
             email: input.email,
-            error: null,
+            error: undefined,
           };
 
       return response;

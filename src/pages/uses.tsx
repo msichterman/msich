@@ -48,80 +48,86 @@ export default function Uses() {
         />
       </Head>
       <SimpleLayout
-        title="Software I use, gadgets I love, and other things I recommend."
-        intro="I get asked a lot about the things I use to build software, stay productive, or buy to fool myself into thinking I’m being productive when I’m really just procrastinating. Here’s a big list of all of my favorite stuff."
+        title="Software and hardware that I use to simplify my life and maximize my productivity."
+        intro="I get asked a lot about the things I use to build software, stay productive, and make my life easier in general. Here's a long-list of all of my favorite tech."
       >
         <div className="space-y-20">
-          <ToolsSection title="Workstation">
-            <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2021)">
-              I was using an Intel-based 16” MacBook Pro prior to this and the
-              difference is night and day. I’ve never heard the fans turn on a
-              single time, even under the incredibly heavy loads I put it
-              through with our various launch simulations.
+          <ToolsSection title="Hardware">
+            <Tool title="15” MacBook Pro, 16GB RAM (2017)">
+              I inherited this device through a previous internship when it was
+              deemed &quot;end-of-life&quot; for the organization. It does
+              absolutely everything I need it to, so no plans to rush to an
+              upgrade. Though, I was lucky enough to run a M1 MacBook Pro in a
+              previous job, and those things are NICE. I will probably crack
+              eventually and get Apple silicon for my next device.
             </Tool>
-            <Tool title="Apple Pro Display XDR (Standard Glass)">
-              The only display on the market if you want something HiDPI and
-              bigger than 27”. When you’re working at planetary scale, every
-              pixel you can get counts.
+            <Tool title="iPhone XR">I know... I am due for an upgrade.</Tool>
+            <Tool
+              title="Logitech MK850 Performance Wireless Keyboard and Mouse Combo"
+              href="https://www.logitech.com/en-us/products/combos/mk850-wireless-keyboard-mouse"
+            >
+              Thank you Costco. This is an excellent combo and I really have no
+              complaints. I love being able to switch from my personal computer
+              to my work computer with the click of a button. If you&apos;re
+              looking for something modest that gets the job done, I highly
+              recommend this combo.
             </Tool>
-            <Tool title="IBM Model M SSK Industrial Keyboard">
-              They don’t make keyboards the way they used to. I buy these any
-              time I see them go up for sale and keep them in storage in case I
-              need parts or need to retire my main.
-            </Tool>
-            <Tool title="Apple Magic Trackpad">
-              Something about all the gestures makes me feel like a wizard with
-              special powers. I really like feeling like a wizard with special
-              powers.
-            </Tool>
-            <Tool title="Herman Miller Aeron Chair">
-              If I’m going to slouch in the worst ergonomic position imaginable
-              all day, I might as well do it in an expensive chair.
+            <Tool
+              title="FAMISKY Dual Motors Standing Desk"
+              href="https://www.amazon.com/gp/product/B08HMVDNYJ"
+            >
+              If I&apos;m going to work on my computer all day and all night, I
+              might as well do it on an awesome desk. This was a graduation
+              gift, and I love being able to sit-stand-sit-stand throughout the
+              day.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Development tools">
-            <Tool title="Sublime Text 4">
-              I don’t care if it’s missing all of the fancy IDE features
-              everyone else relies on, Sublime Text is still the best text
-              editor ever made.
+            <Tool title="Visual Studio Code">
+              If you&apos;re not using this exclusively by now you should be.
+              Yes, I&apos;m talking to you dotnet peeps...
             </Tool>
-            <Tool title="iTerm2">
-              I’m honestly not even sure what features I get with this that
-              aren’t just part of the macOS Terminal but it’s what I use.
+            <Tool title="T3 Stack" href="https://beta.create.t3.gg/">
+              The best way to setup an opinionated, full-stack, typesafe Next.js
+              project. I have always been the tech stack guy, but seriousy this
+              one is good.
             </Tool>
-            <Tool title="TablePlus">
-              Great software for working with databases. Has saved me from
-              building about a thousand admin interfaces for my various projects
-              over the years.
+            <Tool title="Vercel" href="https://vercel.com/">
+              A platform to iterate quickly and develop, preview, and ship
+              delightful user experiences. It is incredible how performant
+              Next.js sites can be!
+            </Tool>
+            <Tool title="Plausible" href="https://plausible.io/">
+              The simple and privacy-friendly Google Analytics alternative. It
+              is lightweight and open source web analytics, with no cookies and
+              fully compliant with GDPR, CCPA and PECR.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Design">
+            <Tool title="TailwindCSS">
+              A utility-first CSS framework that helps you build beautiful,
+              responsive designs without any extra configuration. It&apos;s
+              built with utility-first principles, and is completely
+              customizable and extendable.
+            </Tool>
             <Tool title="Figma">
-              We started using Figma as just a design tool but now it’s become
-              our virtual whiteboard for the entire company. Never would have
-              expected the collaboration features to be the real hook.
+              I feel clumsy in any other design tool. Figma is great for design,
+              but also for editing SVGs, transforming image file types, and
+              more. Hopefully Adobe does&apos;t mess this up.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
-            <Tool title="Alfred">
-              It’s not the newest kid on the block but it’s still the fastest.
-              The Sublime Text of the application launcher world.
+            <Tool title="Notion" href="https://www.notion.so/">
+              An all-in-one workspace where you can write, plan, collaborate and
+              get organized - it allows you to take notes, add tasks, manage
+              projects and more. I am a huge fan of markdown, and I find that
+              the Notion editor is the best way to get my thoughts in writing.
             </Tool>
-            <Tool title="Reflect">
-              Using a daily notes system instead of trying to keep things
-              organized by topics has been super powerful for me. And with
-              Reflect, it’s still easy for me to keep all of that stuff
-              discoverable by topic even though all of my writing happens in the
-              daily note.
-            </Tool>
-            <Tool title="SavvyCal">
-              Great tool for scheduling meetings while protecting my calendar
-              and making sure I still have lots of time for deep work during the
-              week.
-            </Tool>
-            <Tool title="Focus">
-              Simple tool for blocking distracting websites when I need to just
-              do the work and get some momentum going.
+            <Tool title="Raycast" href="https://www.raycast.com/">
+              A blazingly fast, totally extendable launcher. It lets you
+              complete tasks, calculate, share common links, and much more. My
+              favorite parts? Clipboard history and slapping &quot;Quit All
+              Applications&quot; at the end of a long day.
             </Tool>
           </ToolsSection>
         </div>
