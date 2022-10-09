@@ -37,13 +37,19 @@ export default function Newsletter({ className }: { className?: string }) {
 
   type FormSchemaType = z.infer<typeof FormSchema>;
 
+  const defaultValues = {
+    email: "",
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     clearErrors,
+    reset,
   } = useForm<FormSchemaType>({
     resolver: zodResolver(FormSchema),
+    defaultValues,
   });
 
   const utils = trpc.useContext();
@@ -52,16 +58,14 @@ export default function Newsletter({ className }: { className?: string }) {
 
   const subscribe = trpc.newsletter.subscribe.useMutation({
     onSuccess() {
+      reset();
       utils.newsletter.getSubscribers.invalidate();
     },
   });
 
-  const onSubmit: SubmitHandler<FormSchemaType> = async ({ email }, e) => {
+  const onSubmit: SubmitHandler<FormSchemaType> = async ({ email }) => {
     clearErrors();
     subscribe.mutate({ email });
-    if (subscribe.isSuccess) {
-      e?.target.reset();
-    }
   };
 
   return (
@@ -122,12 +126,8 @@ export default function Newsletter({ className }: { className?: string }) {
         </Button>
       </div>
       <ResultBadge
-        isError={!!errors.email || subscribe.isError || !!subscribe.data?.error}
-        errorMessage={
-          errors.email?.message ||
-          subscribe.error?.message ||
-          subscribe.data?.error
-        }
+        isError={!!errors.email || subscribe.isError}
+        errorMessage={errors.email?.message || subscribe.error?.message}
         isSuccess={subscribe.isSuccess}
         successMessage={
           subscribe?.data?.email

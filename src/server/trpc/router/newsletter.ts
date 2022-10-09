@@ -1,6 +1,7 @@
 import { t } from "../trpc";
 import { z } from "zod";
 import { env } from "@/env/server.mjs";
+import { TRPCError } from "@trpc/server";
 
 export const newsletterRouter = t.router({
   subscribe: t.procedure
@@ -20,24 +21,14 @@ export const newsletterRouter = t.router({
       });
       const data = await result.json();
 
-      const responseSchema = z.object({
-        email: z.string().email().optional(),
-        error: z.string().optional(),
-      });
+      if (!result.ok) {
+        throw new TRPCError({
+          code: "INTERNAL_SERVER_ERROR",
+          message: data.error.email[0],
+        });
+      }
 
-      type SubscribeResponseType = z.infer<typeof responseSchema>;
-
-      const response: SubscribeResponseType = !result.ok
-        ? {
-            email: undefined,
-            error: data.error.email[0],
-          }
-        : {
-            email: input.email,
-            error: undefined,
-          };
-
-      return response;
+      return input;
     }),
   getSubscribers: t.procedure.query(async () => {
     const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {

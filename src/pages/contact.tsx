@@ -37,27 +37,39 @@ export default function Contact() {
 
   type FormSchemaType = z.infer<typeof FormSchema>;
 
+  const defaultValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  };
+
   const {
     register,
     handleSubmit,
     clearErrors,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormSchemaType>({
     resolver: zodResolver(FormSchema),
+    defaultValues,
   });
 
-  const contact = trpc.message.contactForm.useMutation();
+  const contact = trpc.message.contactForm.useMutation({
+    onSuccess() {
+      reset();
+    },
+  });
 
-  const onSubmit: SubmitHandler<FormSchemaType> = async (data, e) => {
+  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
     clearErrors();
     const sanitizedData = pickBy<FormSchemaType>(
       data,
       (value) => typeof value === "string" && value.length > 0
     );
     contact.mutate(sanitizedData);
-    if (contact.isSuccess) {
-      e?.target.reset();
-    }
   };
 
   const inputStyles =
