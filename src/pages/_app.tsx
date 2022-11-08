@@ -1,6 +1,7 @@
 // src/pages/_app.tsx
 import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
 import { useEffect, useRef } from "react";
@@ -37,6 +38,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <Header />
           <main>
             <Component previousPathname={previousPathname} {...pageProps} />
+            <Analytics />
           </main>
           <Footer />
         </div>
