@@ -100,7 +100,7 @@ export default function About() {
                 plant, manage, conserve, and repair digital experiences via
                 websites, apps, and e-commerce stores &mdash; enabling
                 businesses to thrive without tech getting in their way. In my
-                freetime, I enjoy working out, traveling around the world, and
+                free time, I enjoy working out, traveling around the world, and
                 finding new rabbit holes to continue my lifelong quest of
                 learning and creating.
               </p>
