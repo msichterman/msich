@@ -61,7 +61,12 @@ export default function Uses() {
               previous job, and those things are NICE. I will probably crack
               eventually and get Apple silicon for my next device.
             </Tool>
-            <Tool title="iPhone XR">I know... I am due for an upgrade.</Tool>
+            <Tool title="iPhone 14 Pro Max">
+              This thing is a beast! And that camera though{" "}
+              <span role="img" aria-label="heart eyes">
+                😍
+              </span>
+            </Tool>
             <Tool
               title="Logitech MK850 Performance Wireless Keyboard and Mouse Combo"
               href="https://www.logitech.com/en-us/products/combos/mk850-wireless-keyboard-mouse"
