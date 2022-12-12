@@ -4,6 +4,8 @@ import { Container } from "@/components/Container";
 import { NavItemProps } from "./Header";
 import { useRouter } from "next/router";
 import clsx from "clsx";
+import WebForestry from "./vectors/WebForestry";
+import ExternalLink from "./ExternalLink";
 
 function NavLink({ href, children }: NavItemProps) {
   const isActive = useRouter().pathname === href;
@@ -40,6 +42,11 @@ export function Footer() {
                 &copy; {new Date().getFullYear()} Matt Sichterman. All rights
                 reserved.
               </p>
+              <ExternalLink to="https://webforestry.com">
+                <div className="flex items-center rounded-md border border-emerald-600 bg-emerald-50 p-1 text-xxs font-bold text-zinc-800">
+                  <WebForestry className="h-4" />
+                </div>
+              </ExternalLink>
             </div>
           </Container.Inner>
         </div>

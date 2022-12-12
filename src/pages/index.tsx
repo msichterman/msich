@@ -94,7 +94,8 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Matt Sichterman - Software engineer, tinkerer, and former hogmollie
+          Matt Sichterman - Software engineer, entrepreneur, and former
+          hogmollie
         </title>
         <meta
           name="description"
@@ -104,12 +105,12 @@ export default function Home() {
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, tinkerer, and former hogmollie.
+            Software engineer, entrepreneur, and former hogmollie.
             <sup>&Dagger;</sup>
           </h1>
-          <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
             I’m Matt, a software engineer and entrepreneur based in Cincinnati,
             OH. I&apos;m the founder of Web Forestry, where I create and manage
             thriving websites for growing businesses.
