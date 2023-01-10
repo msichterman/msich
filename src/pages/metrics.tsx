@@ -41,6 +41,7 @@ export default function Metrics() {
   const metricsWithCounts =
     metrics?.data &&
     metrics.data.map((metric) => ({
+      // @ts-expect-error
       ...(counts?.data && counts.data?.[metric.id]),
       ...metric,
     }));
