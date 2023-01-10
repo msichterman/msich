@@ -29,7 +29,6 @@ const MyApp: AppType<{ session: Session | null }> = ({
 
   return (
     <>
-      <Script src="https://app.embed.im/snow.js" defer />
       <SessionProvider session={session}>
         <>
           <div className="fixed inset-0 flex justify-center sm:px-8">

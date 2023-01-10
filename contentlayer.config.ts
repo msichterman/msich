@@ -13,6 +13,7 @@ export const Article = defineDocumentType(() => ({
     description: { type: "string", required: true },
     author: { type: "string", required: true },
     date: { type: "string", required: true },
+    status: { type: "string", required: true },
     cover: { type: "string", required: false },
   },
   computedFields: {
