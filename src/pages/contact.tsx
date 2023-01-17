@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 import { Container } from "@/components/Container";
-import { SVGProps } from "react";
 import Newsletter from "@/components/Newsletter";
 import { Button } from "@/components/Button";
 import SocialLinks from "@/components/SocialLinks";
@@ -12,18 +11,7 @@ import { pickBy } from "@/lib/objectUtils";
 import clsx from "clsx";
 import { trpc } from "@/utils/trpc";
 import ResultBadge from "@/components/ResultBadge";
-
-function PaperAirplaneIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-    </svg>
-  );
-}
+import { Send } from "lucide-react";
 
 export default function Contact() {
   const FormSchema = z.object({
@@ -73,11 +61,11 @@ export default function Contact() {
   };
 
   const inputStyles =
-    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm";
+    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border border-gray-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-gray-800/5 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:border-gray-700 dark:bg-gray-700/[0.15] dark:text-gray-200 dark:placeholder:text-gray-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm";
   const errorInputStyles =
-    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:ring-sky-400/10 sm:text-sm border-red-500";
+    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-gray-800/5 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-gray-700/[0.15] dark:text-gray-200 dark:placeholder:text-gray-500 dark:focus:ring-sky-400/10 sm:text-sm border-red-500";
   const labelStyles =
-    "block text-sm font-medium text-zinc-600 dark:text-zinc-400";
+    "block text-sm font-medium text-gray-600 dark:text-gray-400";
   const errorLabelStyles = "block text-sm font-medium text-red-500";
 
   return (
@@ -91,9 +79,9 @@ export default function Contact() {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40 lg:order-first lg:row-span-2">
-            <h2 className="text-md flex font-semibold text-zinc-900 dark:text-zinc-100">
-              <PaperAirplaneIcon className="h-6 w-6 flex-none fill-zinc-500" />
+          <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40 lg:order-first lg:row-span-2">
+            <h2 className="text-md flex font-semibold text-gray-900 dark:text-gray-100">
+              <Send className="h-6 w-6 flex-none fill-gray-100 stroke-gray-400 dark:fill-gray-100/10 dark:stroke-gray-500" />
               <span className="ml-3 font-semibold">Send me a message</span>
             </h2>
             <form

@@ -1,17 +1,9 @@
 import Image from "next/future/image";
 import Head from "next/head";
-import Link from "next/link";
 import clsx from "clsx";
 
 import { Card } from "@/components/Card";
 import { Container } from "@/components/Container";
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  MailIcon as SolidMailIcon,
-} from "@/components/SocialIcons";
 import image1 from "@/images/photos/image-1.jpg";
 import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
@@ -24,6 +16,7 @@ import { allArticles, Article } from "contentlayer/generated";
 import { formatDate } from "@/lib/formatDate";
 import Newsletter from "@/components/Newsletter";
 import Resume from "@/components/Resume";
+import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 
 function Article({ article }: { article: Article }) {
   return (
@@ -49,9 +42,9 @@ function SocialLink({
   href: string;
 }) {
   return (
-    <Link className="group -m-1 p-1" href={href} {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
-    </Link>
+    <ExternalLink className="group -m-1 p-1" href={href} {...props}>
+      <Icon className="h-6 w-6 border-none stroke-gray-500 stroke-[1.5] transition group-hover:stroke-gray-600 dark:stroke-gray-400 dark:group-hover:stroke-gray-300" />
+    </ExternalLink>
   );
 }
 
@@ -71,7 +64,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              "relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl",
+              "relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length]
             )}
           >
@@ -106,11 +99,11 @@ export default function Home() {
       </Head>
       <Container className="mt-9">
         <div className="max-w-3xl">
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          <h1 className="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
             Software engineer, entrepreneur, and former hogmollie.
             <sup>&Dagger;</sup>
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-zinc-600 dark:text-zinc-400">
+          <p className="mt-6 max-w-2xl text-base text-gray-600 dark:text-gray-400">
             I’m Matt, a software engineer and entrepreneur based in Cincinnati,
             OH. I&apos;m the founder of Web Forestry, where I create and manage
             thriving websites for growing businesses.
@@ -119,32 +112,32 @@ export default function Home() {
             <SocialLink
               href="https://twitter.com/mattsichterman"
               aria-label="Follow on Twitter"
-              icon={TwitterIcon}
+              icon={Twitter}
             />
             <SocialLink
               href="https://instagram.com/mattsichterman"
               aria-label="Follow on Instagram"
-              icon={InstagramIcon}
+              icon={Instagram}
             />
             <SocialLink
               href="https://github.com/msichterman"
               aria-label="Follow on GitHub"
-              icon={GitHubIcon}
+              icon={Github}
             />
             <SocialLink
               href="https://www.linkedin.com/in/msichterman"
               aria-label="Follow on LinkedIn"
-              icon={LinkedInIcon}
+              icon={Linkedin}
             />
             <SocialLink
               href="mailto:msichterman1@gmail.com"
               aria-label="Email matt"
-              icon={SolidMailIcon}
+              icon={Mail}
             />
           </div>
           <ExternalLink
-            to="http://hogmollie.urbanup.com/228367"
-            className="mt-6 block text-xxs text-zinc-400 dark:text-zinc-600"
+            href="http://hogmollie.urbanup.com/228367"
+            className="mt-6 block text-xxs text-gray-400 dark:text-gray-600"
           >
             &Dagger; what the heck is a hogmollie?
           </ExternalLink>
