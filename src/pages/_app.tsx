@@ -35,7 +35,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <>
           <main
             className={clsx(
-              "relative flex min-h-screen flex-col justify-between bg-gradient-to-r from-neutral-200 via-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-800 dark:via-neutral-900 dark:to-black",
+              "relative flex min-h-screen flex-col justify-between bg-gradient-to-r from-neutral-200 to-white dark:bg-gradient-to-l dark:from-neutral-800 dark:to-black sm:via-neutral-100 dark:sm:via-neutral-900",
               calSans.className
             )}
           >
