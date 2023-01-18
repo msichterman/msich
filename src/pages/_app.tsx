@@ -8,7 +8,6 @@ import { useEffect, useRef } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { trpc } from "@/utils/trpc";
-import Script from "next/script";
 
 function usePrevious(value: string) {
   const ref = useRef<string>();

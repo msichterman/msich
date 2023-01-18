@@ -80,7 +80,7 @@ export default function About() {
               </p>
               <p>
                 <ExternalLink
-                  to="https://youtu.be/pPqnZ709VG0"
+                  href="https://youtu.be/pPqnZ709VG0"
                   className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300"
                 >
                   I played 5 seasons for the Cornhuskers
