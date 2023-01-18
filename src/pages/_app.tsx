@@ -5,9 +5,11 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Session } from "next-auth";
 import "../styles/globals.css";
 import { useEffect, useRef } from "react";
+import localFont from "@next/font/local";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { trpc } from "@/utils/trpc";
+import clsx from "clsx";
 
 function usePrevious(value: string) {
   const ref = useRef<string>();
@@ -18,6 +20,8 @@ function usePrevious(value: string) {
 
   return ref.current;
 }
+
+const calSans = localFont({ src: "./CalSans-SemiBold.woff2" });
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -35,14 +39,14 @@ const MyApp: AppType<{ session: Session | null }> = ({
               <div className="w-full bg-white ring-1 ring-neutral-100 dark:bg-neutral-900 dark:ring-neutral-300/20" />
             </div>
           </div>
-          <div className="relative h-screen">
+          <main className={clsx("relative h-screen", calSans.className)}>
             <Header />
-            <main className="min-h-[60vh]">
+            <div className={calSans.className}>
               <Component previousPathname={previousPathname} {...pageProps} />
               <Analytics />
-            </main>
+            </div>
             <Footer />
-          </div>
+          </main>
         </>
       </SessionProvider>
     </>

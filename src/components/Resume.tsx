@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 
 import logoAmex from "@/images/logos/amex.svg";
 import logoHudl from "@/images/logos/hudl.svg";

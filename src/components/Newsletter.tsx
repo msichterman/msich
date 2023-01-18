@@ -58,7 +58,7 @@ export default function Newsletter({ className }: { className?: string }) {
         <MailPlus className="h-5 w-5 flex-none fill-neutral-100 stroke-neutral-400 dark:fill-neutral-100/10 dark:stroke-neutral-500" />
         <span className="ml-3">Stay up to date</span>
       </h2>
-      <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+      <p className="mt-2 max-w-md text-sm text-neutral-600 dark:text-neutral-400 sm:tracking-wide">
         {!getSubscribers.isError && getSubscribers?.data?.count ? (
           <>
             <span className="font-bold text-sky-600 motion-safe:animate-pulse dark:text-sky-500">
