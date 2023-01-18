@@ -214,7 +214,7 @@ function Avatar({
         sizes={large ? "4rem" : "2.25rem"}
         className={clsx(
           "rounded-full bg-neutral-100 object-cover dark:bg-neutral-800",
-          large ? "h-16 w-16" : "h-9 w-9"
+          large ? "h-16 w-16 sm:h-20 sm:w-20" : "h-9 w-9"
         )}
         priority
       />
@@ -344,7 +344,7 @@ export function Header() {
               className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
             />
             <Container
-              className="top-0 order-last -mb-3 pt-3"
+              className="top-0 order-last -mb-3 flex flex-col pt-3 sm:block"
               // @ts-expect-error
               style={{ position: "var(--header-position)" }}
             >
@@ -363,7 +363,7 @@ export function Header() {
                   />
                   <Avatar
                     large
-                    className="block h-16 w-16 origin-left"
+                    className="block h-16 w-16 origin-left sm:h-20 sm:w-20"
                     // @ts-expect-error
                     style={{ transform: "var(--avatar-image-transform)" }}
                   />

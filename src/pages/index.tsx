@@ -49,24 +49,13 @@ function SocialLink({
 }
 
 function Photos() {
-  const rotations = [
-    "rotate-2",
-    "-rotate-2",
-    "rotate-2",
-    "rotate-2",
-    "-rotate-2",
-  ];
-
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex snap-x snap-mandatory justify-start gap-5 overflow-hidden overflow-x-auto py-4 sm:gap-8 lg:snap-none lg:justify-center lg:overflow-x-hidden">
-        {[image2, image3, image4, image5, image1].map((image, imageIndex) => (
+        {[image2, image3, image4, image5, image1].map((image) => (
           <div
             key={image.src}
-            className={clsx(
-              "relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 sm:w-72 sm:rounded-2xl",
-              rotations[imageIndex % rotations.length]
-            )}
+            className="relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl sm:w-72 sm:rounded-2xl"
           >
             <Image
               src={image}
@@ -97,8 +86,8 @@ export default function Home() {
             thriving websites for growing businesses."
         />
       </Head>
-      <Container className="mt-9">
-        <div className="max-w-3xl">
+      <Container className="mt-9 sm:mt-12">
+        <div className="mx-auto flex max-w-lg flex-col items-center text-center sm:mx-0 sm:max-w-3xl sm:items-start sm:text-left">
           <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
             Software engineer, entrepreneur, and former hogmollie.
             <sup>&Dagger;</sup>

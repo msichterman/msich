@@ -29,22 +29,19 @@ const MyApp: AppType<{ session: Session | null }> = ({
   router,
 }) => {
   const previousPathname = usePrevious(router.pathname);
-
   return (
     <>
       <SessionProvider session={session}>
         <>
-          <div className="fixed inset-0 flex justify-center sm:px-8">
-            <div className="flex w-full max-w-7xl lg:px-8">
-              <div className="w-full bg-white ring-1 ring-neutral-100 dark:bg-neutral-900 dark:ring-neutral-300/20" />
-            </div>
-          </div>
-          <main className={clsx("relative h-screen", calSans.className)}>
+          <main
+            className={clsx(
+              "relative min-h-screen bg-gradient-to-r from-neutral-200 via-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-800 dark:via-neutral-900 dark:to-black",
+              calSans.className
+            )}
+          >
             <Header />
-            <div className={calSans.className}>
-              <Component previousPathname={previousPathname} {...pageProps} />
-              <Analytics />
-            </div>
+            <Component previousPathname={previousPathname} {...pageProps} />
+            <Analytics />
             <Footer />
           </main>
         </>
