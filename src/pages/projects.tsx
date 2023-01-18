@@ -43,7 +43,7 @@ export default function Projects() {
           {projects &&
             projects.map((project) => (
               <Card as="li" key={project.name}>
-                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-gray-800/5 ring-1 ring-gray-900/5 dark:border dark:border-gray-700/50 dark:bg-gray-800 dark:ring-0">
+                <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
                   <Image
                     src={project.logo}
                     alt=""
@@ -51,11 +51,11 @@ export default function Projects() {
                     unoptimized
                   />
                 </div>
-                <h2 className="mt-6 text-base font-semibold text-gray-800 dark:text-gray-100">
+                <h2 className="mt-6 text-base font-semibold text-neutral-800 dark:text-neutral-100">
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-gray-400 transition group-hover:text-sky-500 dark:text-gray-200">
+                <p className="relative z-10 mt-6 flex text-sm font-medium text-neutral-400 transition group-hover:text-sky-500 dark:text-neutral-200">
                   <Link className="h-6 w-6 flex-none" />
                   <span className="ml-2">{project.link.label}</span>
                 </p>

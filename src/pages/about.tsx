@@ -26,16 +26,16 @@ export default function About() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-gray-100 object-cover dark:bg-gray-800"
+                className="aspect-square rotate-3 rounded-2xl bg-neutral-100 object-cover dark:bg-neutral-800"
               />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl">
+            <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-4xl">
               I’m Matt Sichterman. <br /> I live in Cincinnati, OH, where I
               develop thriving digital experiences.
             </h1>
-            <div className="mt-6 space-y-7 text-base text-gray-600 dark:text-gray-400">
+            <div className="mt-6 space-y-7 text-base text-neutral-600 dark:text-neutral-400">
               <p>
                 Ever since I was young, I&apos;ve woken up excited about two
                 things: sports and technology. Sports have been a mainstay in my

@@ -31,7 +31,7 @@ type CardLinkProps = {
 Card.Link = function CardLink({ children, href, ...props }: CardLinkProps) {
   return (
     <>
-      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-gray-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-gray-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+      <div className="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl" />
       <ExternalLink href={href} {...props}>
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span className="relative z-10">{children}</span>
@@ -52,7 +52,7 @@ Card.Title = function CardTitle({
   children,
 }: CardTitleProps) {
   return (
-    <Component className="text-base font-semibold tracking-tight text-gray-800 dark:text-gray-100">
+    <Component className="text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
@@ -64,7 +64,7 @@ Card.Description = function CardDescription({
   children: ReactNode;
 }) {
   return (
-    <p className="relative z-10 mt-2 text-sm text-gray-600 dark:text-gray-400">
+    <p className="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
       {children}
     </p>
   );
@@ -102,7 +102,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={clsx(
         className,
-        "relative z-10 order-first mb-3 flex items-center text-sm text-gray-400 dark:text-gray-500",
+        "relative z-10 order-first mb-3 flex items-center text-sm text-neutral-400 dark:text-neutral-500",
         decorate && "pl-3.5"
       )}
       {...props}
@@ -112,7 +112,7 @@ Card.Eyebrow = function CardEyebrow({
           className="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
         >
-          <span className="h-4 w-0.5 rounded-full bg-gray-200 dark:bg-gray-500" />
+          <span className="h-4 w-0.5 rounded-full bg-neutral-200 dark:bg-neutral-500" />
         </span>
       )}
       {children}

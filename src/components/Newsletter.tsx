@@ -49,16 +49,16 @@ export default function Newsletter({ className }: { className?: string }) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(
-        "rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40",
+        "rounded-2xl border border-neutral-100 p-6 dark:border-neutral-700/40",
         className
       )}
       onBlur={() => clearErrors()}
     >
-      <h2 className="flex items-center text-sm font-semibold text-gray-900 dark:text-gray-100">
-        <MailPlus className="h-5 w-5 flex-none fill-gray-100 stroke-gray-400 dark:fill-gray-100/10 dark:stroke-gray-500" />
+      <h2 className="flex items-center text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+        <MailPlus className="h-5 w-5 flex-none fill-neutral-100 stroke-neutral-400 dark:fill-neutral-100/10 dark:stroke-neutral-500" />
         <span className="ml-3">Stay up to date</span>
       </h2>
-      <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+      <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
         {!getSubscribers.isError && getSubscribers?.data?.count ? (
           <>
             <span className="font-bold text-sky-600 motion-safe:animate-pulse dark:text-sky-500">
@@ -84,10 +84,10 @@ export default function Newsletter({ className }: { className?: string }) {
           {...register("email")}
           autoComplete="email"
           className={clsx(
-            "min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-gray-800/5 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-gray-700/[0.15] dark:text-gray-200 dark:placeholder:text-gray-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm",
+            "min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-neutral-800/5 placeholder:text-neutral-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-neutral-700/[0.15] dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm",
             errors.email || subscribe.error
               ? "border-red-600"
-              : "border-gray-900/10 dark:border-gray-700"
+              : "border-neutral-900/10 dark:border-neutral-700"
           )}
           disabled={isSubmitting || subscribe.isLoading}
         />

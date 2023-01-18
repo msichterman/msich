@@ -28,10 +28,10 @@ export function Footer() {
   return (
     <footer className="mt-32">
       <Container.Outer>
-        <div className="border-t border-gray-100 py-10 dark:border-gray-700/40">
+        <div className="border-t border-neutral-100 py-10 dark:border-neutral-700/40">
           <Container.Inner>
             <div className="min-h-32 flex flex-col items-center justify-between gap-6 sm:flex-row">
-              <div className="flex gap-6 text-sm font-medium text-gray-800 dark:text-gray-200">
+              <div className="flex gap-6 text-sm font-medium text-neutral-800 dark:text-neutral-200">
                 <NavLink href="/metrics">Metrics</NavLink>
                 {/* <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/articles">Articles</NavLink> */}
@@ -39,12 +39,12 @@ export function Footer() {
                 <NavLink href="/about">About</NavLink>
                 <NavLink href="/contact">Contact</NavLink>
               </div>
-              <p className="text-sm text-gray-400 dark:text-gray-500">
+              <p className="text-sm text-neutral-400 dark:text-neutral-500">
                 &copy; {new Date().getFullYear()} Matt Sichterman. All rights
                 reserved.
               </p>
               <ExternalLink href="https://webforestry.com">
-                <div className="flex items-center rounded-md border border-emerald-600 bg-emerald-50 p-1 text-xxs font-bold text-gray-800">
+                <div className="flex items-center rounded-md border border-emerald-600 bg-emerald-50 p-1 text-xxs font-bold text-neutral-800">
                   <WebForestry className="h-4" />
                 </div>
               </ExternalLink>

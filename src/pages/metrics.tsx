@@ -54,7 +54,7 @@ export default function Metrics() {
       </Head>
       <Container className="mt-12">
         <div>
-          <h1 className="mb-8 text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-4xl">
+          <h1 className="mb-8 text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-4xl">
             Metrics for 2023
           </h1>
 
@@ -62,21 +62,21 @@ export default function Metrics() {
             {metrics.isLoading || counts.isLoading
               ? Array.from(Array(5).keys()).map((i) => (
                   <div
-                    className="relative animate-pulse overflow-hidden rounded-xl border border-gray-100 shadow dark:border-gray-700/40"
+                    className="relative animate-pulse overflow-hidden rounded-xl border border-neutral-100 shadow dark:border-neutral-700/40"
                     role="status"
                     key={i}
                   >
                     <div className="flex h-full w-full items-center justify-between space-x-4 p-6">
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-gray-200 dark:bg-gray-700">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-neutral-200 dark:bg-neutral-700">
                         <div
-                          className="h-6 w-6 text-gray-100"
+                          className="h-6 w-6 text-neutral-100"
                           aria-hidden="true"
                         />
                       </div>
                       <div className="mx-auto w-48 space-y-2">
-                        <div className="h-6 w-48 truncate rounded-md bg-gray-200 text-lg font-medium text-gray-500 dark:bg-gray-700 dark:text-gray-300" />
-                        <div className="h-8 w-32 rounded-md bg-gray-200 text-2xl font-semibold text-gray-900 dark:bg-gray-700 dark:text-gray-50" />
-                        <div className="flex h-4 w-16 items-baseline rounded-md bg-gray-200 text-sm font-semibold dark:bg-gray-700" />
+                        <div className="h-6 w-48 truncate rounded-md bg-neutral-200 text-lg font-medium text-neutral-500 dark:bg-neutral-700 dark:text-neutral-300" />
+                        <div className="h-8 w-32 rounded-md bg-neutral-200 text-2xl font-semibold text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50" />
+                        <div className="flex h-4 w-16 items-baseline rounded-md bg-neutral-200 text-sm font-semibold dark:bg-neutral-700" />
                       </div>
                     </div>
                   </div>
@@ -95,21 +95,21 @@ export default function Metrics() {
                   return (
                     <div
                       key={metric.id}
-                      className="relative overflow-hidden rounded-xl border border-gray-100 shadow dark:border-gray-700/40"
+                      className="relative overflow-hidden rounded-xl border border-neutral-100 shadow dark:border-neutral-700/40"
                     >
                       <div className="flex w-full items-center justify-between space-x-4 p-6">
                         <div className="flex h-12 w-12 items-center justify-center rounded-md bg-sky-500">
                           <Icon
                             id={metric.id.toString()}
-                            className="h-6 w-6 text-gray-100"
+                            className="h-6 w-6 text-neutral-100"
                             aria-hidden="true"
                           />
                         </div>
                         <div className="mx-auto min-w-[75%]">
-                          <p className="truncate text-lg font-medium text-gray-500 dark:text-gray-300">
+                          <p className="truncate text-lg font-medium text-neutral-500 dark:text-neutral-300">
                             {metric.name}
                           </p>
-                          <p className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
+                          <p className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                             {`${metricCount} / ${metric.targetNumber}`}
                           </p>
                           <p
@@ -142,7 +142,7 @@ export default function Metrics() {
                         </div>
                       </div>
                       {metric?.href && (
-                        <div className="mt-4 w-full bg-gray-100 px-4 py-4 text-sm dark:bg-gray-800 sm:px-6">
+                        <div className="mt-4 w-full bg-neutral-100 px-4 py-4 text-sm dark:bg-neutral-800 sm:px-6">
                           <Link
                             href={metric?.href}
                             className="font-medium text-sky-600 hover:text-sky-500"

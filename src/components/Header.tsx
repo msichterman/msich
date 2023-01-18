@@ -38,9 +38,9 @@ function MobileNavigation(props: Record<string, unknown>) {
         <ModeToggle />
       </div>
       <Popover {...props}>
-        <Popover.Button className="group ml-4 flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-900/5 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/10 dark:hover:ring-white/20">
+        <Popover.Button className="group ml-4 flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10 dark:hover:ring-white/20">
           Menu
-          <ChevronDown className="ml-2 h-auto w-4 stroke-gray-500 group-hover:stroke-gray-700 dark:group-hover:stroke-gray-400" />
+          <ChevronDown className="ml-2 h-auto w-4 stroke-neutral-500 group-hover:stroke-neutral-700 dark:group-hover:stroke-neutral-400" />
         </Popover.Button>
         <Transition.Root>
           <Transition.Child
@@ -52,7 +52,7 @@ function MobileNavigation(props: Record<string, unknown>) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Popover.Overlay className="fixed inset-0 z-50 bg-gray-800/40 backdrop-blur-sm dark:bg-black/80" />
+            <Popover.Overlay className="fixed inset-0 z-50 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/80" />
           </Transition.Child>
           <Transition.Child
             as={Fragment}
@@ -65,18 +65,18 @@ function MobileNavigation(props: Record<string, unknown>) {
           >
             <Popover.Panel
               focus
-              className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-gray-900/5 dark:bg-gray-900 dark:ring-gray-800"
+              className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-neutral-900/5 dark:bg-neutral-900 dark:ring-neutral-800"
             >
               <div className="flex flex-row-reverse items-center justify-between">
                 <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                  <X className="h-6 w-6 text-gray-500 dark:text-gray-400" />
+                  <X className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />
                 </Popover.Button>
-                <h2 className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                <h2 className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
                   Navigation
                 </h2>
               </div>
               <nav className="mt-6">
-                <ul className="-my-2 divide-y divide-gray-100 text-base text-gray-800 dark:divide-gray-100/5 dark:text-gray-300">
+                <ul className="-my-2 divide-y divide-neutral-100 text-base text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300">
                   <MobileNavItem href="/metrics">Metrics</MobileNavItem>
                   {/* <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem> */}
@@ -119,7 +119,7 @@ function NavItem({ href, children }: NavItemProps) {
 function DesktopNavigation(props: Record<string, unknown>) {
   return (
     <nav {...props}>
-      <ul className="flex items-center rounded-full bg-white/90 px-3 text-sm font-medium text-gray-800 shadow-lg shadow-gray-800/5 ring-1 ring-gray-900/5 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/10">
+      <ul className="flex items-center rounded-full bg-white/90 px-3 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10">
         <NavItem href="/metrics">Metrics</NavItem>
         {/* <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem> */}
@@ -162,11 +162,11 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 p-2 shadow-lg shadow-gray-800/5 ring-1 ring-gray-900/5 backdrop-blur transition dark:bg-gray-800/90 dark:ring-white/10 dark:hover:ring-white/20 sm:bg-transparent sm:shadow-none sm:ring-0 sm:backdrop-blur-none dark:sm:bg-transparent"
+      className="group rounded-full bg-white/90 p-2 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur transition dark:bg-neutral-800/90 dark:ring-white/10 dark:hover:ring-white/20 sm:bg-transparent sm:shadow-none sm:ring-0 sm:backdrop-blur-none dark:sm:bg-transparent"
       onClick={toggleMode}
     >
-      <Sun className="h-5 w-5 fill-gray-100 stroke-gray-500 transition group-hover:fill-gray-200 group-hover:stroke-gray-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-sky-50 [@media(prefers-color-scheme:dark)]:stroke-sky-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-sky-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-sky-600 [&>*]:fill-sky-500" />
-      <Moon className="hidden h-5 w-5 fill-gray-700 stroke-gray-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-gray-400 [@media_not_(prefers-color-scheme:dark)]:fill-sky-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-sky-500" />
+      <Sun className="h-5 w-5 fill-neutral-100 stroke-neutral-500 transition group-hover:fill-neutral-200 group-hover:stroke-neutral-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-sky-50 [@media(prefers-color-scheme:dark)]:stroke-sky-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-sky-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-sky-600 [&>*]:fill-sky-500" />
+      <Moon className="hidden h-5 w-5 fill-neutral-700 stroke-neutral-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-neutral-400 [@media_not_(prefers-color-scheme:dark)]:fill-sky-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-sky-500" />
     </button>
   );
 }
@@ -185,7 +185,7 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        "h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-gray-800/5 ring-1 ring-gray-900/5 backdrop-blur dark:bg-gray-800/90 dark:ring-white/10"
+        "h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:ring-white/10"
       )}
       {...props}
     />
@@ -213,7 +213,7 @@ function Avatar({
         alt=""
         sizes={large ? "4rem" : "2.25rem"}
         className={clsx(
-          "rounded-full bg-gray-100 object-cover dark:bg-gray-800",
+          "rounded-full bg-neutral-100 object-cover dark:bg-neutral-800",
           large ? "h-16 w-16" : "h-9 w-9"
         )}
         priority

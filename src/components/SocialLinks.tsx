@@ -18,9 +18,9 @@ function SocialLink({
     <li className={clsx(className, "flex")}>
       <ExternalLink
         href={href}
-        className="group flex text-sm font-medium text-gray-800 transition hover:text-sky-500 dark:text-gray-200 dark:hover:text-sky-500"
+        className="group flex text-sm font-medium text-neutral-800 transition hover:text-sky-500 dark:text-neutral-200 dark:hover:text-sky-500"
       >
-        <Icon className="h-6 w-6 flex-none stroke-gray-500 stroke-[1.5] transition group-hover:stroke-sky-500" />
+        <Icon className="h-6 w-6 flex-none stroke-neutral-500 stroke-[1.5] transition group-hover:stroke-sky-500" />
         <span className="ml-4">{children}</span>
       </ExternalLink>
     </li>
@@ -57,7 +57,7 @@ export default function SocialLinks() {
       <SocialLink
         href="mailto:msichterman1@gmail.com"
         icon={Mail}
-        className="mt-8 border-t border-gray-100 pt-8 dark:border-gray-700/40"
+        className="mt-8 border-t border-neutral-100 pt-8 dark:border-neutral-700/40"
       >
         msichterman1@gmail.com
       </SocialLink>

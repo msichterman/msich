@@ -61,11 +61,11 @@ export default function Contact() {
   };
 
   const inputStyles =
-    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border border-gray-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-gray-800/5 placeholder:text-gray-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:border-gray-700 dark:bg-gray-700/[0.15] dark:text-gray-200 dark:placeholder:text-gray-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm";
+    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border border-neutral-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-neutral-800/5 placeholder:text-neutral-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:border-neutral-700 dark:bg-neutral-700/[0.15] dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm";
   const errorInputStyles =
-    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-gray-800/5 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-gray-700/[0.15] dark:text-gray-200 dark:placeholder:text-gray-500 dark:focus:ring-sky-400/10 sm:text-sm border-red-500";
+    "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-neutral-800/5 placeholder:text-neutral-400 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-neutral-700/[0.15] dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:ring-sky-400/10 sm:text-sm border-red-500";
   const labelStyles =
-    "block text-sm font-medium text-gray-600 dark:text-gray-400";
+    "block text-sm font-medium text-neutral-600 dark:text-neutral-400";
   const errorLabelStyles = "block text-sm font-medium text-red-500";
 
   return (
@@ -79,9 +79,9 @@ export default function Contact() {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="rounded-2xl border border-gray-100 p-6 dark:border-gray-700/40 lg:order-first lg:row-span-2">
-            <h2 className="text-md flex font-semibold text-gray-900 dark:text-gray-100">
-              <Send className="h-6 w-6 flex-none fill-gray-100 stroke-gray-400 dark:fill-gray-100/10 dark:stroke-gray-500" />
+          <div className="rounded-2xl border border-neutral-100 p-6 dark:border-neutral-700/40 lg:order-first lg:row-span-2">
+            <h2 className="text-md flex font-semibold text-neutral-900 dark:text-neutral-100">
+              <Send className="h-6 w-6 flex-none fill-neutral-100 stroke-neutral-400 dark:fill-neutral-100/10 dark:stroke-neutral-500" />
               <span className="ml-3 font-semibold">Send me a message</span>
             </h2>
             <form
@@ -195,7 +195,10 @@ export default function Contact() {
                   >
                     Phone
                   </label>
-                  <span id="phone-optional" className="text-sm text-gray-500">
+                  <span
+                    id="phone-optional"
+                    className="text-sm text-neutral-500"
+                  >
                     Optional
                   </span>
                 </div>
@@ -264,7 +267,7 @@ export default function Contact() {
                   >
                     Message
                   </label>
-                  <span id="message-max" className="text-sm text-gray-500">
+                  <span id="message-max" className="text-sm text-neutral-500">
                     Max. 500 characters
                   </span>
                 </div>

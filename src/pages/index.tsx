@@ -43,7 +43,7 @@ function SocialLink({
 }) {
   return (
     <ExternalLink className="group -m-1 p-1" href={href} {...props}>
-      <Icon className="h-6 w-6 border-none stroke-gray-500 stroke-[1.5] transition group-hover:stroke-gray-600 dark:stroke-gray-400 dark:group-hover:stroke-gray-300" />
+      <Icon className="h-6 w-6 border-none stroke-neutral-500 stroke-[1.5] transition group-hover:stroke-neutral-600 dark:stroke-neutral-400 dark:group-hover:stroke-neutral-300" />
     </ExternalLink>
   );
 }
@@ -64,7 +64,7 @@ function Photos() {
           <div
             key={image.src}
             className={clsx(
-              "relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 sm:w-72 sm:rounded-2xl",
+              "relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl bg-neutral-100 dark:bg-neutral-800 sm:w-72 sm:rounded-2xl",
               rotations[imageIndex % rotations.length]
             )}
           >
@@ -99,11 +99,11 @@ export default function Home() {
       </Head>
       <Container className="mt-9">
         <div className="max-w-3xl">
-          <h1 className="text-2xl font-bold tracking-tight text-gray-800 dark:text-gray-100 sm:text-5xl">
+          <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
             Software engineer, entrepreneur, and former hogmollie.
             <sup>&Dagger;</sup>
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-gray-600 dark:text-gray-400">
+          <p className="mt-6 max-w-2xl text-base text-neutral-600 dark:text-neutral-400">
             I’m Matt, a software engineer and entrepreneur based in Cincinnati,
             OH. I&apos;m the founder of Web Forestry, where I create and manage
             thriving websites for growing businesses.
@@ -137,7 +137,7 @@ export default function Home() {
           </div>
           <ExternalLink
             href="http://hogmollie.urbanup.com/228367"
-            className="mt-6 block text-xxs text-gray-400 dark:text-gray-600"
+            className="mt-6 block text-xxs text-neutral-400 dark:text-neutral-600"
           >
             &Dagger; what the heck is a hogmollie?
           </ExternalLink>
