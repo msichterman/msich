@@ -36,7 +36,7 @@ export function Footer() {
       <Container.Outer>
         <div className="border-t border-neutral-100 py-10 dark:border-neutral-700/40">
           <Container.Inner>
-            <div className="min-h-32 flex flex-col items-center justify-between gap-6 sm:flex-row">
+            <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <ul className="flex gap-6 text-sm font-medium text-neutral-800 dark:text-neutral-200">
                 <NavItem href="/metrics">Metrics</NavItem>
                 {/* <NavLink href="/projects">Projects</NavLink>

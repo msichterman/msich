@@ -35,13 +35,15 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <>
           <main
             className={clsx(
-              "relative min-h-screen bg-gradient-to-r from-neutral-200 via-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-800 dark:via-neutral-900 dark:to-black",
+              "relative flex min-h-screen flex-col justify-between bg-gradient-to-r from-neutral-200 via-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-800 dark:via-neutral-900 dark:to-black",
               calSans.className
             )}
           >
-            <Header />
-            <Component previousPathname={previousPathname} {...pageProps} />
-            <Analytics />
+            <div>
+              <Header />
+              <Component previousPathname={previousPathname} {...pageProps} />
+              <Analytics />
+            </div>
             <Footer />
           </main>
         </>
