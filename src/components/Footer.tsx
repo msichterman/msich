@@ -28,9 +28,9 @@ export function Footer() {
   return (
     <footer className="mt-32">
       <Container.Outer>
-        <div className="border-t border-gray-100 dark:border-gray-700/40">
+        <div className="border-t border-gray-100 py-10 dark:border-gray-700/40">
           <Container.Inner>
-            <div className="flex h-32 flex-col items-center justify-between gap-6 sm:flex-row">
+            <div className="min-h-32 flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex gap-6 text-sm font-medium text-gray-800 dark:text-gray-200">
                 <NavLink href="/metrics">Metrics</NavLink>
                 {/* <NavLink href="/projects">Projects</NavLink>
