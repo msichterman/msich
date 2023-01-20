@@ -85,7 +85,7 @@ export default function Metrics() {
                   let metricCount = metric.actual;
                   if (metric.id === 2) {
                     // Number of Books Read
-                    metricCount = 0;
+                    metricCount = 1;
                   } else if (metric.id === 5) {
                     // Number of Published Blog Posts
                     metricCount = allArticles.filter(
