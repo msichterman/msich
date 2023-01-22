@@ -110,7 +110,7 @@ export default function Newsletter({ className }: { className?: string }) {
         isSuccess={subscribe.isSuccess}
         successMessage={
           subscribe?.data?.email
-            ? `Thanks ${subscribe.data.email}! Please verify your email.`
+            ? `Thanks ${subscribe?.data?.email}! Please verify your email.`
             : undefined
         }
         className="mt-2"
