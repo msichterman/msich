@@ -83,7 +83,7 @@ export default function Metrics() {
                 ))
               : metricsWithCounts?.map((metric) => {
                   let metricCount = metric.actual;
-                  let hidePace: boolean = false;
+                  let hidePace = false;
                   if (metric.id === 2) {
                     // Number of Books Read
                     metricCount = 1;
