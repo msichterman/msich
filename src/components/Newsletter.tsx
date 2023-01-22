@@ -64,7 +64,7 @@ export default function Newsletter({ className }: { className?: string }) {
         {!getSubscribers.isError && getSubscribers?.data?.count ? (
           <>
             <span className="font-bold text-sky-600 motion-safe:animate-pulse dark:text-sky-500">
-              {`Join ${getSubscribers?.data.count} others `}
+              {`Join ${getSubscribers?.data?.count} others `}
             </span>
             who get notified when I publish something new, and unsubscribe at
             any time.
