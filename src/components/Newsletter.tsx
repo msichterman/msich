@@ -45,6 +45,8 @@ export default function Newsletter({ className }: { className?: string }) {
     subscribe.mutate({ email });
   };
 
+  return null;
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
