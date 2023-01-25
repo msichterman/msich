@@ -46,6 +46,10 @@ export default function Uses() {
           name="description"
           content="Software I use, gadgets I love, and other things I recommend."
         />
+        <meta
+          property="og:image"
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣ Uses"}`}
+        />
       </Head>
       <SimpleLayout
         title="Software and hardware that I use to simplify my life and maximize my productivity."

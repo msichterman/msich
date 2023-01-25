@@ -87,7 +87,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content={`https://msich.dev/api/og?preface=${"Matt Sichterman – Home"}`}
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣ Home"}`}
         />
       </Head>
       <Container className="mt-9 sm:mt-12">

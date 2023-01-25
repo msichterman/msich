@@ -17,6 +17,10 @@ export default function About() {
           name="description"
           content="I’m Matt Sichterman. I live in Cincinnati, OH, where I develop thriving digital experiences."
         />
+        <meta
+          property="og:image"
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣ About"}`}
+        />
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">

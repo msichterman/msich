@@ -16,7 +16,7 @@ const calSans = fetch(
 
 export default async function handler(req: NextRequest) {
   try {
-    const [calSansFont] = await Promise.all([calSans]);
+    const calSansFont = await calSans;
     const { origin, searchParams } = new URL(req.url);
 
     // dynamic params
@@ -51,7 +51,12 @@ export default async function handler(req: NextRequest) {
               </g>
             </svg>
             <div tw="flex-1 flex flex-col mr-20" style={{ zIndex: "50" }}>
-              <p tw="text-sky-400 text-xl uppercase font-bold">{preface}</p>
+              <p
+                tw="text-sky-400 text-5xl uppercase font-bold opacity-30"
+                style={{ whiteSpace: "nowrap" }}
+              >
+                {preface}
+              </p>
               <h1 tw="text-[2.7rem] text-white">{title}</h1>
               <p tw="text-neutral-100 text-lg">{subtitle}</p>
             </div>
@@ -91,13 +96,6 @@ export default async function handler(req: NextRequest) {
             name: "Cal Sans",
             data: calSansFont,
             style: "normal",
-            weight: 400,
-          },
-          {
-            name: "Cal Sans",
-            data: calSansFont,
-            style: "normal",
-            weight: 700,
           },
         ],
       }

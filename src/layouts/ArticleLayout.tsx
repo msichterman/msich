@@ -24,6 +24,10 @@ export function ArticleLayout({
       <Head>
         <title>{`${article.title} - Matt Sichterman`}</title>
         <meta name="description" content={article.description} />
+        <meta
+          property="og:image"
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣  Article"}`}
+        />
       </Head>
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">

@@ -50,6 +50,10 @@ export default function ArticlesIndex() {
           name="description"
           content="All of my long-form thoughts on programming, leadership, entrepreneurship, and more, collected in chronological order."
         />
+        <meta
+          property="og:image"
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣ Articles"}`}
+        />
       </Head>
       <SimpleLayout
         title="Writing on software development, entrepreneurship, and cool technologies."

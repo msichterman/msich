@@ -51,6 +51,10 @@ export default function Metrics() {
           name="description"
           content="The metrics that are guiding me in 2023."
         />
+        <meta
+          property="og:image"
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣ Metrics"}`}
+        />
       </Head>
       <Container className="mt-12">
         <div>
@@ -115,33 +119,35 @@ export default function Metrics() {
                           <p className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                             {`${metricCount} / ${metric.targetNumber}`}
                           </p>
-                          {!hidePace && (<p
-                            className={clsx(
-                              metric.currentPace > 0
-                                ? "text-green-600 dark:text-green-400"
-                                : "text-red-600 dark:text-red-400",
-                              "flex items-baseline text-sm font-semibold"
-                            )}
-                          >
-                            {metric.currentPace > 0 ? (
-                              <TrendingUp
-                                className="mr-1 h-4 w-4 flex-shrink-0 self-center text-green-500 dark:text-green-300"
-                                aria-hidden="true"
-                              />
-                            ) : (
-                              <TrendingDown
-                                className="mr-1 h-4 w-4 flex-shrink-0 self-center text-red-500 dark:text-red-300"
-                                aria-hidden="true"
-                              />
-                            )}
-                            <span className="sr-only">
-                              {" "}
-                              {metric.currentPace > 0
-                                ? "Ahead"
-                                : "Behind"} by{" "}
-                            </span>
-                            {`${Math.abs(metric.currentPace)}%`}
-                          </p>)}
+                          {!hidePace && (
+                            <p
+                              className={clsx(
+                                metric.currentPace > 0
+                                  ? "text-green-600 dark:text-green-400"
+                                  : "text-red-600 dark:text-red-400",
+                                "flex items-baseline text-sm font-semibold"
+                              )}
+                            >
+                              {metric.currentPace > 0 ? (
+                                <TrendingUp
+                                  className="mr-1 h-4 w-4 flex-shrink-0 self-center text-green-500 dark:text-green-300"
+                                  aria-hidden="true"
+                                />
+                              ) : (
+                                <TrendingDown
+                                  className="mr-1 h-4 w-4 flex-shrink-0 self-center text-red-500 dark:text-red-300"
+                                  aria-hidden="true"
+                                />
+                              )}
+                              <span className="sr-only">
+                                {" "}
+                                {metric.currentPace > 0
+                                  ? "Ahead"
+                                  : "Behind"} by{" "}
+                              </span>
+                              {`${Math.abs(metric.currentPace)}%`}
+                            </p>
+                          )}
                         </div>
                       </div>
                       {metric?.href && (
