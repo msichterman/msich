@@ -83,14 +83,17 @@ export default function Metrics() {
                 ))
               : metricsWithCounts?.map((metric) => {
                   let metricCount = metric.actual;
+                  let hidePace = false;
                   if (metric.id === 2) {
                     // Number of Books Read
-                    metricCount = 0;
+                    metricCount = 1;
+                    hidePace = true;
                   } else if (metric.id === 5) {
                     // Number of Published Blog Posts
                     metricCount = allArticles.filter(
                       (a) => a.status === "PUBLISHED"
                     ).length;
+                    hidePace = true;
                   }
                   return (
                     <div
@@ -112,7 +115,7 @@ export default function Metrics() {
                           <p className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                             {`${metricCount} / ${metric.targetNumber}`}
                           </p>
-                          <p
+                          {!hidePace && (<p
                             className={clsx(
                               metric.currentPace > 0
                                 ? "text-green-600 dark:text-green-400"
@@ -138,7 +141,7 @@ export default function Metrics() {
                                 : "Behind"} by{" "}
                             </span>
                             {`${Math.abs(metric.currentPace)}%`}
-                          </p>
+                          </p>)}
                         </div>
                       </div>
                       {metric?.href && (

@@ -69,7 +69,7 @@ export const metricRouter = t.router({
 
     return {
       1: {
-        actual: milesWalked._sum.amount,
+        actual: milesWalked._sum.amount?.toFixed(2),
         expected: parseFloat(((1000 / totalDays) * dayNum).toFixed(2)),
         currentPace: parseFloat(
           (
