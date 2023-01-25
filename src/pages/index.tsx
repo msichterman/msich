@@ -85,6 +85,10 @@ export default function Home() {
             OH. I’m the founder of Web Forestry, where I create and manage
             thriving websites for growing businesses."
         />
+        <meta
+          property="og:image"
+          content={`https://msich.dev/api/og?preface=${"Matt Sichterman – Home"}`}
+        />
       </Head>
       <Container className="mt-9 sm:mt-12">
         <div className="mx-auto flex max-w-lg flex-col items-center text-center sm:mx-0 sm:max-w-3xl sm:items-start sm:text-left">
