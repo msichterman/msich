@@ -19,7 +19,7 @@ function Article({ article }: { article: Article }) {
           decorate
         >
           {formatDate(article.date)}&nbsp;&middot;
-          <span className="inline-block text-tiny font-semibold uppercase text-sky-500/75 sm:tracking-wide">
+          <span className="inline-block text-tiny font-semibold uppercase text-sky-500/75">
             &nbsp;{article.readingTime.text}
           </span>
         </Card.Eyebrow>
@@ -33,7 +33,7 @@ function Article({ article }: { article: Article }) {
       >
         {formatDate(article.date)}
         <br />
-        <span className="text-tiny font-bold uppercase text-sky-500/75 sm:tracking-wide">
+        <span className="text-tiny font-bold uppercase text-sky-500/75">
           {article.readingTime.text}
         </span>
       </Card.Eyebrow>

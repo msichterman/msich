@@ -96,7 +96,7 @@ export default function Home() {
             Software engineer, entrepreneur, and former hogmollie.
             <sup>&Dagger;</sup>
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-neutral-600 dark:text-neutral-400 sm:tracking-wide">
+          <p className="mt-6 max-w-2xl text-sm text-neutral-600 dark:text-neutral-400 sm:text-base">
             I&apos;m Matt, a software engineer and entrepreneur based in
             Cincinnati, OH. I&apos;m the founder of Web Forestry, where I create
             and manage thriving websites for growing businesses.

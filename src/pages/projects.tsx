@@ -55,7 +55,7 @@ export default function Projects() {
                     unoptimized
                   />
                 </div>
-                <h2 className="mt-6 text-base font-semibold text-neutral-800 dark:text-neutral-100">
+                <h2 className="mt-6 text-sm font-semibold text-neutral-800 dark:text-neutral-100 sm:text-base">
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>

@@ -49,7 +49,7 @@ export function ArticleLayout({
                 </h1>
                 <time
                   dateTime={article.date}
-                  className="order-first flex items-center text-base text-neutral-400 dark:text-neutral-500"
+                  className="order-first flex items-center text-sm text-neutral-400 dark:text-neutral-500 sm:text-base"
                 >
                   <span className="h-4 w-0.5 rounded-full bg-neutral-200 dark:bg-neutral-500" />
                   <span className="ml-3">{formatDate(article.date)}</span>

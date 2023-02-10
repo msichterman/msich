@@ -76,7 +76,7 @@ function MobileNavigation(props: Record<string, unknown>) {
                 </h2>
               </div>
               <nav className="mt-6">
-                <ul className="-my-2 divide-y divide-neutral-100 text-base text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300">
+                <ul className="-my-2 divide-y divide-neutral-100 text-sm text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300 sm:text-base">
                   <MobileNavItem href="/metrics">Metrics</MobileNavItem>
                   {/* <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem> */}

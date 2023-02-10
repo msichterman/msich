@@ -113,9 +113,9 @@ export default function Metrics() {
                           />
                         </div>
                         <div className="mx-auto min-w-[75%]">
-                          <p className="truncate text-lg font-medium text-neutral-500 dark:text-neutral-300">
+                          <h2 className="truncate text-lg font-medium text-neutral-500 dark:text-neutral-300">
                             {metric.name}
-                          </p>
+                          </h2>
                           <p className="text-2xl font-semibold text-neutral-900 dark:text-neutral-50">
                             {`${metricCount} / ${metric.targetNumber}`}
                           </p>

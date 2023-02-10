@@ -2,3 +2,29 @@
 @import "tailwindcss/components";
 @import "./prism.css";
 @import "tailwindcss/utilities";
+
+@layer base {
+  h1,
+  h2,
+  h2 span,
+  h3,
+  h4,
+  h5,
+  button,
+  th,
+  a,
+  a span {
+    font-family: var(--font-cal-sans), system-ui, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+  * {
+    font-family: var(--font-ibm), system-ui, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+}

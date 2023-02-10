@@ -6,6 +6,7 @@ import type { Session } from "next-auth";
 import "../styles/globals.css";
 import { useEffect, useRef } from "react";
 import localFont from "@next/font/local";
+import { IBM_Plex_Mono, Inter } from "@next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { trpc } from "@/utils/trpc";
@@ -21,7 +22,19 @@ function usePrevious(value: string) {
   return ref.current;
 }
 
-const calSans = localFont({ src: "./CalSans-SemiBold.woff2" });
+const calSans = localFont({
+  src: "./CalSans-SemiBold.woff2",
+  variable: "--font-cal-sans",
+  weight: "400",
+  display: "swap",
+});
+
+const ibm = IBM_Plex_Mono({
+  variable: "--font-ibm",
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -36,7 +49,8 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <main
             className={clsx(
               "relative flex min-h-screen flex-col justify-between bg-gradient-to-r from-neutral-200 to-white dark:bg-gradient-to-l dark:from-neutral-800 dark:to-black sm:via-neutral-100 dark:sm:via-neutral-900",
-              calSans.className
+              calSans.variable,
+              ibm.variable
             )}
           >
             <div>
