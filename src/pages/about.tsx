@@ -39,7 +39,7 @@ export default function About() {
               I’m Matt Sichterman. <br /> I live in Cincinnati, OH, where I
               develop thriving digital experiences.
             </h1>
-            <div className="mt-6 space-y-7 text-sm text-neutral-600 dark:text-neutral-400 sm:text-base">
+            <div className="mt-6 space-y-7 text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
               <p>
                 Ever since I was young, I&apos;ve woken up excited about two
                 things: sports and technology. Sports have been a mainstay in my
