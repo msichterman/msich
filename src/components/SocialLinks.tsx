@@ -18,7 +18,7 @@ function SocialLink({
     <li className={clsx(className, "flex")}>
       <ExternalLink
         href={href}
-        className="group flex text-sm font-medium text-neutral-800 transition hover:text-sky-500 dark:text-neutral-200 dark:hover:text-sky-500"
+        className="group flex text-xs font-medium text-neutral-800 transition hover:text-sky-500 dark:text-neutral-200 dark:hover:text-sky-500"
       >
         <Icon className="h-6 w-6 flex-none stroke-neutral-500 stroke-[1.5] transition group-hover:stroke-sky-500" />
         <span className="ml-4">{children}</span>

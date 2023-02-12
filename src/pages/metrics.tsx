@@ -80,7 +80,7 @@ export default function Metrics() {
                       <div className="mx-auto w-48 space-y-2">
                         <div className="h-6 w-48 truncate rounded-md bg-neutral-200 text-lg font-medium text-neutral-500 dark:bg-neutral-700 dark:text-neutral-300" />
                         <div className="h-8 w-32 rounded-md bg-neutral-200 text-2xl font-semibold text-neutral-900 dark:bg-neutral-700 dark:text-neutral-50" />
-                        <div className="flex h-4 w-16 items-baseline rounded-md bg-neutral-200 text-sm font-semibold dark:bg-neutral-700" />
+                        <div className="flex h-4 w-16 items-baseline rounded-md bg-neutral-200 text-xs font-semibold dark:bg-neutral-700" />
                       </div>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ export default function Metrics() {
                                 metric.currentPace > 0
                                   ? "text-green-600 dark:text-green-400"
                                   : "text-red-600 dark:text-red-400",
-                                "flex items-baseline text-sm font-semibold"
+                                "flex items-baseline text-xs font-semibold"
                               )}
                             >
                               {metric.currentPace > 0 ? (
@@ -151,7 +151,7 @@ export default function Metrics() {
                         </div>
                       </div>
                       {metric?.href && (
-                        <div className="mt-4 w-full bg-neutral-100 px-4 py-4 text-sm dark:bg-neutral-800 sm:px-6">
+                        <div className="mt-4 w-full bg-neutral-100 px-4 py-4 text-xs dark:bg-neutral-800 sm:px-6">
                           <Link
                             href={metric?.href}
                             className="font-medium text-sky-600 hover:text-sky-500"

@@ -56,7 +56,7 @@ export default function Resume() {
 
   return (
     <div className="rounded-2xl border border-neutral-100 p-6 dark:border-neutral-700/40">
-      <h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
+      <h2 className="flex text-xs font-semibold text-neutral-900 dark:text-neutral-100">
         <Briefcase className="h-6 w-6 flex-none fill-neutral-100 stroke-neutral-400 dark:fill-neutral-100/10 dark:stroke-neutral-500" />
         <span className="ml-3">Work</span>
       </h2>

@@ -65,8 +65,8 @@ export default function Contact() {
   const errorInputStyles =
     "m-0 block w-full min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-neutral-800/5 placeholder:text-neutral-400 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-neutral-700/[0.15] dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:ring-sky-400/10 sm:text-sm border-red-500";
   const labelStyles =
-    "block text-sm font-medium text-neutral-600 dark:text-neutral-400";
-  const errorLabelStyles = "block text-sm font-medium text-red-500";
+    "block text-xs font-medium text-neutral-600 dark:text-neutral-400";
+  const errorLabelStyles = "block text-xs font-medium text-red-500";
 
   return (
     <>

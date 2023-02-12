@@ -38,7 +38,7 @@ function MobileNavigation(props: Record<string, unknown>) {
         <ModeToggle />
       </div>
       <Popover {...props}>
-        <Popover.Button className="group ml-4 flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10 dark:hover:ring-white/20">
+        <Popover.Button className="group ml-4 flex items-center rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10 dark:hover:ring-white/20">
           Menu
           <ChevronDown className="ml-2 h-auto w-4 stroke-neutral-500 group-hover:stroke-neutral-700 dark:group-hover:stroke-neutral-400" />
         </Popover.Button>
@@ -76,7 +76,7 @@ function MobileNavigation(props: Record<string, unknown>) {
                 </h2>
               </div>
               <nav className="mt-6">
-                <ul className="-my-2 divide-y divide-neutral-100 text-sm text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300 sm:text-base">
+                <ul className="-my-2 divide-y divide-neutral-100 text-xs text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300 sm:text-sm">
                   <MobileNavItem href="/metrics">Metrics</MobileNavItem>
                   {/* <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem> */}
@@ -119,7 +119,7 @@ function NavItem({ href, children }: NavItemProps) {
 function DesktopNavigation(props: Record<string, unknown>) {
   return (
     <nav {...props}>
-      <ul className="flex items-center rounded-full bg-white/90 px-3 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10">
+      <ul className="flex items-center rounded-full bg-white/90 px-3 text-xs font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10">
         <NavItem href="/metrics">Metrics</NavItem>
         {/* <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem> */}

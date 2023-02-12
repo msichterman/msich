@@ -55,11 +55,11 @@ export default function Projects() {
                     unoptimized
                   />
                 </div>
-                <h2 className="mt-6 text-sm font-semibold text-neutral-800 dark:text-neutral-100 sm:text-base">
+                <h2 className="mt-6 text-xs font-semibold text-neutral-800 dark:text-neutral-100 sm:text-sm">
                   <Card.Link href={project.link.href}>{project.name}</Card.Link>
                 </h2>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 mt-6 flex text-sm font-medium text-neutral-400 transition group-hover:text-sky-500 dark:text-neutral-200">
+                <p className="relative z-10 mt-6 flex text-xs font-medium text-neutral-400 transition group-hover:text-sky-500 dark:text-neutral-200">
                   <Link className="h-6 w-6 flex-none" />
                   <span className="ml-2">{project.link.label}</span>
                 </p>
