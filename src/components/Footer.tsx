@@ -34,11 +34,11 @@ export function Footer() {
   return (
     <footer className="mt-32">
       <Container.Outer>
-        <div className="border-t border-neutral-100 py-10 dark:border-neutral-700/40">
+        <div className="border-t border-neutral-200 py-10 dark:border-neutral-700/40">
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <ul className="flex gap-6 text-xs font-medium text-neutral-800 dark:text-neutral-200">
-                <NavItem href="/metrics">Metrics</NavItem>
+                {/* <NavItem href="/metrics">Metrics</NavItem> */}
                 {/* <NavLink href="/projects">Projects</NavLink>
                 <NavLink href="/articles">Articles</NavLink> */}
                 <NavItem href="/uses">Uses</NavItem>

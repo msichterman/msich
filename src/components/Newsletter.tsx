@@ -51,7 +51,7 @@ export default function Newsletter({ className }: { className?: string }) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       className={clsx(
-        "rounded-2xl border border-neutral-100 p-6 dark:border-neutral-700/40",
+        "rounded-2xl border border-neutral-200 p-6 dark:border-neutral-700/40",
         className
       )}
       onBlur={() => clearErrors()}

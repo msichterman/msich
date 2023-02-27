@@ -66,7 +66,7 @@ export default function Metrics() {
             {metrics.isLoading || counts.isLoading
               ? Array.from(Array(5).keys()).map((i) => (
                   <div
-                    className="relative animate-pulse overflow-hidden rounded-xl border border-neutral-100 shadow dark:border-neutral-700/40"
+                    className="relative animate-pulse overflow-hidden rounded-xl border border-neutral-200 shadow dark:border-neutral-700/40"
                     role="status"
                     key={i}
                   >
@@ -102,7 +102,7 @@ export default function Metrics() {
                   return (
                     <div
                       key={metric.id}
-                      className="relative overflow-hidden rounded-xl border border-neutral-100 shadow dark:border-neutral-700/40"
+                      className="relative overflow-hidden rounded-xl border border-neutral-200 shadow dark:border-neutral-700/40"
                     >
                       <div className="flex w-full items-center justify-between space-x-4 p-6">
                         <div className="flex h-12 w-12 items-center justify-center rounded-md bg-sky-500">

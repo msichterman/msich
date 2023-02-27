@@ -77,7 +77,7 @@ function MobileNavigation(props: Record<string, unknown>) {
               </div>
               <nav className="mt-6">
                 <ul className="-my-2 divide-y divide-neutral-100 text-xs text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300 sm:text-sm">
-                  <MobileNavItem href="/metrics">Metrics</MobileNavItem>
+                  {/* <MobileNavItem href="/metrics">Metrics</MobileNavItem> */}
                   {/* <MobileNavItem href="/articles">Articles</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem> */}
                   <MobileNavItem href="/uses">Uses</MobileNavItem>
@@ -120,7 +120,7 @@ function DesktopNavigation(props: Record<string, unknown>) {
   return (
     <nav {...props}>
       <ul className="flex items-center rounded-full bg-white/90 px-3 text-xs font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10">
-        <NavItem href="/metrics">Metrics</NavItem>
+        {/* <NavItem href="/metrics">Metrics</NavItem> */}
         {/* <NavItem href="/articles">Articles</NavItem>
         <NavItem href="/projects">Projects</NavItem> */}
         <NavItem href="/uses">Uses</NavItem>

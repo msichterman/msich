@@ -59,7 +59,7 @@ export default function ArticlesIndex() {
         title="Writing on software development, entrepreneurship, and cool technologies."
         intro="All of my long-form thoughts on programming, leadership, entrepreneurship, and more, collected in chronological order."
       >
-        <div className="md:border-l md:border-neutral-100 md:pl-6 md:dark:border-neutral-700/40">
+        <div className="md:border-l md:border-neutral-200 md:pl-6 md:dark:border-neutral-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
             {allArticles.map((article) => (
               <Article key={article.slug} article={article} />

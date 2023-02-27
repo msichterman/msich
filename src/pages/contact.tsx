@@ -83,7 +83,7 @@ export default function Contact() {
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div className="rounded-2xl border border-neutral-100 p-6 dark:border-neutral-700/40 lg:order-first lg:row-span-2">
+          <div className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-700/40 lg:order-first lg:row-span-2">
             <h2 className="text-md flex font-semibold text-neutral-900 dark:text-neutral-100">
               <Send className="h-6 w-6 flex-none fill-neutral-100 stroke-neutral-400 dark:fill-neutral-100/10 dark:stroke-neutral-500" />
               <span className="ml-3 font-semibold">Send me a message</span>

@@ -57,7 +57,7 @@ export default function SocialLinks() {
       <SocialLink
         href="mailto:msichterman1@gmail.com"
         icon={Mail}
-        className="mt-8 border-t border-neutral-100 pt-8 dark:border-neutral-700/40"
+        className="mt-8 border-t border-neutral-200 pt-8 dark:border-neutral-700/40"
       >
         msichterman1@gmail.com
       </SocialLink>
