@@ -1,6 +1,11 @@
+<div align="center">
+
 [![MSICH - Personal Site](https://img.shields.io/badge/MSICH-Personal%20Site-0892d0)](https://msich.dev/)&emsp;
 [![Twitter Follow](https://img.shields.io/twitter/follow/mattsichterman?style=social)](https://twitter.com/mattsichterman)&emsp;
 [![Follow on GitHub](https://img.shields.io/github/followers/msichterman?label=Follow%20on%20Github&style=social)](https://github.com/msichterman)&emsp;
+
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/38794918/227688022-38cc9f0e-fd84-439e-974c-b2f962a250cd.png">
+</div>
 
 # Welcome to my personal site! &rarr; [msich.dev](https://msich.dev/)
 
