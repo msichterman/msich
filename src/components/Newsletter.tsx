@@ -45,8 +45,6 @@ export default function Newsletter({ className }: { className?: string }) {
     subscribe.mutate({ email });
   };
 
-  return null;
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -61,10 +59,10 @@ export default function Newsletter({ className }: { className?: string }) {
         <span className="ml-3">Stay up to date</span>
       </h2>
       <p className="mt-2 max-w-md text-xs text-neutral-600 dark:text-neutral-400">
-        {!getSubscribers.isError && getSubscribers?.data?.count ? (
+        {!getSubscribers.isError && getSubscribers?.data?.total ? (
           <>
             <span className="font-bold text-sky-600 motion-safe:animate-pulse dark:text-sky-500">
-              {`Join ${getSubscribers?.data?.count} others `}
+              {`Join ${getSubscribers?.data?.total} others `}
             </span>
             who get notified when I publish something new, and unsubscribe at
             any time.

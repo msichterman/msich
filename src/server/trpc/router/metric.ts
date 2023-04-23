@@ -1,9 +1,9 @@
 import { Entry, Metric } from "@prisma/client";
-import { t } from "../trpc";
+import { router, procedure } from "../trpc";
 
 export type MetricWithEntries = Metric & { entries: Entry[] };
-export const metricRouter = t.router({
-  getAllMetrics: t.procedure.query(async ({ ctx }) => {
+export const metricRouter = router({
+  getAllMetrics: procedure.query(async ({ ctx }) => {
     const findManyAccount: MetricWithEntries[] =
       await ctx.prisma.metric.findMany({
         include: {
@@ -12,7 +12,7 @@ export const metricRouter = t.router({
       });
     return findManyAccount;
   }),
-  getAllEntryCounts: t.procedure.query(async ({ ctx }) => {
+  getAllEntryCounts: procedure.query(async ({ ctx }) => {
     const [milesWalked, pagesRead, pushUps, sitUps, blogPosts] =
       await ctx.prisma.$transaction([
         ctx.prisma.entry.aggregate({

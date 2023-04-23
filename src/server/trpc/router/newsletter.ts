@@ -1,23 +1,26 @@
-import { t } from "../trpc";
+import { router, procedure } from "../trpc";
 import { z } from "zod";
 import { env } from "@/env/server.mjs";
 import { TRPCError } from "@trpc/server";
 
-export const newsletterRouter = t.router({
-  subscribe: t.procedure
+const BASE_URL = "https://connect.mailerlite.com/api";
+
+export const newsletterRouter = router({
+  subscribe: procedure
     .input(
       z.object({
         email: z.string().email({ message: "Invalid email address." }),
       })
     )
     .mutation(async ({ input }) => {
-      const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {
+      const result = await fetch(`${BASE_URL}/subscribers`, {
         method: "POST",
         headers: {
-          Authorization: `Token ${env.REVUE_API_KEY}`,
+          Authorization: `Bearer ${env.MAILERLITE_API_KEY}`,
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(input),
+        body: JSON.stringify({ ...input, groups: ["86273922106918208"] }),
       });
       const data = await result.json();
 
@@ -30,18 +33,20 @@ export const newsletterRouter = t.router({
 
       return input;
     }),
-  getSubscribers: t.procedure.query(async () => {
-    const result = await fetch("https://www.getrevue.co/api/v2/subscribers", {
+  getSubscribers: procedure.query(async () => {
+    const result = await fetch(`${BASE_URL}/subscribers?limit=0`, {
       method: "GET",
       headers: {
-        Authorization: `Token ${env.REVUE_API_KEY}`,
+        Authorization: `Bearer ${env.MAILERLITE_API_KEY}`,
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
     });
 
     const data = await result.json();
 
     const responseSchema = z.object({
-      count: z.number().nullable(),
+      total: z.number().nullable(),
       error: z.string().nullable(),
     });
 
@@ -49,11 +54,11 @@ export const newsletterRouter = t.router({
 
     const response: SubscribersResponseType = !result.ok
       ? {
-          count: null,
-          error: data.error.email[0],
+          total: null,
+          error: result.statusText,
         }
       : {
-          count: data.length,
+          total: data.total,
           error: null,
         };
 

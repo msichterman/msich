@@ -1,8 +1,8 @@
-import { t } from "../trpc";
+import { router, procedure } from "../trpc";
 import { z } from "zod";
 
-export const messageRouter = t.router({
-  contactForm: t.procedure
+export const messageRouter = router({
+  contactForm: procedure
     .input(
       z.object({
         firstName: z.string().min(2).max(32),

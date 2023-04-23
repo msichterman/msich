@@ -1,11 +1,11 @@
 // src/server/trpc/router/index.ts
-import { t } from "../trpc";
+import { router } from "../trpc";
 import { newsletterRouter } from "./newsletter";
 import { authRouter } from "./auth";
 import { messageRouter } from "./message";
 import { metricRouter } from "./metric";
 
-export const appRouter = t.router({
+export const appRouter = router({
   newsletter: newsletterRouter,
   message: messageRouter,
   auth: authRouter,
