@@ -9,6 +9,7 @@ import image2 from "@/images/photos/image-2.jpg";
 import image3 from "@/images/photos/image-3.jpg";
 import image4 from "@/images/photos/image-4.jpg";
 import image5 from "@/images/photos/image-5.jpg";
+import image6 from "@/images/photos/image-6.jpg";
 
 import { ElementType } from "react";
 import ExternalLink from "@/components/ExternalLink";
@@ -52,7 +53,7 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex snap-x snap-mandatory justify-start gap-5 overflow-hidden overflow-x-auto py-4 sm:gap-8 lg:snap-none lg:justify-center lg:overflow-x-hidden">
-        {[image2, image3, image4, image5, image1].map((image) => (
+        {[image2, image6, image3, image4, image5, image1].map((image) => (
           <div
             key={image.src}
             className="relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl sm:w-72 sm:rounded-2xl"
