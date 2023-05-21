@@ -17,7 +17,7 @@ export default function Resume() {
       start: "May 2023",
       end: {
         label: "Present",
-        dateTime: null,
+        dateTime: undefined,
       },
     },
     {
