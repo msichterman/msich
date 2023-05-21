@@ -85,7 +85,7 @@ export default function About() {
               <p>
                 <ExternalLink
                   href="https://youtu.be/pPqnZ709VG0"
-                  className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300"
+                  className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
                 >
                   I played 5 seasons for the Cornhuskers
                 </ExternalLink>{" "}
@@ -100,13 +100,25 @@ export default function About() {
                 that I had.
               </p>
               <p>
-                Today, I&apos;m the founder of Web Forestry, where I create,
-                plant, manage, conserve, and repair digital experiences via
-                websites, apps, and e-commerce stores &mdash; enabling
-                businesses to thrive without tech getting in their way. In my
-                free time, I enjoy working out, traveling around the world, and
-                finding new rabbit holes to continue my lifelong quest of
-                learning and creating.
+                Today, I&apos;m building the future of marketing along with a
+                killer team at{" "}
+                <ExternalLink
+                  href="https://flamel.ai/"
+                  className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
+                >
+                  Flamel.ai
+                </ExternalLink>
+                . I&apos;m also on a mission to create the best beef jerky in
+                the world, with my college teammate Cam Jurgens at{" "}
+                <ExternalLink
+                  href="https://beefjurgy.com"
+                  className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
+                >
+                  Beef Jurgy
+                </ExternalLink>
+                . In my free time, I enjoy working out, traveling around the
+                world, and finding new rabbit holes to continue my lifelong
+                quest of learning and creating.
               </p>
             </div>
           </div>

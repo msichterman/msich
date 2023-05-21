@@ -1,8 +1,6 @@
 // src/pages/_app.tsx
-import { SessionProvider } from "next-auth/react";
 import type { AppType } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
-import type { Session } from "next-auth";
 import "../styles/globals.css";
 import { useEffect, useRef } from "react";
 import localFont from "next/font/local";
@@ -36,32 +34,28 @@ const ibm = IBM_Plex_Mono({
   display: "swap",
 });
 
-const MyApp: AppType<{ session: Session | null }> = ({
+const MyApp: AppType = ({
   Component,
-  pageProps: { session, ...pageProps },
+  pageProps,
   router,
 }) => {
   const previousPathname = usePrevious(router.pathname);
   return (
     <>
-      <SessionProvider session={session}>
-        <>
-          <main
-            className={clsx(
-              "relative flex min-h-screen flex-col justify-between bg-gradient-to-r from-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-900 dark:to-black",
-              calSans.variable,
-              ibm.variable
-            )}
-          >
-            <div>
-              <Header />
-              <Component previousPathname={previousPathname} {...pageProps} />
-              <Analytics />
-            </div>
-            <Footer />
-          </main>
-        </>
-      </SessionProvider>
+      <main
+        className={clsx(
+          "relative flex min-h-screen flex-col justify-between bg-gradient-to-r from-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-900 dark:to-black",
+          calSans.variable,
+          ibm.variable
+        )}
+      >
+        <div>
+          <Header />
+          <Component previousPathname={previousPathname} {...pageProps} />
+          <Analytics />
+        </div>
+        <Footer />
+      </main>
     </>
   );
 };

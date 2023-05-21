@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import logoFlamel from "@/images/logos/flamel.svg";
 import logoAmex from "@/images/logos/amex.svg";
 import logoHudl from "@/images/logos/hudl.svg";
 import logoLevelFive from "@/images/logos/levelfive.svg";
@@ -10,21 +11,28 @@ import { Briefcase, Download } from "lucide-react";
 export default function Resume() {
   const resume = [
     {
+      company: "Flamel.ai",
+      title: "Senior Full Stack Developer",
+      logo: logoFlamel,
+      start: "May 2023",
+      end: {
+        label: "Present",
+        dateTime: null,
+      },
+    },
+    {
       company: "American Express",
-      title: "Full-Stack Software Engineer II",
+      title: "Full Stack Software Engineer II",
       logo: logoAmex,
       start: "Aug 2022",
       end: {
-        label: "Present",
-        dateTime: new Date().toLocaleString("en-us", {
-          month: "short",
-          year: "numeric",
-        }),
+        label: null,
+        dateTime: "May 2023",
       },
     },
     {
       company: "Hudl",
-      title: "Full-Stack Software Engineer",
+      title: "Full Stack Software Engineer",
       logo: logoHudl,
       start: "Mar 2021",
       end: {
