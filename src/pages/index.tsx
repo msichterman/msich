@@ -98,8 +98,7 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-2xl text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
             I&apos;m Matt, a software engineer and entrepreneur based in
-            Cincinnati, OH. <br />Obsessed with UI/UX, generative AI, heavy weights,
-            and fixing my slice.<br />Building the future of social media marketing
+            Cincinnati, OH. <br />Building the future of social media marketing
             at{" "}
             <ExternalLink href="https://flamel.ai/" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
               Flamel.ai
