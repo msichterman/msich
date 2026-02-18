@@ -11,6 +11,7 @@ export const serverSchema = z.object({
   NEXTAUTH_SECRET: z.string(),
   NEXTAUTH_URL: z.string().url(),
   MAILERLITE_API_KEY: z.string(),
+  GMAIL_APP_PASSWORD: z.string(),
 });
 
 /**

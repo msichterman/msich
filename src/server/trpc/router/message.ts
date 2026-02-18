@@ -1,5 +1,15 @@
 import { router, procedure } from "../trpc";
 import { z } from "zod";
+import nodemailer from "nodemailer";
+import { env } from "../../../env/server.mjs";
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "msichterman1@gmail.com",
+    pass: env.GMAIL_APP_PASSWORD,
+  },
+});
 
 export const messageRouter = router({
   contactForm: procedure
@@ -13,9 +23,25 @@ export const messageRouter = router({
         message: z.string().min(2).max(500),
       })
     )
-    .mutation(async ({ ctx, input }) => {
-      return await ctx.prisma.contact.create({
-        data: input,
+    .mutation(async ({ input }) => {
+      const { firstName, lastName, email, phone, subject, message } = input;
+
+      await transporter.sendMail({
+        from: `"${firstName} ${lastName}" <msichterman1@gmail.com>`,
+        replyTo: email,
+        to: "msichterman1+website@gmail.com",
+        subject: `Contact Form: ${subject}`,
+        text: [
+          `Name: ${firstName} ${lastName}`,
+          `Email: ${email}`,
+          phone ? `Phone: ${phone}` : null,
+          `Subject: ${subject}`,
+          `\nMessage:\n${message}`,
+        ]
+          .filter(Boolean)
+          .join("\n"),
       });
+
+      return { firstName };
     }),
 });
