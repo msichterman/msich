@@ -90,25 +90,25 @@
   --tw-prose-th-borders: var(--color-zinc-200);
   --tw-prose-td-borders: var(--color-zinc-100);
 
-  --tw-prose-invert-body: var(--color-zinc-400);
-  --tw-prose-invert-headings: var(--color-zinc-200);
+  --tw-prose-invert-body: var(--color-zinc-300);
+  --tw-prose-invert-headings: var(--color-zinc-50);
   --tw-prose-invert-links: var(--color-sky-400);
-  --tw-prose-invert-links-hover: var(--color-sky-400);
-  --tw-prose-invert-underline: oklch(from var(--color-sky-400) l c h / 0.3);
-  --tw-prose-invert-underline-hover: var(--color-sky-400);
-  --tw-prose-invert-bold: var(--color-zinc-200);
-  --tw-prose-invert-counters: var(--color-zinc-200);
-  --tw-prose-invert-bullets: var(--color-zinc-200);
-  --tw-prose-invert-hr: oklch(from var(--color-zinc-700) l c h / 0.4);
-  --tw-prose-invert-quote-borders: var(--color-zinc-500);
-  --tw-prose-invert-captions: var(--color-zinc-500);
-  --tw-prose-invert-code: var(--color-zinc-300);
-  --tw-prose-invert-code-bg: oklch(from var(--color-zinc-200) l c h / 0.05);
-  --tw-prose-invert-pre-code: var(--color-zinc-100);
-  --tw-prose-invert-pre-bg: rgb(0 0 0 / 0.4);
-  --tw-prose-invert-pre-border: oklch(from var(--color-zinc-200) l c h / 0.1);
-  --tw-prose-invert-th-borders: var(--color-zinc-700);
-  --tw-prose-invert-td-borders: var(--color-zinc-800);
+  --tw-prose-invert-links-hover: var(--color-sky-300);
+  --tw-prose-invert-underline: oklch(from var(--color-sky-400) l c h / 0.4);
+  --tw-prose-invert-underline-hover: var(--color-sky-300);
+  --tw-prose-invert-bold: var(--color-zinc-100);
+  --tw-prose-invert-counters: var(--color-zinc-300);
+  --tw-prose-invert-bullets: var(--color-zinc-300);
+  --tw-prose-invert-hr: oklch(from var(--color-zinc-600) l c h / 0.5);
+  --tw-prose-invert-quote-borders: var(--color-zinc-600);
+  --tw-prose-invert-captions: var(--color-zinc-400);
+  --tw-prose-invert-code: var(--color-zinc-200);
+  --tw-prose-invert-code-bg: oklch(from var(--color-zinc-200) l c h / 0.1);
+  --tw-prose-invert-pre-code: var(--color-zinc-200);
+  --tw-prose-invert-pre-bg: rgb(0 0 0 / 0.5);
+  --tw-prose-invert-pre-border: oklch(from var(--color-zinc-200) l c h / 0.15);
+  --tw-prose-invert-th-borders: var(--color-zinc-600);
+  --tw-prose-invert-td-borders: var(--color-zinc-700);
 
   color: var(--tw-prose-body);
   line-height: 1.75rem;
@@ -347,6 +347,7 @@
 }
 
 /* Prose invert (dark mode) */
+.dark .prose,
 .prose-invert {
   --tw-prose-body: var(--tw-prose-invert-body);
   --tw-prose-headings: var(--tw-prose-invert-headings);

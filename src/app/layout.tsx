@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           href={`${process.env.NEXT_PUBLIC_SITE_URL}/rss/feed.json`}
         />
       </head>
-      <body className="flex h-full flex-col bg-neutral-50 dark:bg-black">
+      <body className="flex h-full flex-col bg-neutral-50 dark:bg-neutral-950">
         <RootProvider
           theme={{
             attribute: "class",

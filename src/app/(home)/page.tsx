@@ -14,9 +14,9 @@ import Resume from "@/components/Resume";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Matt Sichterman - Software engineer, entrepreneur, and former hogmollie",
+  title: "Matt Sichterman - Engineer, entrepreneur, and former hogmollie",
   description:
-    "I'm Matt, CTO and entrepreneur based in Cincinnati, OH. Leading the engineering team at Flamel.ai, the marketing hub for multi-location brands.",
+    "I'm Matt, CTO at Flamel.ai, the AI-powered platform helping franchise brands scale their marketing. Also co-founder of Jurgy with Eagles center Cam Jurgens.",
   openGraph: {
     images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Home" }],
   },
@@ -40,16 +40,16 @@ function SocialLink({
 function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex snap-x snap-mandatory justify-start gap-5 overflow-hidden overflow-x-auto py-4 sm:gap-8 lg:snap-none lg:justify-center lg:overflow-x-hidden">
+      <div className="-my-4 flex snap-x snap-mandatory justify-start gap-5 overflow-x-auto py-4 sm:gap-8 lg:mx-auto lg:max-w-7xl lg:snap-none lg:justify-center lg:gap-6 lg:overflow-visible lg:px-8">
         {[image2, image6, image3, image4, image5, image1].map((image) => (
           <div
             key={image.src}
-            className="relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl sm:w-72 sm:rounded-2xl"
+            className="relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl sm:w-72 sm:rounded-2xl lg:w-0 lg:flex-1"
           >
             <Image
               src={image}
               alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
+              sizes="(min-width: 1024px) 14vw, (min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
@@ -65,16 +65,20 @@ export default function Home() {
       <Container className="mt-9 sm:mt-12">
         <div className="mx-auto flex max-w-lg flex-col items-center text-center sm:mx-0 sm:max-w-3xl sm:items-start sm:text-left">
           <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
-            Software engineer, entrepreneur, and former hogmollie.
-            <sup>&Dagger;</sup>
+            Engineer, entrepreneur,
+            <br />
+            and former hogmollie.<sup>&Dagger;</sup>
           </h1>
           <p className="mt-6 max-w-2xl text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
-            I&apos;m Matt, CTO and entrepreneur based in Cincinnati, OH.
-            <br />Leading the engineering team at{" "}
+            I&apos;m Matt, CTO at{" "}
             <ExternalLink href="https://flamel.ai/" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
               Flamel.ai
             </ExternalLink>
-            , the marketing hub for multi-location brands.
+            , the AI-powered platform helping franchise brands create, schedule, and localize their marketing at scale. Also co-founder of{" "}
+            <ExternalLink href="https://jurgy.co" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
+              Jurgy
+            </ExternalLink>
+            , a beef jerky brand with Eagles center Cam Jurgens.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

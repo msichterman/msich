@@ -3,14 +3,6 @@ import { z } from "zod";
 import nodemailer from "nodemailer";
 import { env } from "../../../env/server.mjs";
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "msichterman1@gmail.com",
-    pass: env.GMAIL_APP_PASSWORD,
-  },
-});
-
 export const messageRouter = router({
   contactForm: procedure
     .input(
@@ -24,6 +16,18 @@ export const messageRouter = router({
       })
     )
     .mutation(async ({ input }) => {
+      if (!env.GMAIL_APP_PASSWORD) {
+        throw new Error("Contact form is temporarily unavailable. Please try again later.");
+      }
+
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: "msichterman1@gmail.com",
+          pass: env.GMAIL_APP_PASSWORD,
+        },
+      });
+
       const { firstName, lastName, email, phone, subject, message } = input;
 
       await transporter.sendMail({
