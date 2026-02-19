@@ -1,8 +1,5 @@
 import Image from "next/image";
-import Head from "next/head";
-import clsx from "clsx";
-
-import { Card } from "@/components/Card";
+import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import image1 from "@/images/photos/image-1.jpg";
 import image2 from "@/images/photos/image-2.jpg";
@@ -10,29 +7,20 @@ import image3 from "@/images/photos/image-3.jpg";
 import image4 from "@/images/photos/image-4.jpg";
 import image5 from "@/images/photos/image-5.jpg";
 import image6 from "@/images/photos/image-6.jpg";
-
 import { ElementType } from "react";
 import ExternalLink from "@/components/ExternalLink";
-import { allArticles, Article } from "contentlayer/generated";
-import { formatDate } from "@/lib/formatDate";
 import Newsletter from "@/components/Newsletter";
 import Resume from "@/components/Resume";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 
-function Article({ article }: { article: Article }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
-  );
-}
+export const metadata: Metadata = {
+  title: "Matt Sichterman - Software engineer, entrepreneur, and former hogmollie",
+  description:
+    "I'm Matt, CTO and entrepreneur based in Cincinnati, OH. Leading the engineering team at Flamel.ai, the marketing hub for multi-location brands.",
+  openGraph: {
+    images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Home" }],
+  },
+};
 
 function SocialLink({
   icon: Icon,
@@ -72,24 +60,8 @@ function Photos() {
 }
 
 export default function Home() {
-  const hasArticles = allArticles.length > 0;
   return (
     <>
-      <Head>
-        <title>
-          Matt Sichterman - Software engineer, entrepreneur, and former
-          hogmollie
-        </title>
-        <meta
-          name="description"
-          content="I’m Matt, a software engineer and entrepreneur based in Cincinnati,
-            OH. Building the future of social media marketing at Flamel.ai."
-        />
-        <meta
-          property="og:image"
-          content={`https://msich.dev/api/og?preface=${"Matt Sichterman ‣ Home"}`}
-        />
-      </Head>
       <Container className="mt-9 sm:mt-12">
         <div className="mx-auto flex max-w-lg flex-col items-center text-center sm:mx-0 sm:max-w-3xl sm:items-start sm:text-left">
           <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
@@ -97,13 +69,12 @@ export default function Home() {
             <sup>&Dagger;</sup>
           </h1>
           <p className="mt-6 max-w-2xl text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
-            I&apos;m Matt, a software engineer and entrepreneur based in
-            Cincinnati, OH. <br />Building the future of social media marketing
-            at{" "}
+            I&apos;m Matt, CTO and entrepreneur based in Cincinnati, OH.
+            <br />Leading the engineering team at{" "}
             <ExternalLink href="https://flamel.ai/" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
               Flamel.ai
             </ExternalLink>
-            .
+            , the marketing hub for multi-location brands.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -142,23 +113,8 @@ export default function Home() {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div
-          className={clsx(
-            "mx-auto max-w-xl",
-            hasArticles &&
-              "grid grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
-          )}
-        >
-          {hasArticles && (
-            <div className="flex flex-col gap-16">
-              {allArticles.map((article) => (
-                <Article key={article.slug} article={article} />
-              ))}
-            </div>
-          )}
-          <div
-            className={clsx("space-y-10", hasArticles && "lg:pl-16 xl:pl-24")}
-          >
+        <div className="mx-auto max-w-xl">
+          <div className="space-y-10">
             <Newsletter />
             <Resume />
           </div>

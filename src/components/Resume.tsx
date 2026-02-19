@@ -12,12 +12,22 @@ export default function Resume() {
   const resume = [
     {
       company: "Flamel.ai",
+      title: "CTO",
+      logo: logoFlamel,
+      start: "Feb 2026",
+      end: {
+        label: "Present",
+        dateTime: undefined,
+      },
+    },
+    {
+      company: "Flamel.ai",
       title: "Senior Full Stack Developer",
       logo: logoFlamel,
       start: "May 2023",
       end: {
-        label: "Present",
-        dateTime: undefined,
+        label: null,
+        dateTime: "Feb 2026",
       },
     },
     {

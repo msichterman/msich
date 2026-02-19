@@ -1,14 +1,16 @@
+"use client";
+
 import Link from "next/link";
 
 import { Container } from "@/components/Container";
 import { NavItemProps } from "./Header";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import WebForestry from "./vectors/WebForestry";
 import ExternalLink from "./ExternalLink";
 
 function NavItem({ href, children }: NavItemProps) {
-  const isActive = useRouter().pathname === href;
+  const isActive = usePathname() === href;
 
   return (
     <li>
@@ -38,9 +40,8 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <ul className="flex gap-6 text-xs font-medium text-neutral-800 dark:text-neutral-200">
-                {/* <NavItem href="/metrics">Metrics</NavItem> */}
-                {/* <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/articles">Articles</NavLink> */}
+                <NavItem href="/blog">Blog</NavItem>
+                <NavItem href="/notes">Notes</NavItem>
                 <NavItem href="/uses">Uses</NavItem>
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/contact">Contact</NavItem>

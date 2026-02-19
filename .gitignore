@@ -16,8 +16,8 @@
 /.next/
 /out/
 
-# contentlayer
-/.contentlayer/
+# fumadocs
+/.source/
 
 # production
 /build

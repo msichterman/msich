@@ -1,14 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { Popover, Transition } from "@headlessui/react";
+import { usePathname } from "next/navigation";
+import {
+  CloseButton,
+  Popover,
+  PopoverBackdrop,
+  PopoverButton,
+  PopoverPanel,
+} from "@headlessui/react";
 import clsx from "clsx";
 
 import { Container } from "@/components/Container";
 import avatarImage from "@/images/avatar.jpg";
 import {
   DetailedHTMLProps,
-  Fragment,
   HTMLAttributes,
   ReactNode,
   useEffect,
@@ -24,9 +31,9 @@ export type NavItemProps = {
 function MobileNavItem({ href, children }: NavItemProps) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <CloseButton as={Link} href={href} className="block py-2">
         {children}
-      </Popover.Button>
+      </CloseButton>
     </li>
   );
 }
@@ -38,63 +45,44 @@ function MobileNavigation(props: Record<string, unknown>) {
         <ModeToggle />
       </div>
       <Popover {...props}>
-        <Popover.Button className="group ml-4 flex items-center rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10 dark:hover:ring-white/20">
+        <PopoverButton className="group ml-4 flex items-center rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10 dark:hover:ring-white/20">
           Menu
           <ChevronDown className="ml-2 h-auto w-4 stroke-neutral-500 group-hover:stroke-neutral-700 dark:group-hover:stroke-neutral-400" />
-        </Popover.Button>
-        <Transition.Root>
-          <Transition.Child
-            as={Fragment}
-            enter="duration-150 ease-out"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="duration-150 ease-in"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Popover.Overlay className="fixed inset-0 z-50 bg-neutral-800/40 backdrop-blur-sm dark:bg-black/80" />
-          </Transition.Child>
-          <Transition.Child
-            as={Fragment}
-            enter="duration-150 ease-out"
-            enterFrom="opacity-0 scale-95"
-            enterTo="opacity-100 scale-100"
-            leave="duration-150 ease-in"
-            leaveFrom="opacity-100 scale-100"
-            leaveTo="opacity-0 scale-95"
-          >
-            <Popover.Panel
-              focus
-              className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-neutral-900/5 dark:bg-neutral-900 dark:ring-neutral-800"
-            >
-              <div className="flex flex-row-reverse items-center justify-between">
-                <Popover.Button aria-label="Close menu" className="-m-1 p-1">
-                  <X className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />
-                </Popover.Button>
-                <h2 className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
-                  Navigation
-                </h2>
-              </div>
-              <nav className="mt-6">
-                <ul className="-my-2 divide-y divide-neutral-100 text-xs text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300 sm:text-sm">
-                  {/* <MobileNavItem href="/metrics">Metrics</MobileNavItem> */}
-                  {/* <MobileNavItem href="/articles">Articles</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem> */}
-                  <MobileNavItem href="/uses">Uses</MobileNavItem>
-                  <MobileNavItem href="/about">About</MobileNavItem>
-                  <MobileNavItem href="/contact">Contact</MobileNavItem>
-                </ul>
-              </nav>
-            </Popover.Panel>
-          </Transition.Child>
-        </Transition.Root>
+        </PopoverButton>
+        <PopoverBackdrop
+          transition
+          className="fixed inset-0 z-50 bg-neutral-800/40 backdrop-blur-sm transition duration-150 ease-out data-[closed]:opacity-0 dark:bg-black/80"
+        />
+        <PopoverPanel
+          focus
+          transition
+          className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-neutral-900/5 transition duration-150 ease-out data-[closed]:scale-95 data-[closed]:opacity-0 dark:bg-neutral-900 dark:ring-neutral-800"
+        >
+          <div className="flex flex-row-reverse items-center justify-between">
+            <CloseButton aria-label="Close menu" className="-m-1 p-1">
+              <X className="h-6 w-6 text-neutral-500 dark:text-neutral-400" />
+            </CloseButton>
+            <h2 className="text-sm font-medium text-neutral-600 dark:text-neutral-400">
+              Navigation
+            </h2>
+          </div>
+          <nav className="mt-6">
+            <ul className="-my-2 divide-y divide-neutral-100 text-xs text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300 sm:text-sm">
+              <MobileNavItem href="/blog">Blog</MobileNavItem>
+              <MobileNavItem href="/notes">Notes</MobileNavItem>
+              <MobileNavItem href="/uses">Uses</MobileNavItem>
+              <MobileNavItem href="/about">About</MobileNavItem>
+              <MobileNavItem href="/contact">Contact</MobileNavItem>
+            </ul>
+          </nav>
+        </PopoverPanel>
       </Popover>
     </nav>
   );
 }
 
 function NavItem({ href, children }: NavItemProps) {
-  const isActive = useRouter().pathname === href;
+  const isActive = usePathname() === href;
 
   return (
     <li>
@@ -120,9 +108,8 @@ function DesktopNavigation(props: Record<string, unknown>) {
   return (
     <nav {...props}>
       <ul className="flex items-center rounded-full bg-white/90 px-3 text-xs font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-800/90 dark:text-neutral-200 dark:ring-white/10">
-        {/* <NavItem href="/metrics">Metrics</NavItem> */}
-        {/* <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem> */}
+        <NavItem href="/blog">Blog</NavItem>
+        <NavItem href="/notes">Notes</NavItem>
         <NavItem href="/uses">Uses</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/contact">Contact</NavItem>
@@ -195,10 +182,12 @@ function AvatarContainer({
 function Avatar({
   large = false,
   className,
+  style,
   ...props
 }: {
   large?: boolean;
   className?: string;
+  style?: React.CSSProperties;
   props?: Record<string, unknown>;
 }) {
   return (
@@ -206,6 +195,7 @@ function Avatar({
       href="/"
       aria-label="Home"
       className={clsx(className, "pointer-events-auto")}
+      style={style}
       {...props}
     >
       <Image
@@ -223,7 +213,7 @@ function Avatar({
 }
 
 export function Header() {
-  const isHomePage = useRouter().pathname === "/";
+  const isHomePage = usePathname() === "/";
 
   const headerRef = useRef<HTMLDivElement | null>(null);
   const avatarRef = useRef<HTMLDivElement | null>(null);
@@ -341,17 +331,15 @@ export function Header() {
           <>
             <div
               ref={avatarRef}
-              className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
+              className="order-last mt-[calc(4rem-0.75rem)]"
             />
             <Container
               className="top-0 order-last -mb-3 flex flex-col pt-3 sm:block"
-              // @ts-expect-error
-              style={{ position: "var(--header-position)" }}
+              style={{ position: "var(--header-position)" as React.CSSProperties["position"] }}
             >
               <div
-                className="top-[var(--avatar-top,theme(spacing.3))] w-full"
-                // @ts-expect-error
-                style={{ position: "var(--header-inner-position)" }}
+                className="top-[var(--avatar-top,0.75rem)] w-full"
+                style={{ position: "var(--header-inner-position)" as React.CSSProperties["position"] }}
               >
                 <div className="relative">
                   <AvatarContainer
@@ -364,7 +352,6 @@ export function Header() {
                   <Avatar
                     large
                     className="block h-16 w-16 origin-left sm:h-20 sm:w-20"
-                    // @ts-expect-error
                     style={{ transform: "var(--avatar-image-transform)" }}
                   />
                 </div>
@@ -375,13 +362,11 @@ export function Header() {
         <div
           ref={headerRef}
           className="top-0 z-10 h-16 pt-6"
-          // @ts-expect-error
-          style={{ position: "var(--header-position)" }}
+          style={{ position: "var(--header-position)" as React.CSSProperties["position"] }}
         >
           <Container
-            className="top-[var(--header-top,theme(spacing.6))] w-full"
-            // @ts-expect-error
-            style={{ position: "var(--header-inner-position)" }}
+            className="top-[var(--header-top,1.5rem)] w-full"
+            style={{ position: "var(--header-inner-position)" as React.CSSProperties["position"] }}
           >
             <div className="relative flex gap-4">
               <div className="flex flex-1">

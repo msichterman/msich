@@ -5,16 +5,14 @@ import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 import avatarImage from "@/images/avatar.jpg";
 
-export const config = {
-  runtime: "edge",
-};
+export const runtime = "edge";
 
 // Make sure the font exists in the specified path:
 const calSans = fetch(
-  new URL("../../../public/CalSans-SemiBold.ttf", import.meta.url)
+  new URL("../../../../public/CalSans-SemiBold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
     const calSansFont = await calSans;
     const { origin, searchParams } = new URL(req.url);
@@ -26,7 +24,7 @@ export default async function handler(req: NextRequest) {
       : "Software engineer, entrepreneur, and former hogmollie.";
     const subtitle = searchParams.has("title")
       ? searchParams.get("title")?.slice(0, 100)
-      : "I create and manage thriving websites for growing businesses.";
+      : "CTO at Flamel.ai. Building the marketing hub for multi-location brands.";
     const image = searchParams.get("image") || `${origin}${avatarImage.src}`;
 
     return new ImageResponse(
