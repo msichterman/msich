@@ -45,12 +45,10 @@ export const newsletterRouter = router({
 
     const data = await result.json();
 
-    const responseSchema = z.object({
-      total: z.number().nullable(),
-      error: z.string().nullable(),
-    });
-
-    type SubscribersResponseType = z.infer<typeof responseSchema>;
+    type SubscribersResponseType = {
+      total: number | null;
+      error: string | null;
+    };
 
     const response: SubscribersResponseType = !result.ok
       ? {
