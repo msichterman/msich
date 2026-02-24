@@ -28,11 +28,7 @@
         ".source/*"
       ]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "plugins": []
   },
   "include": [
     "**/*.cjs",
@@ -41,8 +37,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".source/**/*",
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
+    "vite-env.d.ts"
   ],
   "exclude": [
     "node_modules"

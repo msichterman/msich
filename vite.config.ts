@@ -17,6 +17,15 @@ export default defineConfig(({ mode }) => {
       ),
       "process.env.NODE_ENV": JSON.stringify(mode),
     },
+    optimizeDeps: {
+      include: [
+        "react",
+        "react-dom",
+        "react/jsx-runtime",
+        "react/jsx-dev-runtime",
+        "react-dom/client",
+      ],
+    },
     plugins: [mdx(MdxConfig), vinext()],
   };
 });
