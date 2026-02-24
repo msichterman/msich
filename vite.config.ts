@@ -25,6 +25,24 @@ export default defineConfig(({ mode }) => {
         "react/jsx-dev-runtime",
         "react-dom/client",
       ],
+      exclude: [
+        "fumadocs-core",
+        "fumadocs-ui",
+        "fumadocs-mdx",
+      ],
+    },
+    resolve: {
+      dedupe: [
+        "fumadocs-core",
+        "fumadocs-ui",
+      ],
+    },
+    ssr: {
+      noExternal: [
+        "fumadocs-core",
+        "fumadocs-ui",
+        "fumadocs-mdx",
+      ],
     },
     plugins: [mdx(MdxConfig), vinext()],
   };

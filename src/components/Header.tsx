@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 import { Container } from "@/components/Container";
 import avatarImage from "@/images/avatar.jpg";
-import { ReactNode } from "react";
+import { ReactNode, useState, useEffect } from "react";
 import { ChevronDown, Moon, Sun, X } from "lucide-react";
 
 export type NavItemProps = {
@@ -76,7 +76,12 @@ function MobileNavigation(props: Record<string, unknown>) {
 }
 
 function NavItem({ href, children }: NavItemProps) {
-  const isActive = usePathname() === href;
+  const pathname = usePathname();
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    setIsActive(pathname === href);
+  }, [pathname, href]);
 
   return (
     <li>
