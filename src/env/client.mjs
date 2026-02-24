@@ -14,7 +14,10 @@ export const formatErrors = (
     })
     .filter(Boolean);
 
-if (_clientEnv.success === false) {
+if (
+  _clientEnv.success === false &&
+  process.env.SKIP_ENV_VALIDATION !== "true"
+) {
   console.error(
     "❌ Invalid environment variables:\n",
     ...formatErrors(_clientEnv.error.format()),

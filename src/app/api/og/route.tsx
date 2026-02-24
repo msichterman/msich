@@ -4,17 +4,18 @@ import React from "react";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 import avatarImage from "@/images/avatar.jpg";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 
 export const runtime = "edge";
 
-// Make sure the font exists in the specified path:
-const calSans = fetch(
-  new URL("../../../../public/CalSans-SemiBold.ttf", import.meta.url)
-).then((res) => res.arrayBuffer());
+const calSans = readFileSync(
+  join(process.cwd(), "public/CalSans-SemiBold.ttf")
+);
 
 export async function GET(req: NextRequest) {
   try {
-    const calSansFont = await calSans;
+    const calSansFont = calSans;
     const { origin, searchParams } = new URL(req.url);
 
     // dynamic params
@@ -25,7 +26,9 @@ export async function GET(req: NextRequest) {
     const subtitle = searchParams.has("title")
       ? searchParams.get("title")?.slice(0, 100)
       : "CTO at Flamel.ai. Building the marketing hub for multi-location brands.";
-    const image = searchParams.get("image") || `${origin}${avatarImage.src}`;
+    const avatarSrc =
+      typeof avatarImage === "string" ? avatarImage : avatarImage.src;
+    const image = searchParams.get("image") || `${origin}${avatarSrc}`;
 
     return new ImageResponse(
       (
@@ -39,7 +42,7 @@ export async function GET(req: NextRequest) {
               width="1200"
               height="800"
               version="1.1"
-              style={{ zIndex: "0" }}
+              style={{ zIndex: 0 }}
             >
               <g transform="translate(444.3593826782917 273.8643784322123)">
                 <path
@@ -48,7 +51,7 @@ export async function GET(req: NextRequest) {
                 ></path>
               </g>
             </svg>
-            <div tw="flex-1 flex flex-col mr-20" style={{ zIndex: "50" }}>
+            <div tw="flex-1 flex flex-col mr-20" style={{ zIndex: 50 }}>
               <p
                 tw="text-sky-400 text-5xl uppercase font-bold opacity-30"
                 style={{ whiteSpace: "nowrap" }}

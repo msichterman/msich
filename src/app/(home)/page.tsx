@@ -43,7 +43,7 @@ function Photos() {
       <div className="-my-4 flex snap-x snap-mandatory justify-start gap-5 overflow-x-auto py-4 sm:gap-8 lg:mx-auto lg:max-w-7xl lg:snap-none lg:justify-center lg:gap-6 lg:overflow-visible lg:px-8">
         {[image2, image6, image3, image4, image5, image1].map((image) => (
           <div
-            key={image.src}
+            key={typeof image === "string" ? image : image.src}
             className="relative aspect-[9/10] w-44 flex-none snap-center overflow-hidden rounded-xl sm:w-72 sm:rounded-2xl lg:w-0 lg:flex-1"
           >
             <Image

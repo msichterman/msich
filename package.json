@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "vinext dev",
+    "build": "vinext build",
+    "start": "vinext start",
+    "lint": "vinext lint",
     "postinstall": "prisma generate"
   },
   "dependencies": {
@@ -25,7 +25,6 @@
     "fumadocs-mdx": "^14.2.7",
     "fumadocs-ui": "^15.8.5",
     "lucide-react": "^0.460.0",
-    "next": "^15.1.0",
     "nodemailer": "^8.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -43,6 +42,7 @@
     "@types/react-dom": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
+    "@vitejs/plugin-rsc": "^0.5.20",
     "eslint": "^8.57.0",
     "eslint-config-next": "^15.1.0",
     "postcss": "^8.4.49",
@@ -50,9 +50,12 @@
     "prettier-plugin-tailwindcss": "^0.6.0",
     "prisma": "^6.0.0",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vinext": "^0.0.4",
+    "vite": "^7.3.1"
   },
   "ct3aMetadata": {
     "initVersion": "6.0.0-next.62e86c4"
-  }
+  },
+  "type": "module"
 }

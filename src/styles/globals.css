@@ -3,6 +3,18 @@
 @import "tailwindcss";
 @import "./prism.css";
 
+@font-face {
+  font-family: "Cal Sans";
+  src: url("../fonts/CalSans-SemiBold.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --font-cal-sans: "Cal Sans";
+  --font-ibm: "IBM Plex Mono";
+}
+
 @source "../../node_modules/fumadocs-ui/dist/**/*.js";
 
 @plugin "@tailwindcss/typography";

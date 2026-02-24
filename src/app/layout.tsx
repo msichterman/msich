@@ -1,24 +1,8 @@
 import { RootProvider } from "fumadocs-ui/provider";
-import localFont from "next/font/local";
-import { IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import type { ReactNode } from "react";
 import "../styles/globals.css";
-
-const calSans = localFont({
-  src: "../fonts/CalSans-SemiBold.woff2",
-  variable: "--font-cal-sans",
-  weight: "400",
-  display: "swap",
-});
-
-const ibm = IBM_Plex_Mono({
-  variable: "--font-ibm",
-  weight: ["300", "400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 // Static dark mode initialization script — identical to _document.tsx.
 // Uses a static string, not user input, so dangerouslySetInnerHTML is safe here.
@@ -60,10 +44,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`h-full antialiased ${calSans.variable} ${ibm.variable}`}
+      className="h-full antialiased"
       suppressHydrationWarning
     >
       <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        />
         <script
           dangerouslySetInnerHTML={{ __html: modeScript }}
         />
