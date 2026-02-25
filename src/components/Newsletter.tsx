@@ -1,3 +1,5 @@
+"use client";
+
 import { trpc } from "@/utils/trpc";
 import { zodResolver } from "@hookform/resolvers/zod";
 import clsx from "clsx";
@@ -29,7 +31,7 @@ export default function Newsletter({ className }: { className?: string }) {
     defaultValues,
   });
 
-  const utils = trpc.useContext();
+  const utils = trpc.useUtils();
 
   const getSubscribers = trpc.newsletter.getSubscribers.useQuery();
 
@@ -84,20 +86,20 @@ export default function Newsletter({ className }: { className?: string }) {
           {...register("email")}
           autoComplete="email"
           className={clsx(
-            "min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-neutral-800/5 placeholder:text-neutral-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-neutral-700/[0.15] dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm",
+            "min-w-0 flex-auto appearance-none rounded-md border bg-white px-3 py-[calc(0.5rem-1px)] shadow-md shadow-neutral-800/5 placeholder:text-neutral-400 focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10 dark:bg-neutral-700/[0.15] dark:text-neutral-200 dark:placeholder:text-neutral-500 dark:focus:border-sky-400 dark:focus:ring-sky-400/10 sm:text-sm",
             errors.email || subscribe.error
               ? "border-red-600"
               : "border-neutral-900/10 dark:border-neutral-700"
           )}
-          disabled={isSubmitting || subscribe.isLoading}
+          disabled={isSubmitting || subscribe.isPending}
         />
         <Button
           type="submit"
           className={clsx(
             "ml-4 flex-none",
-            subscribe.isLoading && "animate-pulse"
+            subscribe.isPending && "animate-pulse"
           )}
-          disabled={isSubmitting || subscribe.isLoading}
+          disabled={isSubmitting || subscribe.isPending}
         >
           Join
         </Button>

@@ -8,7 +8,12 @@ import { env as clientEnv, formatErrors } from "./client.mjs";
 
 const _serverEnv = serverSchema.safeParse(process.env);
 
-if (_serverEnv.success === false) {
+if (
+  _serverEnv.success === false &&
+  process.env.SKIP_ENV_VALIDATION !== "true" &&
+  // App Router evaluates route handlers at build time — skip validation during build
+  process.env.NEXT_PHASE !== "phase-production-build"
+) {
   console.error(
     "❌ Invalid environment variables:\n",
     ...formatErrors(_serverEnv.error.format()),
@@ -19,12 +24,14 @@ if (_serverEnv.success === false) {
 /**
  * Validate that server-side environment variables are not exposed to the client.
  */
-for (let key of Object.keys(_serverEnv.data)) {
-  if (key.startsWith("NEXT_PUBLIC_")) {
-    console.warn("❌ You are exposing a server-side env-variable:", key);
+if (_serverEnv.data) {
+  for (let key of Object.keys(_serverEnv.data)) {
+    if (key.startsWith("NEXT_PUBLIC_")) {
+      console.warn("❌ You are exposing a server-side env-variable:", key);
 
-    throw new Error("You are exposing a server-side env-variable");
+      throw new Error("You are exposing a server-side env-variable");
+    }
   }
 }
 
-export const env = { ..._serverEnv.data, ...clientEnv };
+export const env = { ...(_serverEnv.data ?? {}), ...clientEnv };

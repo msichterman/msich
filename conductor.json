@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "setup": "npm install && vercel env pull .env.local --yes 2>/dev/null || echo 'Vercel env pull skipped — ensure .env.local exists'",
+    "run": "npm run dev -- -p ${CONDUCTOR_PORT:-3000}"
+  },
+  "runScriptMode": "nonconcurrent"
+}

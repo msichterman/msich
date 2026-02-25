@@ -16,11 +16,12 @@
 /.next/
 /out/
 
-# contentlayer
-/.contentlayer/
+# fumadocs
+/.source/
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
