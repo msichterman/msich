@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "vinext build",
+  "outputDirectory": "dist/client",
+  "functions": {
+    "api/handler.mjs": {
+      "includeFiles": ["dist/server/**", "public/**"],
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/handler" }
+  ]
+}
