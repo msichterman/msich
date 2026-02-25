@@ -6,7 +6,8 @@ export default function NotesLayout({ children }: { children: ReactNode }) {
   return (
     <DocsLayout
       tree={notesSource.pageTree}
-      nav={{ title: "Notes" }}
+      nav={{ title: "Notes", enabled: false }}
+      themeSwitch={{ enabled: false }}
     >
       {children}
     </DocsLayout>
