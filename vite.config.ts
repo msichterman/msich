@@ -44,6 +44,17 @@ export default defineConfig(({ mode }) => {
         "fumadocs-mdx",
       ],
     },
+    build: {
+      rollupOptions: {
+        onwarn(warning, defaultHandler) {
+          // Suppress sourcemap warnings from vinext "use client" transform
+          if (warning.message?.includes("Can't resolve original location of error")) return;
+          // Suppress vinext internal dynamic/static import warning
+          if (warning.message?.includes("is dynamically imported by") && warning.message?.includes("vinext")) return;
+          defaultHandler(warning);
+        },
+      },
+    },
     plugins: [mdx(MdxConfig), vinext()],
   };
 });
