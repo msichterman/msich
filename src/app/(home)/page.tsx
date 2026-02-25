@@ -16,7 +16,7 @@ import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 export const metadata: Metadata = {
   title: "Matt Sichterman - Engineer, entrepreneur, and former hogmollie",
   description:
-    "I'm Matt, CTO at Flamel.ai, the AI-powered platform helping franchise brands scale their marketing. Also co-founder of Jurgy with Eagles center Cam Jurgens.",
+    "CTO at Flamel.ai — helping multi-location brands, franchisees, and agencies deploy localized content at scale while staying true to brand guidelines. Co-founder of Jurgy, a beef jerky brand with Eagles center Cam Jurgens.",
   openGraph: {
     images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Home" }],
   },
@@ -74,11 +74,11 @@ export default function Home() {
             <ExternalLink href="https://flamel.ai/" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
               Flamel.ai
             </ExternalLink>
-            , the AI-powered platform helping franchise brands create, schedule, and localize their marketing at scale. Also co-founder of{" "}
+            .{" "}Flamel.ai helps multi-location brands, franchisees, and agencies deploy localized content at scale while staying true to brand guidelines. I&apos;m also co-founder of{" "}
             <ExternalLink href="https://jurgy.co" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
               Jurgy
             </ExternalLink>
-            , a beef jerky brand with Eagles center Cam Jurgens.
+            , a beef jerky brand I started with Eagles center Cam Jurgens.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

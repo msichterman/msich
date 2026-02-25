@@ -11,7 +11,7 @@ import SocialLinks from "@/components/SocialLinks";
 export const metadata: Metadata = {
   title: "About - Matt Sichterman",
   description:
-    "I'm Matt Sichterman. CTO at Flamel.ai, living in Cincinnati, OH, where I lead engineering and build thriving digital experiences.",
+    "CTO at Flamel.ai — helping multi-location brands, franchisees, and agencies deploy localized content at scale. Co-founder of Jurgy with Eagles center Cam Jurgens. Based in Cincinnati, OH.",
   openGraph: {
     images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+About" }],
   },
@@ -104,11 +104,9 @@ export default function About() {
               >
                 Flamel.ai
               </ExternalLink>
-              , where I lead the engineering team building the marketing
-              hub for multi-location brands. We&apos;re using AI to
-              simplify content creation, scheduling, and localized
-              advertising for franchises at scale. I&apos;m also the
-              co-founder of{" "}
+              . Flamel.ai helps multi-location brands, franchisees, and
+              agencies deploy localized content at scale while staying true
+              to brand guidelines. I&apos;m also co-founder of{" "}
               <ExternalLink
                 href="https://jurgy.co"
                 className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
@@ -117,8 +115,8 @@ export default function About() {
               </ExternalLink>
               , a beef jerky brand I started with my college teammate and
               Eagles center Cam Jurgens. In my free time, I enjoy working
-              out, traveling around the world, and finding new rabbit holes
-              to continue my lifelong quest of learning and creating.
+              out, traveling, and finding new rabbit holes to continue my
+              lifelong quest of learning and creating.
             </p>
           </div>
         </div>

@@ -22,10 +22,10 @@ export async function GET(req: NextRequest) {
     const preface = searchParams.get("preface") || "Matt Sichterman";
     const title = searchParams.has("title")
       ? searchParams.get("title")?.slice(0, 100)
-      : "Software engineer, entrepreneur, and former hogmollie.";
-    const subtitle = searchParams.has("title")
-      ? searchParams.get("title")?.slice(0, 100)
-      : "CTO at Flamel.ai. Building the marketing hub for multi-location brands.";
+      : "Engineer, entrepreneur, and former hogmollie.";
+    const subtitle = searchParams.has("subtitle")
+      ? searchParams.get("subtitle")?.slice(0, 100)
+      : "CTO at Flamel.ai — localized content at scale for multi-location brands.";
     const avatarSrc =
       typeof avatarImage === "string" ? avatarImage : avatarImage.src;
     const image = searchParams.get("image") || `${origin}${avatarSrc}`;
