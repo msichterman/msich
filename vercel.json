@@ -5,7 +5,7 @@
   "outputDirectory": "dist/client",
   "functions": {
     "api/handler.mjs": {
-      "includeFiles": ["dist/server/**", "public/**"],
+      "includeFiles": "{dist/server/**,public/**}",
       "maxDuration": 30
     }
   },
