@@ -1,9 +1,7 @@
-import { createMDX } from "fumadocs-mdx/next";
-
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
   pageExtensions: ["tsx", "ts", "mdx", "md"],
 };
 
-export default createMDX()(config);
+export default config;

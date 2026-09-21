@@ -11,6 +11,7 @@ import { ElementType } from "react";
 import ExternalLink from "@/components/ExternalLink";
 import Newsletter from "@/components/Newsletter";
 import Resume from "@/components/Resume";
+import ProjectList from "@/components/ProjectList";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -117,9 +118,10 @@ export default function Home() {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto max-w-xl">
-          <div className="space-y-10">
-            <Newsletter />
+        <div className="mx-auto max-w-xl space-y-10 lg:max-w-none">
+          <Newsletter />
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-8">
+            <ProjectList />
             <Resume />
           </div>
         </div>

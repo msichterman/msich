@@ -1,7 +1,7 @@
 import vinext from "vinext";
 import mdx from "fumadocs-mdx/vite";
 import { defineConfig, loadEnv } from "vite";
-import * as MdxConfig from "./source.config";
+import * as MdxConfig from "./source.config.ts";
 
 export default defineConfig(({ mode }) => {
   // Load all env vars from .env* files into process.env
@@ -33,6 +33,8 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       dedupe: [
+        "react",
+        "react-dom",
         "fumadocs-core",
         "fumadocs-ui",
       ],
@@ -43,17 +45,6 @@ export default defineConfig(({ mode }) => {
         "fumadocs-ui",
         "fumadocs-mdx",
       ],
-    },
-    build: {
-      rollupOptions: {
-        onwarn(warning, defaultHandler) {
-          // Suppress sourcemap warnings from vinext "use client" transform
-          if (warning.message?.includes("Can't resolve original location of error")) return;
-          // Suppress vinext internal dynamic/static import warning
-          if (warning.message?.includes("is dynamically imported by") && warning.message?.includes("vinext")) return;
-          defaultHandler(warning);
-        },
-      },
     },
     plugins: [mdx(MdxConfig), vinext()],
   };

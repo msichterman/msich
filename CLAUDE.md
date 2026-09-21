@@ -4,11 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Matt Sichterman at msich.dev. Built on the T3 Stack with Next.js 15 App Router, React 19, TypeScript, tRPC, Prisma, and Tailwind CSS 4.
+Personal portfolio website for Matt Sichterman at msich.dev. Built on the T3 Stack with a Next.js-compatible App Router running on Vinext + Vite 8, React 19, TypeScript, tRPC, Prisma, and Tailwind CSS 4.
 
 ## Commands
 
-- `npm run dev` — Start dev server with Turbopack
+- `npm run dev` — Start Vinext/Vite dev server
 - `npm run build` — Production build
 - `npm run lint` — ESLint
 - `npx prisma generate` — Regenerate Prisma client (runs automatically on `npm install`)
