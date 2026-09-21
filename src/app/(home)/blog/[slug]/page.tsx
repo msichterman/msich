@@ -53,7 +53,7 @@ export default async function BlogPost(props: Props) {
     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-8 sm:py-32">
       <article>
         <header className="flex flex-col">
-          <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-4xl">
+          <h1 className="mt-6 text-2xl font-bold tracking-tight text-balance text-neutral-800 dark:text-neutral-100 sm:text-4xl">
             {data.title}
           </h1>
           <div className="order-first flex items-center gap-4 text-xs text-neutral-400 dark:text-neutral-500 sm:text-sm">
@@ -91,7 +91,7 @@ export default async function BlogPost(props: Props) {
           </div>
         )}
 
-        <div className="prose dark:prose-invert mt-8">
+        <div className="prose dark:prose-invert mt-8 text-pretty">
           <MDXBody components={defaultMdxComponents} />
         </div>
       </article>

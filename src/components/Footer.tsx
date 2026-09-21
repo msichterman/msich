@@ -40,8 +40,7 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <ul className="flex gap-6 text-xs font-medium text-neutral-800 dark:text-neutral-200">
-                <NavItem href="/blog">Blog</NavItem>
-                <NavItem href="/notes">Notes</NavItem>
+                <NavItem href="/projects">Projects</NavItem>
                 <NavItem href="/uses">Uses</NavItem>
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/contact">Contact</NavItem>
