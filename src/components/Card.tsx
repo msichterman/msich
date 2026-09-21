@@ -52,7 +52,7 @@ Card.Title = function CardTitle({
   children,
 }: CardTitleProps) {
   return (
-    <Component className="text-sm font-semibold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-sm">
+    <Component className="text-sm font-semibold tracking-tight text-pretty text-neutral-800 dark:text-neutral-100 sm:text-sm">
       {href ? <Card.Link href={href}>{children}</Card.Link> : children}
     </Component>
   );
@@ -64,7 +64,7 @@ Card.Description = function CardDescription({
   children: ReactNode;
 }) {
   return (
-    <p className="relative z-10 mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+    <p className="relative z-10 mt-2 text-xs leading-5 text-pretty text-neutral-600 dark:text-neutral-400">
       {children}
     </p>
   );

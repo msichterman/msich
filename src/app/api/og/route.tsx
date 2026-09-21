@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
       : "Engineer, entrepreneur, and former hogmollie.";
     const subtitle = searchParams.has("subtitle")
       ? searchParams.get("subtitle")?.slice(0, 100)
-      : "CTO at Flamel.ai — localized content at scale for multi-location brands.";
+      : "CTO at Flamel.ai. Localized content at scale for multi-location brands.";
     const avatarSrc =
       typeof avatarImage === "string" ? avatarImage : avatarImage.src;
     const image = searchParams.get("image") || `${origin}${avatarSrc}`;

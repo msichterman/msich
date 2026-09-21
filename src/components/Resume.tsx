@@ -27,8 +27,12 @@ function RoleDates({ role }: { role: Role }) {
       aria-label={`${role.start} until ${end}`}
     >
       <time dateTime={role.start}>{role.start}</time>{" "}
-      <span aria-hidden="true">—</span>{" "}
-      <time dateTime={role.end.dateTime}>{end}</time>
+      <span aria-hidden="true">-</span>{" "}
+      {role.end.dateTime ? (
+        <time dateTime={role.end.dateTime}>{end}</time>
+      ) : (
+        <span>{end}</span>
+      )}
     </dd>
   );
 }
@@ -70,7 +74,7 @@ export default function Resume() {
       company: "Hudl",
       logo: logoHudl,
       description:
-        "Web and mobile apps for Hudl Focus camera fleets — configuration, Wi-Fi onboarding, and a custom video player.",
+        "Web and mobile apps for Hudl Focus camera fleets: configuration, Wi-Fi onboarding, and a custom video player.",
       roles: [
         {
           title: "Full Stack Software Engineer",
@@ -122,7 +126,7 @@ export default function Resume() {
                   ))}
                 </ol>
               )}
-              <p className="mt-2 text-xxs leading-5 text-neutral-500 dark:text-neutral-400">
+              <p className="mt-2 text-xxs leading-5 text-pretty text-neutral-500 dark:text-neutral-400">
                 {description}
               </p>
             </div>

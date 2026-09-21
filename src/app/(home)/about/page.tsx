@@ -11,7 +11,7 @@ import SocialLinks from "@/components/SocialLinks";
 export const metadata: Metadata = {
   title: "About - Matt Sichterman",
   description:
-    "CTO at Flamel.ai — helping multi-location brands, franchisees, and agencies deploy localized content at scale. Co-founder of Jurgy with Eagles center Cam Jurgens. Based in Cincinnati, OH.",
+    "CTO at Flamel.ai, helping multi-location brands, franchisees, and agencies deploy localized content at scale. Co-founder of Jurgy with Eagles center Cam Jurgens. Based in Cincinnati, OH.",
   openGraph: {
     images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+About" }],
   },
@@ -32,11 +32,11 @@ export default function About() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-balance text-neutral-800 dark:text-neutral-100 sm:text-4xl">
             I&apos;m Matt Sichterman. <br /> I live in Cincinnati, OH, where I
             develop thriving digital experiences.
           </h1>
-          <div className="mt-6 space-y-7 text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
+          <div className="mt-6 space-y-7 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
             <p>
               Ever since I was young, I&apos;ve woken up excited about two
               things: sports and technology. Sports have been a mainstay in my
@@ -64,12 +64,12 @@ export default function About() {
               introduction to coding with Matlab. I eagerly enrolled and was
               presented with countless opportunities to problem solve and
               learn from the greatest teacher I have ever had to this day.
-              This sparked my interest in coding &mdash; a Python course and
+              This sparked my interest in coding. A Python course and
               many YouTube videos later I knew software engineering was for
               me.
             </p>
             <p>
-              My college search was pretty unique &mdash; I was highly
+              My college search was pretty unique. I was highly
               recruited to play football by schools around the country. I was
               intrigued by prestigious institutions like Duke, Northwestern,
               and Harvard, but knew balance in football and engineering was

@@ -37,14 +37,16 @@ export default function BlogIndex() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16 sm:px-8 sm:py-32">
-      <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-4xl">
-        Writing on software development, entrepreneurship, and cool
-        technologies.
-      </h1>
-      <p className="mt-6 text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
-        All of my long-form thoughts on programming, leadership,
-        entrepreneurship, and more, collected in chronological order.
-      </p>
+      <header className="mx-auto max-w-2xl text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-balance text-neutral-800 dark:text-neutral-100 sm:text-5xl">
+          Writing on software development, entrepreneurship, and cool
+          technologies.
+        </h1>
+        <p className="mt-6 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
+          All of my long-form thoughts on programming, leadership,
+          entrepreneurship, and more, collected in chronological order.
+        </p>
+      </header>
 
       <div className="mt-16 md:border-l md:border-neutral-200 md:pl-6 md:dark:border-neutral-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">
@@ -86,7 +88,7 @@ export default function BlogIndex() {
                   })}
                 </time>
                 {post.data.description && (
-                  <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
+                  <p className="mt-2 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
                     {post.data.description}
                   </p>
                 )}

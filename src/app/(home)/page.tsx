@@ -17,7 +17,7 @@ import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 export const metadata: Metadata = {
   title: "Matt Sichterman - Engineer, entrepreneur, and former hogmollie",
   description:
-    "CTO at Flamel.ai — helping multi-location brands, franchisees, and agencies deploy localized content at scale while staying true to brand guidelines. Co-founder of Jurgy, a beef jerky brand with Eagles center Cam Jurgens.",
+    "CTO at Flamel.ai, helping multi-location brands, franchisees, and agencies deploy localized content at scale while staying true to brand guidelines. Co-founder of Jurgy, a beef jerky brand with Eagles center Cam Jurgens.",
   openGraph: {
     images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Home" }],
   },
@@ -64,13 +64,12 @@ export default function Home() {
   return (
     <>
       <Container className="mt-9 sm:mt-12">
-        <div className="mx-auto flex max-w-lg flex-col items-center text-center sm:mx-0 sm:max-w-3xl sm:items-start sm:text-left">
-          <h1 className="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-5xl">
-            Engineer, entrepreneur,
-            <br />
-            and former hogmollie.<sup>&Dagger;</sup>
+        <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+          <h1 className="text-4xl font-bold tracking-tight text-balance text-neutral-800 dark:text-neutral-100 sm:text-5xl">
+            Engineer, entrepreneur, and former hogmollie.
+            <sup>&Dagger;</sup>
           </h1>
-          <p className="mt-6 max-w-2xl text-xs text-neutral-600 dark:text-neutral-400 sm:text-sm">
+          <p className="mt-6 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
             I&apos;m Matt, CTO at{" "}
             <ExternalLink href="https://flamel.ai/" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
               Flamel.ai

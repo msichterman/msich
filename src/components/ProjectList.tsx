@@ -30,16 +30,11 @@ export default function ProjectList() {
                   {project.name}
                 </ExternalLink>
               </h3>
-              <p className="mt-1 text-xxs leading-5 text-neutral-500 dark:text-neutral-400">
+              <p className="mt-1 text-xxs leading-5 text-pretty text-neutral-500 dark:text-neutral-400">
                 {project.description}
               </p>
               <p className="mt-2 text-xxs font-medium text-sky-500">
-                <ExternalLink
-                  href={project.link.href}
-                  className="transition hover:text-sky-400"
-                >
-                  {project.link.label}
-                </ExternalLink>
+                {project.link.label}
               </p>
             </div>
           </li>

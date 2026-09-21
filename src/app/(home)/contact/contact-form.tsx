@@ -70,7 +70,15 @@ export default function ContactForm() {
 
   return (
     <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
+      <header className="mx-auto max-w-2xl text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-balance text-neutral-800 dark:text-neutral-100 sm:text-5xl">
+          Get in touch.
+        </h1>
+        <p className="mt-6 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
+          Send a message, or find me around the internet.
+        </p>
+      </header>
+      <div className="mt-16 grid grid-cols-1 gap-y-16 sm:mt-20 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="rounded-2xl border border-neutral-200 p-6 dark:border-neutral-700/40 lg:order-first lg:row-span-2">
           <h2 className="text-md flex font-semibold text-neutral-900 dark:text-neutral-100">
             <Send className="h-6 w-6 flex-none fill-neutral-100 stroke-neutral-400 dark:fill-neutral-100/10 dark:stroke-neutral-500" />

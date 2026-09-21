@@ -18,7 +18,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Things I've made trying to put my dent in the universe."
-      intro="A mix of products I've built, brands I've started, and systems I've shipped — from AI marketing infrastructure to a beef jerky company."
+      intro="Products I've built, brands I've started, and systems I've shipped. AI marketing infrastructure, a beef jerky company, and a lot in between."
     >
       <ul
         role="list"
@@ -34,7 +34,7 @@ export default function Projects() {
                 unoptimized
               />
             </div>
-            <h2 className="mt-6 text-sm font-semibold tracking-normal text-neutral-800 dark:text-neutral-100">
+            <h2 className="mt-6 text-sm font-semibold tracking-normal text-pretty text-neutral-800 dark:text-neutral-100">
               <Card.Link href={project.link.href}>{project.name}</Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>

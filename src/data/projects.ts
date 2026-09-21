@@ -46,7 +46,7 @@ export const projects: Project[] = [
   {
     name: "Burnaze",
     description:
-      "Daily news and intelligence for franchise and multi-location brands — covering QSR, fitness, home services, and emerging concepts.",
+      "Daily news and intelligence for franchise and multi-location brands, covering QSR, fitness, home services, and emerging concepts.",
     link: { href: "https://burnaze.com", label: "burnaze.com" },
     logo: logoBurnaze,
   },
