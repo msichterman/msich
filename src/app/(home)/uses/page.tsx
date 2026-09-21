@@ -52,30 +52,25 @@ export default function Uses() {
       intro="A current list of the tools and gear I use."
     >
       <div className="space-y-20">
-        <ToolsSection title="Development tools">
+        <ToolsSection title="Tools">
           <Tool title="Conductor" href="https://www.conductor.build/">
             I use this to run coding agents in parallel. Each one gets its
             own workspace.
           </Tool>
+          <Tool title="Flue" href="https://flueframework.com/">
+            The framework I use to build agents.
+          </Tool>
           <Tool title="Cloudflare" href="https://www.cloudflare.com/">
             Where I deploy things.
           </Tool>
-        </ToolsSection>
-        <ToolsSection title="Design">
-          <Tool title="Tailwind CSS" href="https://tailwindcss.com/">
-            How I style almost everything I build.
-          </Tool>
-          <Tool title="Figma" href="https://www.figma.com/">
-            What I use for design, SVGs, and quick image work.
+          <Tool title="Raycast" href="https://www.raycast.com/">
+            My launcher. I use it all day, mostly for clipboard history and
+            jumping between apps.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Everyday">
           <Tool title="Vivo Barefoot" href="https://www.vivobarefoot.com/us/">
             The shoes I wear most days.
-          </Tool>
-          <Tool title="Raycast" href="https://www.raycast.com/">
-            My launcher. I use it all day, mostly for clipboard history and
-            jumping between apps.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Golf">
