@@ -25,7 +25,11 @@ export type NavItemProps = {
 function MobileNavItem({ href, children }: NavItemProps) {
   return (
     <li>
-      <CloseButton as={Link} href={href} className="block py-2">
+      <CloseButton
+        as={Link}
+        href={href}
+        className="block rounded-md py-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
+      >
         {children}
       </CloseButton>
     </li>
@@ -87,7 +91,7 @@ function NavItem({ href, children }: NavItemProps) {
       <Link
         href={href}
         className={clsx(
-          "relative block px-3 py-2 transition",
+          "relative block rounded-full px-3 py-2 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500",
           isActive
             ? "text-sky-500 dark:text-sky-400"
             : "hover:text-sky-500 dark:hover:text-sky-400"
@@ -146,7 +150,7 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 p-2 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur transition dark:bg-neutral-800/90 dark:ring-white/10 dark:hover:ring-white/20 sm:bg-transparent sm:shadow-none sm:ring-0 sm:backdrop-blur-none dark:sm:bg-transparent"
+      className="group rounded-full bg-white/90 p-2 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-neutral-800/90 dark:ring-white/10 dark:hover:ring-white/20 sm:bg-transparent sm:shadow-none sm:ring-0 sm:backdrop-blur-none dark:sm:bg-transparent"
       onClick={toggleMode}
     >
       <Sun className="h-5 w-5 fill-neutral-100 stroke-neutral-500 transition group-hover:fill-neutral-200 group-hover:stroke-neutral-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-sky-50 [@media(prefers-color-scheme:dark)]:stroke-sky-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-sky-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-sky-600 [&>*]:fill-sky-500" />

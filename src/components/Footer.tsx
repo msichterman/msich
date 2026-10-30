@@ -45,7 +45,7 @@ export function Footer() {
                 <NavItem href="/about">About</NavItem>
                 <NavItem href="/contact">Contact</NavItem>
               </ul>
-              <p className="text-sm text-neutral-400 dark:text-neutral-500">
+              <p className="text-sm text-neutral-600 dark:text-neutral-400">
                 &copy; {new Date().getFullYear()} Matt Sichterman. All rights
                 reserved.
               </p>
