@@ -49,25 +49,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <head>
         <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
+          rel="preload"
+          href="/fonts/CalSans-SemiBold.woff2"
+          as="font"
+          type="font/woff2"
           crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;700&display=swap"
-          rel="stylesheet"
         />
         <script
           dangerouslySetInnerHTML={{ __html: modeScript }}
-        />
-        <script
-          src="https://beamanalytics.b-cdn.net/beam.min.js"
-          data-token="13a52d15-6508-4e96-850b-62c6e744f58e"
-          async
         />
         <link
           rel="alternate"

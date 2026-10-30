@@ -5,7 +5,10 @@ import * as MdxConfig from "./source.config.ts";
 
 export default defineConfig(({ mode }) => {
   // Load all env vars from .env* files into process.env
-  // so they're available in the Vite module runner (RSC environment)
+  // so they're available in the Vite module runner (RSC environment).
+  // Do not define process.env.NODE_ENV here. Vinext and React read the real
+  // runtime value; replacing it at build time made the SSR bundle disagree
+  // with the Node production server.
   const env = loadEnv(mode, process.cwd(), "");
   Object.assign(process.env, env);
 
@@ -15,7 +18,6 @@ export default defineConfig(({ mode }) => {
       "process.env.NEXT_PUBLIC_SITE_URL": JSON.stringify(
         env.NEXT_PUBLIC_SITE_URL,
       ),
-      "process.env.NODE_ENV": JSON.stringify(mode),
     },
     optimizeDeps: {
       include: [
