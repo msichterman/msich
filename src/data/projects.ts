@@ -32,7 +32,7 @@ export const projects: Project[] = [
   {
     name: "Jurgy Beef Jerky",
     description:
-      "Co-founded a craft CPG brand with Cam Jurgens. Formulated 6 proprietary flavors, scaled direct-to-consumer operations, and expanded into 150+ retail stores.",
+      "Co-founded a craft CPG brand with Baltimore Ravens center Cam Jurgens. Formulated 6 proprietary flavors, scaled direct-to-consumer operations, and expanded into 150+ retail stores.",
     link: { href: "https://jurgy.co", label: "jurgy.co" },
     logo: logoJurgy,
   },

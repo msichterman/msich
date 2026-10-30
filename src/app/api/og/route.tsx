@@ -3,7 +3,6 @@
 import React from "react";
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
-import avatarImage from "@/images/avatar.jpg";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -12,11 +11,14 @@ export const runtime = "edge";
 const calSans = readFileSync(
   join(process.cwd(), "public/CalSans-SemiBold.ttf")
 );
+const avatarDataUrl = `data:image/jpeg;base64,${readFileSync(
+  join(process.cwd(), "public/og-avatar.jpg")
+).toString("base64")}`;
 
 export async function GET(req: NextRequest) {
   try {
     const calSansFont = calSans;
-    const { origin, searchParams } = new URL(req.url);
+    const { searchParams } = new URL(req.url);
 
     // dynamic params
     const preface = searchParams.get("preface") || "Matt Sichterman";
@@ -26,9 +28,9 @@ export async function GET(req: NextRequest) {
     const subtitle = searchParams.has("subtitle")
       ? searchParams.get("subtitle")?.slice(0, 100)
       : "CTO at Flamel.ai. Localized content at scale for multi-location brands.";
-    const avatarSrc =
-      typeof avatarImage === "string" ? avatarImage : avatarImage.src;
-    const image = searchParams.get("image") || `${origin}${avatarSrc}`;
+    // A data URL avoids fetching the site origin. @vercel/og blocks
+    // localhost as SSRF, and a failed image fetch rejects the response stream.
+    const image = searchParams.get("image") || avatarDataUrl;
 
     return new ImageResponse(
       (

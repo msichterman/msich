@@ -11,7 +11,7 @@ import SocialLinks from "@/components/SocialLinks";
 export const metadata: Metadata = {
   title: "About - Matt Sichterman",
   description:
-    "CTO at Flamel.ai, helping multi-location brands, franchisees, and agencies deploy localized content at scale. Co-founder of Jurgy with Eagles center Cam Jurgens. Based in Cincinnati, OH.",
+    "CTO at Flamel.ai, helping multi-location brands, franchisees, and agencies deploy localized content at scale. Co-founder of Jurgy with Baltimore Ravens center Cam Jurgens. Based in Cincinnati, OH.",
   openGraph: {
     images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+About" }],
   },
@@ -114,7 +114,7 @@ export default function About() {
                 Jurgy
               </ExternalLink>
               , a beef jerky brand I started with my college teammate and
-              Eagles center Cam Jurgens. In my free time, I enjoy working
+              Baltimore Ravens center Cam Jurgens. In my free time, I enjoy working
               out, traveling, and finding new rabbit holes to continue my
               lifelong quest of learning and creating.
             </p>
