@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 
 import { Card } from "@/components/Card";
 import { SimpleLayout } from "@/layouts/SimpleLayout";
-import { projects } from "@/data/projects";
-import { Link } from "lucide-react";
+import { projectHostLabel, projectHref, projects } from "@/data/projects";
+import { ArrowUpRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Projects - Matt Sichterman",
@@ -24,26 +24,36 @@ export default function Projects() {
         role="list"
         className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {projects.map((project) => (
-          <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-              <Image
-                src={project.logo}
-                alt=""
-                className="h-8 w-8 object-contain"
-                unoptimized
-              />
-            </div>
-            <h2 className="mt-6 text-sm font-semibold tracking-normal text-pretty text-neutral-800 dark:text-neutral-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
-            </h2>
-            <Card.Description>{project.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-xs font-medium text-neutral-400 transition group-hover:text-sky-500 dark:text-neutral-200">
-              <Link className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
-            </p>
-          </Card>
-        ))}
+        {projects.map((project) => {
+          const href = projectHref(project);
+          const host = projectHostLabel(project);
+          return (
+            <Card as="li" key={project.name}>
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
+                <Image
+                  src={project.logo}
+                  alt=""
+                  className="h-8 w-8 object-contain"
+                  unoptimized
+                />
+              </div>
+              <h2 className="mt-6 text-sm font-semibold tracking-normal text-pretty text-neutral-800 dark:text-neutral-100">
+                {href ? (
+                  <Card.Link href={href}>{project.name}</Card.Link>
+                ) : (
+                  project.name
+                )}
+              </h2>
+              <Card.Description>{project.description}</Card.Description>
+              {host ? (
+                <p className="relative z-10 mt-4 inline-flex items-center gap-1 text-xs font-medium text-sky-600 transition group-hover:text-sky-500 group-focus-within:text-sky-500 dark:text-sky-400 dark:group-hover:text-sky-300 dark:group-focus-within:text-sky-300 [font-family:var(--font-cal-sans),system-ui,sans-serif]">
+                  {host}
+                  <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
+                </p>
+              ) : null}
+            </Card>
+          );
+        })}
       </ul>
     </SimpleLayout>
   );
