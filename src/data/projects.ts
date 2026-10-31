@@ -72,7 +72,10 @@ export const projects: Project[] = [
     name: "US Credit Cards",
     description:
       "Deployed full-stack acquisition funnels for American Express Platinum and Gold cards to tens of millions of users with multivariate A/B testing.",
-    link: { href: "https://www.americanexpress.com", label: "amex.com" },
+    link: {
+      href: "https://www.americanexpress.com/us/credit-cards/",
+      label: "americanexpress.com",
+    },
     logo: logoAmex,
   },
   {
