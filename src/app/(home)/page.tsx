@@ -110,7 +110,7 @@ export default function Home() {
           </div>
           <ExternalLink
             href="http://hogmollie.urbanup.com/228367"
-            className="mt-6 block text-xxs text-neutral-400 dark:text-neutral-600"
+            className="mt-6 block text-xxs text-neutral-600 dark:text-neutral-400"
           >
             &Dagger; what the heck is a hogmollie?
           </ExternalLink>

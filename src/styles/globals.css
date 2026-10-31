@@ -460,3 +460,16 @@
   --color-fd-secondary: hsl(0, 0%, 12%);
   --color-fd-muted-foreground: hsl(0, 0%, 50%);
 }
+
+/* The site header is sticky and about 5.25rem tall. Fumadocs pins its
+   sidebar, page TOC, and mobile section bar to the viewport, so they
+   slide under that header. Shift those bars down without adding a second
+   gap under the in-flow header. */
+html {
+  scroll-padding-top: 5.25rem;
+}
+
+#nd-docs-layout {
+  --fd-nav-height: 5.25rem;
+  padding-top: 0;
+}
