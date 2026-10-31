@@ -10,9 +10,27 @@ import logoHudl from "@/images/logos/hudl.svg";
 export type Project = {
   name: string;
   description: string;
-  link: { href: string; label: string };
+  /** Omit when the project has no public URL. */
+  link?: { href: string; label?: string };
   logo: string | StaticImageData;
 };
+
+export function projectHref(project: Project): string | null {
+  const href = project.link?.href?.trim();
+  return href ? href : null;
+}
+
+export function projectHostLabel(project: Project): string | null {
+  const href = projectHref(project);
+  if (!href) return null;
+  const label = project.link?.label?.trim();
+  if (label) return label;
+  try {
+    return new URL(href).hostname.replace(/^www\./, "");
+  } catch {
+    return href;
+  }
+}
 
 export const projects: Project[] = [
   {

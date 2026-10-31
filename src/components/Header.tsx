@@ -161,8 +161,12 @@ function ModeToggle() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 pt-6 pb-4 pointer-events-none">
-      <Container>
+    <header className="sticky top-0 z-50 pt-6 pb-4">
+      <div
+        aria-hidden="true"
+        className="pointer-events-auto absolute inset-0 bg-gradient-to-r from-neutral-100 to-white dark:bg-gradient-to-l dark:from-neutral-900 dark:to-neutral-950"
+      />
+      <Container className="relative z-10">
         <div className="flex items-center gap-4">
           <div className="flex flex-1">
             <Link

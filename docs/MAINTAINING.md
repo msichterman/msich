@@ -76,7 +76,7 @@ Blog and notes frontmatter is loaded by Fumadocs (`source.config.ts`, `src/lib/s
 ## Common edits
 
 - **Change a sentence on the home or about page.** Edit the matching `page.tsx`. Meta `description` is separate from the visible paragraph; update both when the fact changes.
-- **Add a project.** Append an object in `src/data/projects.ts`. Put the logo in `src/images/logos/` and import it. Keep descriptions to a few sentences.
+- **Add a project.** Append an object in `src/data/projects.ts`. Put the logo in `src/images/logos/` and import it. Keep descriptions to a few sentences. Set `link.href` to make the whole card open that site in a new tab. Leave `link` off when there is no public URL. The home list is `src/components/ProjectList.tsx`; `/projects` uses the same data.
 - **Add a blog post.** Add `content/blog/your-slug.mdx` with `title`, `description`, `author`, `date`, and `tags`. The URL is `/blog/your-slug`.
 - **Add a note.** Add `content/notes/your-slug.mdx` and append `"your-slug"` to `pages` in `content/notes/meta.json`.
 - **Swap a homepage photo.** Replace the file in `src/images/photos/` or change the import list in `src/app/(home)/page.tsx`. Keep photos around 1280px wide. The first image in that list is the LCP image (`priority`).
