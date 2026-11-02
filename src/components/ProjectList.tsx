@@ -3,7 +3,7 @@ import { ArrowUpRight, Layers } from "lucide-react";
 import { projectHostLabel, projectHref, projects } from "@/data/projects";
 
 const hostClassName =
-  "[font-family:var(--font-cal-sans),system-ui,sans-serif] inline-flex items-center gap-1 text-xs font-medium tracking-wide text-sky-600 group-hover:text-sky-500 dark:text-sky-400 dark:group-hover:text-sky-300";
+  "[font-family:var(--font-cal-sans),system-ui,sans-serif] inline-flex items-center gap-1 text-xs font-medium tracking-wide text-sky-700 group-hover:text-sky-800 dark:text-sky-400 dark:group-hover:text-sky-300";
 
 export default function ProjectList() {
   return (

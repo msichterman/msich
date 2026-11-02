@@ -4,15 +4,15 @@ import type { Metadata } from "next";
 import { Card } from "@/components/Card";
 import { SimpleLayout } from "@/layouts/SimpleLayout";
 import { projectHostLabel, projectHref, projects } from "@/data/projects";
+import { pageMetadata } from "@/lib/metadata";
 import { ArrowUpRight } from "lucide-react";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Projects - Matt Sichterman",
   description: "Things I've made trying to put my dent in the universe.",
-  openGraph: {
-    images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Projects" }],
-  },
-};
+  path: "/projects",
+  ogPreface: "Matt Sichterman \u2023 Projects",
+});
 
 export default function Projects() {
   return (
@@ -46,7 +46,7 @@ export default function Projects() {
               </h2>
               <Card.Description>{project.description}</Card.Description>
               {host ? (
-                <p className="relative z-10 mt-4 inline-flex items-center gap-1 text-xs font-medium text-sky-600 transition group-hover:text-sky-500 group-focus-within:text-sky-500 dark:text-sky-400 dark:group-hover:text-sky-300 dark:group-focus-within:text-sky-300 [font-family:var(--font-cal-sans),system-ui,sans-serif]">
+                <p className="relative z-10 mt-4 inline-flex items-center gap-1 text-xs font-medium text-sky-700 transition group-hover:text-sky-800 group-focus-within:text-sky-800 dark:text-sky-400 dark:group-hover:text-sky-300 dark:group-focus-within:text-sky-300 [font-family:var(--font-cal-sans),system-ui,sans-serif]">
                   {host}
                   <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </p>

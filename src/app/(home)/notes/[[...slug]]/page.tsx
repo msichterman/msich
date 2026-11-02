@@ -5,6 +5,11 @@ import defaultMdxComponents from "fumadocs-ui/mdx";
 import type { Metadata } from "next";
 import type { MDXContent } from "mdx/types";
 import type { TOCItemType } from "fumadocs-core/toc";
+import { REVALIDATE_SECONDS } from "@/data/profile";
+import { pageMetadata } from "@/lib/metadata";
+
+export const dynamic = "force-static";
+export const revalidate = REVALIDATE_SECONDS;
 
 type Props = {
   params: Promise<{ slug?: string[] }>;
@@ -21,10 +26,13 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const page = notesSource.getPage(slug);
   if (!page) return {};
 
-  return {
+  return pageMetadata({
     title: `${page.data.title} - Notes - Matt Sichterman`,
-    description: page.data.description,
-  };
+    description: page.data.description ?? "",
+    path: page.url,
+    ogPreface: "Matt Sichterman \u2023 Notes",
+    ogTitle: page.data.title,
+  });
 }
 
 export default async function NotesPage(props: Props) {

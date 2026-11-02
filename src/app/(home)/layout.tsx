@@ -1,6 +1,10 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { REVALIDATE_SECONDS } from "@/data/profile";
 import type { ReactNode } from "react";
+
+export const revalidate = REVALIDATE_SECONDS;
+export const dynamic = "force-static";
 
 export default function HomeLayout({ children }: { children: ReactNode }) {
   return (

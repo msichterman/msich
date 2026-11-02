@@ -7,15 +7,26 @@ import ExternalLink from "@/components/ExternalLink";
 import Newsletter from "@/components/Newsletter";
 import Resume from "@/components/Resume";
 import SocialLinks from "@/components/SocialLinks";
+import {
+  ABOUT_DESCRIPTION,
+  ABOUT_TITLE,
+  FLAMEL_DESCRIPTION,
+  FLAMEL_JOINING,
+  FLAMEL_URL,
+  JURGY_TAGLINE,
+  JURGY_URL,
+} from "@/data/profile";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About - Matt Sichterman",
-  description:
-    "CTO at Flamel.ai, helping multi-location brands, franchisees, and agencies deploy localized content at scale. Co-founder of Jurgy with Baltimore Ravens center Cam Jurgens. Based in Cincinnati, OH.",
-  openGraph: {
-    images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+About" }],
-  },
-};
+const linkClass =
+  "tracking-wide text-sky-700 hover:text-sky-800 dark:text-sky-400 dark:hover:text-sky-300";
+
+export const metadata: Metadata = pageMetadata({
+  title: ABOUT_TITLE,
+  description: ABOUT_DESCRIPTION,
+  path: "/about",
+  ogPreface: "Matt Sichterman \u2023 About",
+});
 
 export default function About() {
   return (
@@ -82,7 +93,7 @@ export default function About() {
             <p>
               <ExternalLink
                 href="https://youtu.be/pPqnZ709VG0"
-                className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
+                className={linkClass}
               >
                 I played 5 seasons for the Cornhuskers
               </ExternalLink>{" "}
@@ -99,21 +110,19 @@ export default function About() {
             <p>
               Today, I&apos;m the CTO at{" "}
               <ExternalLink
-                href="https://flamel.ai/"
-                className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
+                href={FLAMEL_URL}
+                className={linkClass}
               >
                 Flamel.ai
               </ExternalLink>
-              . Flamel.ai helps multi-location brands, franchisees, and
-              agencies deploy localized content at scale while staying true
-              to brand guidelines. I&apos;m also co-founder of{" "}
+              . {FLAMEL_DESCRIPTION} {FLAMEL_JOINING} I&apos;m also co-founder of{" "}
               <ExternalLink
-                href="https://jurgy.co"
-                className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide"
+                href={JURGY_URL}
+                className={linkClass}
               >
                 Jurgy
               </ExternalLink>
-              , a beef jerky brand I started with my college teammate and
+              , {JURGY_TAGLINE}, a brand I started with my college teammate and
               Baltimore Ravens center Cam Jurgens. In my free time, I enjoy working
               out, traveling, and finding new rabbit holes to continue my
               lifelong quest of learning and creating.

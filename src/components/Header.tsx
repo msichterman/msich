@@ -93,8 +93,8 @@ function NavItem({ href, children }: NavItemProps) {
         className={clsx(
           "relative block rounded-full px-3 py-2 transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500",
           isActive
-            ? "text-sky-500 dark:text-sky-400"
-            : "hover:text-sky-500 dark:hover:text-sky-400"
+            ? "text-sky-700 dark:text-sky-400"
+            : "hover:text-sky-700 dark:hover:text-sky-400"
         )}
       >
         {children}
