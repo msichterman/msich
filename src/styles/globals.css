@@ -112,8 +112,8 @@
 .prose {
   --tw-prose-body: var(--color-zinc-600);
   --tw-prose-headings: var(--color-zinc-900);
-  --tw-prose-links: var(--color-sky-500);
-  --tw-prose-links-hover: var(--color-sky-600);
+  --tw-prose-links: var(--color-sky-800);
+  --tw-prose-links-hover: var(--color-sky-900);
   --tw-prose-underline: oklch(from var(--color-sky-500) l c h / 0.2);
   --tw-prose-underline-hover: var(--color-sky-500);
   --tw-prose-bold: var(--color-zinc-900);
@@ -298,6 +298,12 @@
   padding: 2rem;
   overflow-x: auto;
   border: 1px solid var(--tw-prose-pre-border);
+}
+
+/* Code blocks use a dark surface in both themes. Shiki's light palette
+   fails that surface, so use the dark token colors. */
+.prose .shiki:not(.not-fumadocs-codeblock *) code span {
+  color: var(--shiki-dark);
 }
 
 .prose pre code {

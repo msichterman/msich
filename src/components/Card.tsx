@@ -74,7 +74,7 @@ Card.Cta = function CardCta({ children }: { children: ReactNode }) {
   return (
     <div
       aria-hidden="true"
-      className="relative z-10 mt-4 flex items-center text-xs font-medium text-sky-500"
+      className="relative z-10 mt-4 flex items-center text-xs font-medium text-sky-700"
     >
       {children}
       <ChevronRight className="ml-1 h-4 w-4 stroke-current" />
@@ -102,7 +102,7 @@ Card.Eyebrow = function CardEyebrow({
     <Component
       className={clsx(
         className,
-        "relative z-10 order-first mb-3 flex items-center text-xs text-neutral-400 dark:text-neutral-500",
+        "relative z-10 order-first mb-3 flex items-center text-xs text-neutral-600 dark:text-neutral-300",
         decorate && "pl-3.5"
       )}
       {...props}

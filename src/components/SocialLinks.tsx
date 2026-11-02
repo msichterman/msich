@@ -30,8 +30,8 @@ function SocialLink({
 export default function SocialLinks() {
   return (
     <ul role="list">
-      <SocialLink href="https://twitter.com/mattsichterman" icon={Twitter}>
-        Follow on Twitter
+      <SocialLink href="https://x.com/mattsichterman" icon={Twitter}>
+        Follow on X
       </SocialLink>
       <SocialLink
         href="https://www.instagram.com/mattsichterman"

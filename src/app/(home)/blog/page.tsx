@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { blogSource } from "@/lib/source";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 
 type BlogPostData = {
   title: string;
@@ -10,18 +11,13 @@ type BlogPostData = {
   tags: string[];
 };
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog - Matt Sichterman",
   description:
     "Long-form thoughts on software engineering, entrepreneurship, and more.",
-  openGraph: {
-    images: [
-      {
-        url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Blog",
-      },
-    ],
-  },
-};
+  path: "/blog",
+  ogPreface: "Matt Sichterman \u2023 Blog",
+});
 
 export default function BlogIndex() {
   const posts = blogSource
@@ -54,7 +50,7 @@ export default function BlogIndex() {
             <article key={post.url} className="md:grid md:grid-cols-4 md:items-baseline">
               <time
                 dateTime={post.data.date}
-                className="mt-1 hidden text-xs text-neutral-400 dark:text-neutral-500 md:block"
+                className="mt-1 hidden text-xs text-neutral-600 dark:text-neutral-300 md:block"
               >
                 {new Date(post.data.date).toLocaleDateString("en-US", {
                   year: "numeric",
@@ -73,7 +69,7 @@ export default function BlogIndex() {
                 </h2>
                 <time
                   dateTime={post.data.date}
-                  className="relative order-first mb-3 flex items-center pl-3.5 text-xs text-neutral-400 dark:text-neutral-500 md:hidden"
+                  className="relative order-first mb-3 flex items-center pl-3.5 text-xs text-neutral-600 dark:text-neutral-300 md:hidden"
                 >
                   <span
                     className="absolute inset-y-0 left-0 flex items-center"
@@ -106,7 +102,7 @@ export default function BlogIndex() {
                 )}
                 <Link
                   href={post.url}
-                  className="mt-4 flex items-center text-xs font-medium text-sky-500"
+                  className="mt-4 flex items-center text-xs font-medium text-sky-700 dark:text-sky-400"
                 >
                   Read article
                   <svg

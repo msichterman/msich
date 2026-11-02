@@ -4,6 +4,7 @@ import logoFlamel from "@/images/logos/flamel.svg";
 import logoJurgy from "@/images/logos/jurgy.png";
 import logoFitsick from "@/images/logos/fitsick.png";
 import logoBurnaze from "@/images/logos/burnaze.svg";
+import logoAdsThatRun from "@/images/logos/adsthatrun.svg";
 import logoAmex from "@/images/logos/amex.svg";
 import logoHudl from "@/images/logos/hudl.svg";
 
@@ -36,7 +37,7 @@ export const projects: Project[] = [
   {
     name: "Flamel Studio",
     description:
-      "Multi-tenant franchise marketing platform. Architected Luna, an autonomous AI agent with tool-calling, and Ad Playbooks for automated ad sets and budget pacing across 100+ stores.",
+      "Flamel is the paid media hub for multi-location brands, running localized paid campaigns across Google, Meta, and ChatGPT. Architected Luna, an autonomous AI agent with tool-calling, and Ad Playbooks for automated ad sets and budget pacing.",
     link: { href: "https://flamel.ai", label: "flamel.ai" },
     logo: logoFlamel,
   },
@@ -50,7 +51,7 @@ export const projects: Project[] = [
   {
     name: "Jurgy Beef Jerky",
     description:
-      "Co-founded a craft CPG brand with Baltimore Ravens center Cam Jurgens. Formulated 6 proprietary flavors, scaled direct-to-consumer operations, and expanded into 150+ retail stores.",
+      "Beef Jerky for Champions. Co-founded a craft CPG brand with Baltimore Ravens center Cam Jurgens. Formulated 6 proprietary flavors, scaled direct-to-consumer operations, and expanded into 150+ retail stores.",
     link: { href: "https://jurgy.co", label: "jurgy.co" },
     logo: logoJurgy,
   },
@@ -67,6 +68,13 @@ export const projects: Project[] = [
       "Daily news and intelligence for franchise and multi-location brands, covering QSR, fitness, home services, and emerging concepts.",
     link: { href: "https://burnaze.com", label: "burnaze.com" },
     logo: logoBurnaze,
+  },
+  {
+    name: "Ads That Run",
+    description:
+      "Ad creative analytics. See the ads competitors are running, broken down by hook, message, angle, offer, and CTA.",
+    link: { href: "https://adsthatrun.com", label: "adsthatrun.com" },
+    logo: logoAdsThatRun,
   },
   {
     name: "US Credit Cards",

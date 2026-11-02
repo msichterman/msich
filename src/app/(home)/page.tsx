@@ -13,15 +13,28 @@ import Newsletter from "@/components/Newsletter";
 import Resume from "@/components/Resume";
 import ProjectList from "@/components/ProjectList";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
+import {
+  FLAMEL_DESCRIPTION,
+  FLAMEL_JOINING,
+  FLAMEL_URL,
+  HOGMOLLIE_URL,
+  HOME_DESCRIPTION,
+  HOME_TITLE,
+  JURGY_TAGLINE,
+  JURGY_URL,
+  SOCIAL,
+} from "@/data/profile";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Matt Sichterman - Engineer, entrepreneur, and former hogmollie",
-  description:
-    "CTO at Flamel.ai, helping multi-location brands, franchisees, and agencies deploy localized content at scale while staying true to brand guidelines. Co-founder of Jurgy, a beef jerky brand with Baltimore Ravens center Cam Jurgens.",
-  openGraph: {
-    images: [{ url: "https://msich.dev/api/og?preface=Matt+Sichterman+%E2%80%A3+Home" }],
-  },
-};
+const linkClass =
+  "tracking-wide text-sky-700 hover:text-sky-800 dark:text-sky-400 dark:hover:text-sky-300";
+
+export const metadata: Metadata = pageMetadata({
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
+  path: "/",
+  ogPreface: "Matt Sichterman \u2023 Home",
+});
 
 function SocialLink({
   icon: Icon,
@@ -72,44 +85,44 @@ export default function Home() {
           </h1>
           <p className="mt-6 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
             I&apos;m Matt, CTO at{" "}
-            <ExternalLink href="https://flamel.ai/" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
+            <ExternalLink href={FLAMEL_URL} className={linkClass}>
               Flamel.ai
             </ExternalLink>
-            .{" "}Flamel.ai helps multi-location brands, franchisees, and agencies deploy localized content at scale while staying true to brand guidelines. I&apos;m also co-founder of{" "}
-            <ExternalLink href="https://jurgy.co" className="text-sky-600 hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300 tracking-wide">
+            . {FLAMEL_DESCRIPTION} {FLAMEL_JOINING} I&apos;m also co-founder of{" "}
+            <ExternalLink href={JURGY_URL} className={linkClass}>
               Jurgy
             </ExternalLink>
-            , a beef jerky brand I started with Baltimore Ravens center Cam Jurgens.
+            , {JURGY_TAGLINE}, a brand I started with Baltimore Ravens center Cam Jurgens.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/mattsichterman"
-              aria-label="Follow on Twitter"
+              href={SOCIAL.x}
+              aria-label="Follow on X"
               icon={Twitter}
             />
             <SocialLink
-              href="https://instagram.com/mattsichterman"
+              href={SOCIAL.instagram}
               aria-label="Follow on Instagram"
               icon={Instagram}
             />
             <SocialLink
-              href="https://github.com/msichterman"
+              href={SOCIAL.github}
               aria-label="Follow on GitHub"
               icon={Github}
             />
             <SocialLink
-              href="https://www.linkedin.com/in/msichterman"
+              href={SOCIAL.linkedin}
               aria-label="Follow on LinkedIn"
               icon={Linkedin}
             />
             <SocialLink
-              href="mailto:msichterman1@gmail.com"
+              href={SOCIAL.email}
               aria-label="Email matt"
               icon={Mail}
             />
           </div>
           <ExternalLink
-            href="http://hogmollie.urbanup.com/228367"
+            href={HOGMOLLIE_URL}
             className="mt-6 block text-xxs text-neutral-600 dark:text-neutral-400"
           >
             &Dagger; what the heck is a hogmollie?

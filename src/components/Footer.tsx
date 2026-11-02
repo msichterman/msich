@@ -19,8 +19,8 @@ function NavItem({ href, children }: NavItemProps) {
         className={clsx(
           "relative block px-3 py-2 transition",
           isActive
-            ? "text-sky-500 dark:text-sky-400"
-            : "hover:text-sky-500 dark:hover:text-sky-400"
+            ? "text-sky-700 dark:text-sky-400"
+            : "hover:text-sky-700 dark:hover:text-sky-400"
         )}
       >
         {children}
@@ -49,7 +49,7 @@ export function Footer() {
                 &copy; {new Date().getFullYear()} Matt Sichterman. All rights
                 reserved.
               </p>
-              <ExternalLink href="https://webforestry.com">
+              <ExternalLink href="https://webforestry.com" aria-label="Web Forestry">
                 <div className="flex items-center rounded-md border border-emerald-600 bg-emerald-50 p-1 text-xxs font-bold text-neutral-800">
                   <WebForestry className="h-4" />
                 </div>

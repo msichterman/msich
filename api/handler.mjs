@@ -8,6 +8,39 @@ const serverPath = join(process.cwd(), "dist", "server", "index.js");
 const mod = await import(pathToFileURL(serverPath).href);
 const rscHandler = mod.default;
 
+// Vercel's vinext deploy policy rewrites shared-cache HTML to
+// `public, max-age=0, must-revalidate`. Put a real shared lifetime back on
+// public documents so the CDN can cache them.
+const DOCUMENT_CACHE =
+  "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800";
+
+function isDiscoveryDocument(contentType) {
+  return (
+    contentType.includes("text/markdown") ||
+    contentType.includes("text/plain") ||
+    contentType.includes("xml") ||
+    contentType.includes("rss") ||
+    contentType.includes("feed+json") ||
+    contentType.includes("linkset") ||
+    contentType.includes("openapi")
+  );
+}
+
+function upgradeCache(pathname, status, headers) {
+  if (status !== 200 || headers.has("set-cookie")) return;
+  if (pathname.startsWith("/api/") && !pathname.startsWith("/api/health")) return;
+  const contentType = (headers.get("content-type") || "").toLowerCase();
+  if (isDiscoveryDocument(contentType)) {
+    headers.set("cache-control", DOCUMENT_CACHE);
+    return;
+  }
+  if (!contentType.includes("text/html")) return;
+  const cc = headers.get("cache-control") || "";
+  if (/no-store|private/i.test(cc)) return;
+  if (cc.includes("s-maxage=") && !/max-age=0/.test(cc)) return;
+  headers.set("cache-control", DOCUMENT_CACHE);
+}
+
 export default async function handler(req, res) {
   try {
     const protocol = req.headers["x-forwarded-proto"] || "https";
@@ -31,6 +64,8 @@ export default async function handler(req, res) {
       init.duplex = "half";
     }
     const response = await rscHandler(new Request(url.href, init));
+
+    upgradeCache(url.pathname, response.status, response.headers);
 
     const respHeaders = {};
     response.headers.forEach((value, key) => {
