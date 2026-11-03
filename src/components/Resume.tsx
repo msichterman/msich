@@ -10,7 +10,7 @@ import { Briefcase, Download } from "lucide-react";
 
 const logos = {
   Yext: logoYext,
-  "Flamel.ai": logoFlamel,
+  "Flamel.ai (acquired)": logoFlamel,
   "American Express": logoAmex,
   Hudl: logoHudl,
 } as const;

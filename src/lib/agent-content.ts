@@ -5,7 +5,7 @@ import {
   ABOUT_DESCRIPTION,
   CONTACT_DESCRIPTION,
   EMAIL,
-  FLAMEL_DESCRIPTION,
+  FLAMEL_URL,
   HOGMOLLIE_URL,
   HOME_DESCRIPTION,
   HOME_TITLE,
@@ -194,7 +194,7 @@ function homeMarkdown(): string {
 
 > Engineer, entrepreneur, and former hogmollie.
 
-I'm Matt. Flamel was acquired by [Yext](${YEXT_URL}) in November 2026; I'm now a Senior Software Engineer on Yext's Paid Media team. ${FLAMEL_DESCRIPTION} I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, a brand I started with Baltimore Ravens center Cam Jurgens.
+I'm a Senior Software Engineer on [Yext](${YEXT_URL})'s Paid Media team. I was CTO of [Flamel.ai](${FLAMEL_URL}) (acquired by Yext in November 2026). I co-founded [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, with Baltimore Ravens center Cam Jurgens. A few more projects sit below.
 
 [What the heck is a hogmollie?](${HOGMOLLIE_URL})
 
@@ -221,19 +221,19 @@ function aboutMarkdown(): string {
 
 > ${ABOUT_DESCRIPTION}
 
-I'm Matt Sichterman. I live in Cincinnati, OH, where I develop thriving digital experiences.
+I'm Matt Sichterman. I live in Cincinnati, OH, where I build software and brands.
 
-Ever since I was young, I've woken up excited about two things: sports and technology. Sports have been a mainstay in my life for as long as I can remember. Sports have taken me all across the country, and have allowed me to experience great places, cities, and competitions. Most of all, sports have connected me with incredible teammates, leaders, and people. Technology has found its way into my life in other ways, feeding my hunger to learn and create.
+Ever since I was young, I've woken up excited about two things: sports and technology. The games have been with me for as long as I can remember. They took me across the country, into new cities and big competitions, and connected me with incredible teammates, leaders, and people. Technology found another way in, feeding my hunger to learn and create.
 
-"Pick something hard and be the best at it", is a quote from my dad who has always encouraged me to work hard and dream big. Early on, that meant disassembling computers, dabbling in every computer app I could get my hands on, and helping out with maintenance projects around the house. I learned new skills with every experience, yet continued to search for opportunities to build things and quench my thirst for creativity.
+"Pick something hard and be the best at it" is a quote from my dad, who has always encouraged me to work hard and dream big. Early on, that meant disassembling computers, dabbling in every computer app I could get my hands on, and helping out with maintenance projects around the house. I learned new skills with every experience, yet continued to search for opportunities to build things and quench my thirst for creativity.
 
-Sophomore year of high school, I was introduced to engineering when I enrolled in a course boasting hands-on projects like a fettuccine bridge, eight-foot-tall wooden trebuchet, and an introduction to coding with Matlab. I eagerly enrolled and was presented with countless opportunities to problem solve and learn from the greatest teacher I have ever had to this day. This sparked my interest in coding. A Python course and many YouTube videos later I knew software engineering was for me.
+Sophomore year of high school, I was introduced to engineering in a course full of hands-on projects: a fettuccine bridge, an eight-foot-tall wooden trebuchet, and a first pass at coding with Matlab. I showed up ready, and got countless chances to problem solve and learn from the greatest teacher I have ever had. This sparked my interest in coding. A Python course and many YouTube videos later, I knew software engineering was for me.
 
-My college search was pretty unique. I was highly recruited to play football by schools around the country. I was intrigued by prestigious institutions like Duke, Northwestern, and Harvard, but knew balance in football and engineering was important to me. After countless visits and conversations, I decided on one of the most storied programs in college football. With a proven track record of student-athlete excellence and a city with a fast-emerging tech scene, I knew Nebraska was the school for me.
+My college search was unusual. I was highly recruited to play football by schools around the country. I was intrigued by prestigious institutions like Duke, Northwestern, and Harvard, but knew balance in football and engineering was important to me. After countless visits and conversations, I decided on one of the most storied programs in college football. With a proven track record of student-athlete excellence and a city with a fast-emerging tech scene, I knew Nebraska was the school for me.
 
-[I played 5 seasons for the Cornhuskers](https://youtu.be/pPqnZ709VG0) on the offensive line, and started every game at right guard during my last season in 2021. I had an incredible experience playing in front of the greatest fans in college football. Even more incredible was my academic experience at Nebraska. I earned a bachelors degree in Software Engineering and a masters degree in Engineering Management, while also balancing football and part-time dev jobs. The support I had to pursue both was incredible, and I am eternally grateful for the opportunities that I had.
+[I played 5 seasons for the Cornhuskers](https://youtu.be/pPqnZ709VG0) on the offensive line, and started every game at right guard during my last season in 2021. I had an incredible experience playing in front of the greatest fans in college football. Even more incredible was my academic experience at Nebraska. I earned a bachelor's degree in Software Engineering and a master's degree in Engineering Management, while also balancing football and part-time dev jobs. The support I had to pursue both was incredible, and I am eternally grateful for the opportunities that I had.
 
-Today I'm a Senior Software Engineer on [Yext](${YEXT_URL})'s Paid Media team. Flamel was acquired by Yext in November 2026. ${FLAMEL_DESCRIPTION} I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, a brand I started with my college teammate and Baltimore Ravens center Cam Jurgens. In my free time, I enjoy working out, traveling, and finding new rabbit holes to continue my lifelong quest of learning and creating.
+Today I'm a Senior Software Engineer on [Yext](${YEXT_URL})'s Paid Media team. I was CTO of [Flamel.ai](${FLAMEL_URL}) (acquired by Yext in November 2026). I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, with my college teammate and Baltimore Ravens center Cam Jurgens. In my free time, I enjoy working out, traveling, and finding new rabbit holes to continue my lifelong quest of learning and creating.
 
 ## Contact
 

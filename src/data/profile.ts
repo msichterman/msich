@@ -19,16 +19,13 @@ export const FLAMEL_DESCRIPTION =
 
 export const YEXT_ROLE = "Senior Software Engineer, Paid Media";
 
-/** Post-close wording. The acquisition closed November 2, 2026. */
-export const FLAMEL_ACQUIRED =
-  "Flamel was acquired by Yext in November 2026; I'm now a Senior Software Engineer on Yext's Paid Media team.";
-
 export const JURGY_TAGLINE = "Beef Jerky for Champions";
 
 export const HOME_TITLE =
   "Matt Sichterman - Engineer, entrepreneur, and former hogmollie";
 
-export const HOME_DESCRIPTION = `${FLAMEL_ACQUIRED} ${FLAMEL_DESCRIPTION} Co-founder of Jurgy, ${JURGY_TAGLINE}, with Baltimore Ravens center Cam Jurgens.`;
+export const HOME_DESCRIPTION =
+  "Senior Software Engineer on Yext's Paid Media team. Former CTO of Flamel.ai (acquired by Yext, November 2026). Co-founder of Jurgy, Beef Jerky for Champions, with Baltimore Ravens center Cam Jurgens.";
 
 export const CONTACT_DESCRIPTION =
   "I'm Matt Sichterman. Senior Software Engineer on Yext's Paid Media team, living in Cincinnati, OH. Get in touch.";

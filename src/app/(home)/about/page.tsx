@@ -10,7 +10,7 @@ import SocialLinks from "@/components/SocialLinks";
 import {
   ABOUT_DESCRIPTION,
   ABOUT_TITLE,
-  FLAMEL_DESCRIPTION,
+  FLAMEL_URL,
   JURGY_TAGLINE,
   JURGY_URL,
   YEXT_URL,
@@ -44,22 +44,20 @@ export default function About() {
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-2xl font-bold tracking-tight text-balance text-neutral-800 dark:text-neutral-100 sm:text-4xl">
             I&apos;m Matt Sichterman. <br /> I live in Cincinnati, OH, where I
-            develop thriving digital experiences.
+            build software and brands.
           </h1>
           <div className="mt-6 space-y-7 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
             <p>
               Ever since I was young, I&apos;ve woken up excited about two
-              things: sports and technology. Sports have been a mainstay in my
-              life for as long as I can remember. Sports have taken me all
-              across the country, and have allowed me to experience great
-              places, cities, and competitions. Most of all, sports have
-              connected me with incredible teammates, leaders, and people.
-              Technology has found its way into my life in other ways, feeding
-              my hunger to learn and create.
+              things: sports and technology. The games have been with me for
+              as long as I can remember. They took me across the country, into
+              new cities and big competitions, and connected me with
+              incredible teammates, leaders, and people. Technology found
+              another way in, feeding my hunger to learn and create.
             </p>
             <p>
-              &quot;Pick something hard and be the best at it&quot;, is a
-              quote from my dad who has always encouraged me to work hard and
+              &quot;Pick something hard and be the best at it&quot; is a
+              quote from my dad, who has always encouraged me to work hard and
               dream big. Early on, that meant disassembling computers,
               dabbling in every computer app I could get my hands on, and
               helping out with maintenance projects around the house. I
@@ -69,17 +67,17 @@ export default function About() {
             </p>
             <p>
               Sophomore year of high school, I was introduced to engineering
-              when I enrolled in a course boasting hands-on projects like a
-              fettuccine bridge, eight-foot-tall wooden trebuchet, and an
-              introduction to coding with Matlab. I eagerly enrolled and was
-              presented with countless opportunities to problem solve and
-              learn from the greatest teacher I have ever had to this day.
+              in a course full of hands-on projects: a fettuccine bridge, an
+              eight-foot-tall wooden trebuchet, and a first pass at coding
+              with Matlab. I showed up ready, and got countless chances to
+              problem solve and learn from the greatest teacher I have ever
+              had.
               This sparked my interest in coding. A Python course and
               many YouTube videos later I knew software engineering was for
               me.
             </p>
             <p>
-              My college search was pretty unique. I was highly
+              My college search was unusual. I was highly
               recruited to play football by schools around the country. I was
               intrigued by prestigious institutions like Duke, Northwestern,
               and Harvard, but knew balance in football and engineering was
@@ -100,8 +98,8 @@ export default function About() {
               during my last season in 2021. I had an incredible experience
               playing in front of the greatest fans in college football. Even
               more incredible was my academic experience at Nebraska. I earned
-              a bachelors degree in Software Engineering and a masters degree
-              in Engineering Management, while also balancing football and
+              a bachelor&apos;s degree in Software Engineering and a master&apos;s
+              degree in Engineering Management, while also balancing football and
               part-time dev jobs. The support I had to pursue both was
               incredible, and I am eternally grateful for the opportunities
               that I had.
@@ -111,7 +109,11 @@ export default function About() {
               <ExternalLink href={YEXT_URL} className={linkClass}>
                 Yext
               </ExternalLink>
-              &apos;s Paid Media team. Flamel was acquired by Yext in November 2026. {FLAMEL_DESCRIPTION} I&apos;m also co-founder of{" "}
+              &apos;s Paid Media team. I was CTO of{" "}
+              <ExternalLink href={FLAMEL_URL} className={linkClass}>
+                Flamel.ai
+              </ExternalLink>{" "}
+              (acquired by Yext in November 2026). I&apos;m also co-founder of{" "}
               <ExternalLink
                 href={JURGY_URL}
                 className={linkClass}

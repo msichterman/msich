@@ -1,10 +1,7 @@
 import {
   ABOUT_DESCRIPTION,
   EMAIL,
-  FLAMEL_ACQUIRED,
-  FLAMEL_DESCRIPTION,
   HOME_DESCRIPTION,
-  JURGY_TAGLINE,
   SAME_AS,
   SITE_NAME,
   SITE_URL,
@@ -35,7 +32,7 @@ export function siteJsonLd() {
           name: "Yext",
           url: YEXT_URL,
         },
-        description: `${FLAMEL_ACQUIRED} ${FLAMEL_DESCRIPTION} Co-founder of Jurgy, ${JURGY_TAGLINE}.`,
+        description: HOME_DESCRIPTION,
         sameAs: SAME_AS,
       },
       {

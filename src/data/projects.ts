@@ -35,14 +35,14 @@ export function projectHostLabel(project: Project): string | null {
 
 export const projects: Project[] = [
   {
-    name: "Flamel Studio",
+    name: "Flamel Studio (acquired)",
     description:
       "Flamel is the paid media hub for multi-location brands, running localized paid campaigns across Google, Meta, and ChatGPT. Architected Luna, an autonomous AI agent with tool-calling, and Ad Playbooks for automated ad sets and budget pacing.",
     link: { href: "https://flamel.ai", label: "flamel.ai" },
     logo: logoFlamel,
   },
   {
-    name: "Flamel Web & Docs",
+    name: "Flamel Web & Docs (acquired)",
     description:
       "High-conversion marketing site alongside interactive developer docs for the Flamel platform.",
     link: { href: "https://docs.flamel.ai", label: "docs.flamel.ai" },
