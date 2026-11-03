@@ -1,4 +1,4 @@
-import { FLAMEL_DESCRIPTION, FLAMEL_JOINING } from "@/data/profile";
+import { FLAMEL_ACQUIRED, FLAMEL_DESCRIPTION, YEXT_URL } from "@/data/profile";
 
 export type ResumeRole = {
   title: string;
@@ -8,19 +8,32 @@ export type ResumeRole = {
 
 export type ResumeEntry = {
   company: string;
+  href?: string;
   description: string;
   roles: ResumeRole[];
 };
 
 export const resume: ResumeEntry[] = [
   {
+    company: "Yext",
+    href: YEXT_URL,
+    description: FLAMEL_ACQUIRED,
+    roles: [
+      {
+        title: "Senior Software Engineer, Paid Media",
+        start: "Nov 2026",
+        end: { label: "Present", dateTime: undefined },
+      },
+    ],
+  },
+  {
     company: "Flamel.ai",
-    description: `${FLAMEL_DESCRIPTION} ${FLAMEL_JOINING}`,
+    description: FLAMEL_DESCRIPTION,
     roles: [
       {
         title: "CTO",
         start: "Feb 2026",
-        end: { label: "Present", dateTime: undefined },
+        end: { dateTime: "Nov 2026" },
       },
       {
         title: "Senior Software Engineer",

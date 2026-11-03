@@ -10,19 +10,28 @@ export const HOGMOLLIE_URL =
 
 export const FLAMEL_URL = "https://flamel.ai/";
 
+export const YEXT_URL = "https://www.yext.com";
+
 export const JURGY_URL = "https://jurgy.co";
 
 export const FLAMEL_DESCRIPTION =
   "Flamel is the paid media hub for multi-location brands, running localized paid campaigns across Google, Meta, and ChatGPT.";
 
-export const FLAMEL_JOINING = "Flamel is joining Yext.";
+export const YEXT_ROLE = "Senior Software Engineer, Paid Media";
+
+/** Post-close wording. The acquisition closed November 2, 2026. */
+export const FLAMEL_ACQUIRED =
+  "Flamel was acquired by Yext in November 2026; I'm now a Senior Software Engineer on Yext's Paid Media team.";
 
 export const JURGY_TAGLINE = "Beef Jerky for Champions";
 
 export const HOME_TITLE =
   "Matt Sichterman - Engineer, entrepreneur, and former hogmollie";
 
-export const HOME_DESCRIPTION = `CTO at Flamel.ai. ${FLAMEL_DESCRIPTION} ${FLAMEL_JOINING} Co-founder of Jurgy, ${JURGY_TAGLINE}, with Baltimore Ravens center Cam Jurgens.`;
+export const HOME_DESCRIPTION = `${FLAMEL_ACQUIRED} ${FLAMEL_DESCRIPTION} Co-founder of Jurgy, ${JURGY_TAGLINE}, with Baltimore Ravens center Cam Jurgens.`;
+
+export const CONTACT_DESCRIPTION =
+  "I'm Matt Sichterman. Senior Software Engineer on Yext's Paid Media team, living in Cincinnati, OH. Get in touch.";
 
 export const ABOUT_TITLE = "About - Matt Sichterman";
 
@@ -42,6 +51,7 @@ export const SAME_AS = [
   SOCIAL.github,
   SOCIAL.linkedin,
   "https://flamel.ai",
+  YEXT_URL,
   JURGY_URL,
 ];
 

@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
       : "Engineer, entrepreneur, and former hogmollie.";
     const subtitle = searchParams.has("subtitle")
       ? searchParams.get("subtitle")?.slice(0, 100)
-      : "Flamel is the paid media hub for multi-location brands. Flamel is joining Yext.";
+      : "Senior Software Engineer on Yext's Paid Media team. Flamel was acquired by Yext in November 2026.";
     // A data URL avoids fetching the site origin. @vercel/og blocks
     // localhost as SSRF, and a failed image fetch rejects the response stream.
     const image = searchParams.get("image") || avatarDataUrl;
