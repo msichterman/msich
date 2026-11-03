@@ -14,7 +14,7 @@ import Resume from "@/components/Resume";
 import ProjectList from "@/components/ProjectList";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import {
-  FLAMEL_DESCRIPTION,
+  FLAMEL_URL,
   HOGMOLLIE_URL,
   HOME_DESCRIPTION,
   HOME_TITLE,
@@ -83,15 +83,20 @@ export default function Home() {
             <sup>&Dagger;</sup>
           </h1>
           <p className="mt-6 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
-            I&apos;m Matt. Flamel was acquired by{" "}
+            I&apos;m a Senior Software Engineer on{" "}
             <ExternalLink href={YEXT_URL} className={linkClass}>
               Yext
+            </ExternalLink>
+            &apos;s Paid Media team. I was CTO of{" "}
+            <ExternalLink href={FLAMEL_URL} className={linkClass}>
+              Flamel.ai
             </ExternalLink>{" "}
-            in November 2026; I&apos;m now a Senior Software Engineer on Yext&apos;s Paid Media team. {FLAMEL_DESCRIPTION} I&apos;m also co-founder of{" "}
+            (acquired by Yext in November 2026). I co-founded{" "}
             <ExternalLink href={JURGY_URL} className={linkClass}>
               Jurgy
             </ExternalLink>
-            , {JURGY_TAGLINE}, a brand I started with Baltimore Ravens center Cam Jurgens.
+            , {JURGY_TAGLINE}, with Baltimore Ravens center Cam Jurgens. A few
+            more projects sit below.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
