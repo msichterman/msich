@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import logoYext from "@/images/logos/yext.svg";
 import logoFlamel from "@/images/logos/flamel.svg";
 import logoAmex from "@/images/logos/amex.svg";
 import logoHudl from "@/images/logos/hudl.svg";
@@ -8,6 +9,7 @@ import { Button } from "./Button";
 import { Briefcase, Download } from "lucide-react";
 
 const logos = {
+  Yext: logoYext,
   "Flamel.ai": logoFlamel,
   "American Express": logoAmex,
   Hudl: logoHudl,
@@ -39,7 +41,7 @@ export default function Resume() {
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 divide-y divide-neutral-200 dark:divide-neutral-700/40">
-        {resume.map(({ company, description, roles }) => {
+        {resume.map(({ company, href, description, roles }) => {
           const logo = logos[company as keyof typeof logos];
           return (
           <li key={company} className="flex gap-4 py-5 first:pt-0 last:pb-0">
@@ -48,7 +50,18 @@ export default function Resume() {
             </div>
             <div className="min-w-0 flex-auto">
               <h3 className="text-sm font-medium text-neutral-900 dark:text-neutral-100">
-                {company}
+                {href ? (
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-sky-700 dark:hover:text-sky-400"
+                  >
+                    {company}
+                  </a>
+                ) : (
+                  company
+                )}
               </h3>
               {roles.length === 1 && roles[0] != null ? (
                 <dl className="mt-0.5">

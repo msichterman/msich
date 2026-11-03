@@ -11,10 +11,9 @@ import {
   ABOUT_DESCRIPTION,
   ABOUT_TITLE,
   FLAMEL_DESCRIPTION,
-  FLAMEL_JOINING,
-  FLAMEL_URL,
   JURGY_TAGLINE,
   JURGY_URL,
+  YEXT_URL,
 } from "@/data/profile";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -108,14 +107,11 @@ export default function About() {
               that I had.
             </p>
             <p>
-              Today, I&apos;m the CTO at{" "}
-              <ExternalLink
-                href={FLAMEL_URL}
-                className={linkClass}
-              >
-                Flamel.ai
+              Today I&apos;m a Senior Software Engineer on{" "}
+              <ExternalLink href={YEXT_URL} className={linkClass}>
+                Yext
               </ExternalLink>
-              . {FLAMEL_DESCRIPTION} {FLAMEL_JOINING} I&apos;m also co-founder of{" "}
+              &apos;s Paid Media team. Flamel was acquired by Yext in November 2026. {FLAMEL_DESCRIPTION} I&apos;m also co-founder of{" "}
               <ExternalLink
                 href={JURGY_URL}
                 className={linkClass}

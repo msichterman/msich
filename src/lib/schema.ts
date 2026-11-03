@@ -1,13 +1,15 @@
 import {
   ABOUT_DESCRIPTION,
   EMAIL,
+  FLAMEL_ACQUIRED,
   FLAMEL_DESCRIPTION,
-  FLAMEL_JOINING,
   HOME_DESCRIPTION,
   JURGY_TAGLINE,
   SAME_AS,
   SITE_NAME,
   SITE_URL,
+  YEXT_ROLE,
+  YEXT_URL,
 } from "@/data/profile";
 
 export function siteJsonLd() {
@@ -20,7 +22,7 @@ export function siteJsonLd() {
         name: SITE_NAME,
         url: SITE_URL,
         image: `${SITE_URL}/og-avatar.jpg`,
-        jobTitle: "CTO",
+        jobTitle: YEXT_ROLE,
         email: EMAIL,
         address: {
           "@type": "PostalAddress",
@@ -30,10 +32,10 @@ export function siteJsonLd() {
         },
         worksFor: {
           "@type": "Organization",
-          name: "Flamel.ai",
-          url: "https://flamel.ai",
+          name: "Yext",
+          url: YEXT_URL,
         },
-        description: `${FLAMEL_DESCRIPTION} ${FLAMEL_JOINING} Co-founder of Jurgy, ${JURGY_TAGLINE}.`,
+        description: `${FLAMEL_ACQUIRED} ${FLAMEL_DESCRIPTION} Co-founder of Jurgy, ${JURGY_TAGLINE}.`,
         sameAs: SAME_AS,
       },
       {

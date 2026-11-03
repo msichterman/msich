@@ -3,10 +3,9 @@ import { join } from "node:path";
 import { projects, projectHref } from "@/data/projects";
 import {
   ABOUT_DESCRIPTION,
+  CONTACT_DESCRIPTION,
   EMAIL,
   FLAMEL_DESCRIPTION,
-  FLAMEL_JOINING,
-  FLAMEL_URL,
   HOGMOLLIE_URL,
   HOME_DESCRIPTION,
   HOME_TITLE,
@@ -15,6 +14,7 @@ import {
   SITE_NAME,
   SITE_URL,
   SOCIAL,
+  YEXT_URL,
 } from "@/data/profile";
 import { resume } from "@/data/resume";
 import { uses } from "@/data/uses";
@@ -133,8 +133,7 @@ export function listPublicDocs(): PublicDoc[] {
     {
       path: "/contact",
       title: "Contact",
-      description:
-        "I'm Matt Sichterman. CTO at Flamel.ai, living in Cincinnati, OH. Get in touch.",
+      description: CONTACT_DESCRIPTION,
       section: "Pages",
     },
     {
@@ -186,7 +185,8 @@ function homeMarkdown(): string {
           return `${role.title} (${role.start}–${end})`;
         })
         .join("; ");
-      return `### ${entry.company}\n\n${roles}.\n\n${entry.description}`;
+      const name = entry.href ? `[${entry.company}](${entry.href})` : entry.company;
+      return `### ${name}\n\n${roles}.\n\n${entry.description}`;
     })
     .join("\n\n");
 
@@ -194,7 +194,7 @@ function homeMarkdown(): string {
 
 > Engineer, entrepreneur, and former hogmollie.
 
-I'm Matt, CTO at [Flamel.ai](${FLAMEL_URL}). ${FLAMEL_DESCRIPTION} ${FLAMEL_JOINING} I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, a brand I started with Baltimore Ravens center Cam Jurgens.
+I'm Matt. Flamel was acquired by [Yext](${YEXT_URL}) in November 2026; I'm now a Senior Software Engineer on Yext's Paid Media team. ${FLAMEL_DESCRIPTION} I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, a brand I started with Baltimore Ravens center Cam Jurgens.
 
 [What the heck is a hogmollie?](${HOGMOLLIE_URL})
 
@@ -233,7 +233,7 @@ My college search was pretty unique. I was highly recruited to play football by 
 
 [I played 5 seasons for the Cornhuskers](https://youtu.be/pPqnZ709VG0) on the offensive line, and started every game at right guard during my last season in 2021. I had an incredible experience playing in front of the greatest fans in college football. Even more incredible was my academic experience at Nebraska. I earned a bachelors degree in Software Engineering and a masters degree in Engineering Management, while also balancing football and part-time dev jobs. The support I had to pursue both was incredible, and I am eternally grateful for the opportunities that I had.
 
-Today, I'm the CTO at [Flamel.ai](${FLAMEL_URL}). ${FLAMEL_DESCRIPTION} ${FLAMEL_JOINING} I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, a brand I started with my college teammate and Baltimore Ravens center Cam Jurgens. In my free time, I enjoy working out, traveling, and finding new rabbit holes to continue my lifelong quest of learning and creating.
+Today I'm a Senior Software Engineer on [Yext](${YEXT_URL})'s Paid Media team. Flamel was acquired by Yext in November 2026. ${FLAMEL_DESCRIPTION} I'm also co-founder of [Jurgy](${JURGY_URL}), ${JURGY_TAGLINE}, a brand I started with my college teammate and Baltimore Ravens center Cam Jurgens. In my free time, I enjoy working out, traveling, and finding new rabbit holes to continue my lifelong quest of learning and creating.
 
 ## Contact
 
@@ -288,7 +288,7 @@ ${groups}
 function contactMarkdown(): string {
   return `# Contact
 
-> I'm Matt Sichterman. CTO at Flamel.ai, living in Cincinnati, OH. Get in touch.
+> ${CONTACT_DESCRIPTION}
 
 Send a message, or find me around the internet.
 

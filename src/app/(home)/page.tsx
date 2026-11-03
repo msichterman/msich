@@ -15,14 +15,13 @@ import ProjectList from "@/components/ProjectList";
 import { Github, Instagram, Linkedin, Mail, Twitter } from "lucide-react";
 import {
   FLAMEL_DESCRIPTION,
-  FLAMEL_JOINING,
-  FLAMEL_URL,
   HOGMOLLIE_URL,
   HOME_DESCRIPTION,
   HOME_TITLE,
   JURGY_TAGLINE,
   JURGY_URL,
   SOCIAL,
+  YEXT_URL,
 } from "@/data/profile";
 import { pageMetadata } from "@/lib/metadata";
 
@@ -84,11 +83,11 @@ export default function Home() {
             <sup>&Dagger;</sup>
           </h1>
           <p className="mt-6 text-xs text-pretty text-neutral-600 dark:text-neutral-400 sm:text-sm">
-            I&apos;m Matt, CTO at{" "}
-            <ExternalLink href={FLAMEL_URL} className={linkClass}>
-              Flamel.ai
-            </ExternalLink>
-            . {FLAMEL_DESCRIPTION} {FLAMEL_JOINING} I&apos;m also co-founder of{" "}
+            I&apos;m Matt. Flamel was acquired by{" "}
+            <ExternalLink href={YEXT_URL} className={linkClass}>
+              Yext
+            </ExternalLink>{" "}
+            in November 2026; I&apos;m now a Senior Software Engineer on Yext&apos;s Paid Media team. {FLAMEL_DESCRIPTION} I&apos;m also co-founder of{" "}
             <ExternalLink href={JURGY_URL} className={linkClass}>
               Jurgy
             </ExternalLink>
